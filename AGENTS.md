@@ -27,4 +27,3 @@
 
 - 进度看 `progress.md`；Agent 出错记录写 `agent_log.md`；bug 根因写 `debug_log.md`
 - 论文笔记写 `docs/paper_notes.md`；复现结论写 `REPORT.md`
-- API key 只放环境变量，不进代码、不进 git
