@@ -34,18 +34,50 @@
 
 ## 模块一：BFS 搜索（Day 3 填）
 
-- 论文原句：⏳（贴 Method 里对应的句子 + 章节号）
-- 我的翻译：⏳（一句话）
+- 论文原句：3.4.(a) Breadth-first search (BFS) (Algorithm 1) maintains a set of the b most promising states
+per step. This is used for Game of 24 and Creative Writing where the tree depth is limit
+(T ≤3), and initial thought steps can be evaluated and pruned to a small set (b ≤ 5).
+- 我的翻译：广度优先搜索———bfs保留了b个最有潜力的想法，并且不断迭代，保持只有5个最有潜力的想法，这被用在了24点和创意写作游戏上，根据思维树的深度，它可以被限制在一定的合集里面。
 - 输入 / 输出：⏳（in = 题目 x + 当前候选 ys；out = 4 步之后的最终候选）
-- 伪代码（**自己写，不许照抄论文的图**）：⏳
-- 代码位置：⏳（`bfs.py:49-88`，已打开核对）
+- 伪代码函数 
+搜索(题目编号 idx):
+##
+    题目 x = 取第 idx 题
+    当前候选集合 ys = ['']           # 空轨迹，还没走
+    每层记录 infos = []
+
+    for step in 0 .. steps-1:        # Game24 固定 4 层
+        # ---------- （1） 生成：对每个候选长出子候选 ----------
+        子候选集合 = []
+        for y in ys:
+            回复 = 模型(模板_propose(当前剩余数字), n=1)
+            拆成一行行，每条提议接到 y 后面 -> 得到若干新轨迹
+            子候选集合.加入这些新轨迹
+        # 现在 子候选集合 = 这一层所有新候选（可能几十个）
+
+        # ---------- （2） 评估：给每个子候选打分 ----------
+        分数 = 批量打分(x, 子候选集合, n_evaluate_sample)
+
+        # ---------- （3）选择：只留最好的 b 个 ----------
+        # greedy 策略（Game24 默认）：
+        按下标，依分数从大到小排序
+        选出前 b 个 的轨迹 -> 选中集合
+        # （sample 策略则是：把分数归一化成概率，按概率随机抽 b 个）
+
+        # ---------- （4）记录并推进 ----------
+        infos.记录(step, 子候选, 分数, 选中集合)
+        当前候选集合 = 选中集合          # 进入下一层
+
+    return 当前候选集合, infos
+##
+- 代码位置：（`bfs.py:49-88`，已打开核对）
 - 我做的验证：⏳
-- 我还不懂：⏳（至少写一条）
+- 我还不懂：bfs反馈提示词给模型之后，应该生成多少个候选
 
 ## 模块二：状态打分（Day 3 填）
 
-- 论文原句：⏳
-- 我的翻译：⏳
+- 论文原句：
+- 我的翻译：
 - 输入 / 输出：⏳（in = 题目 + 一个中间步骤；out = 分数 0.001 / 1 / 20）
 - 伪代码：⏳
 - 代码位置：⏳（`bfs.py:6-26` + `game24.py` 的 `value_prompt_wrap` / `value_outputs_unwrap`）
