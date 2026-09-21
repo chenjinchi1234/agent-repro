@@ -101,3 +101,9 @@ baseline 对得上、实验组也对得上（差异在 15 题抽样噪声内）�
 | 907 | 89 | ✅ | ✅ | 2/3 | | | |
 
 原始数据：`repro/tot/logs/game24/glm-5.3-flash_0.7_naive_cot_sample_100_start{900,905,910}*.json`（CoT）与 `glm-5.3-flash_0.7_propose1_value1_greedy3_start{900,905,910}*.json`（ToT）。汇总脚本：`combine.py` / `final_compare.py`（在 WSL home，未进仓库——统计脚本允许，评测逻辑不允许）。
+
+## 复跑确认（2026-09-21，换新 key 全量重跑）
+
+- 同 15 题（900-914）、同参数（CoT、100 样本/题、T=0.7）换新 key 重跑一次：**逐样本 84.3%（1265/1500），best-of-100 15/15**。
+- 与正式数字（84.0%、15/15）在 ±1% 抽样噪声内一致 → **反转结论稳定，不依赖单次运行的运气**。
+- 完整单文件：`repro/tot/logs/game24/glm-5.3-flash_0.7_naive_cot_sample_100_start900_end915.json`；备份副本在 `repro/tot/logs/archive/`（防止重跑覆盖）。

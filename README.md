@@ -26,13 +26,18 @@
 
 ```bash
 cd repro/tot
-# 环境：uv 建 venv 后装官方 requirements（见该仓库 README）
+```
 
-# 环境变量必须在命令里 inline（wsl bash -c 非交互，不加载 .bashrc）：
+（环境：uv 建 venv 后装官方 requirements，见该仓库 README。环境变量必须在命令里 inline——wsl bash -c 非交互，不加载 .bashrc。完整分步走法：开机检查 → 最小验证 → 后台跑 → 收工 → 汇总，见 [AGENTS.md](AGENTS.md)。）
+
+```bash
+# CoT 基线：每题 100 样本，5 题一批
 OPENAI_API_KEY=sk-... OPENAI_API_BASE=http://127.0.0.1:8787/v1 .venv/bin/python run.py \
   --task game24 --task_start_index 900 --task_end_index 905 \
   --naive_run --prompt_sample cot --n_generate_sample 100 --backend glm-5.3-flash
+```
 
+```bash
 # ToT（b=3, e=1, greedy）：
 OPENAI_API_KEY=sk-... OPENAI_API_BASE=http://127.0.0.1:8787/v1 .venv/bin/python run.py \
   --task game24 --task_start_index 900 --task_end_index 905 \

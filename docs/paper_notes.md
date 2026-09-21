@@ -70,19 +70,34 @@ per step. This is used for Game of 24 and Creative Writing where the tree depth 
 
     return 当前候选集合, infos
 ##
-- 代码位置：（`bfs.py:49-88`，已打开核对）
+- 代码位置：（`bfs.py:66-105`，已打开核对）
 - 我做的验证：⏳
 - 我还不懂：bfs反馈提示词给模型之后，应该生成多少个候选
 
 ## 模块二：状态打分（Day 3 填）
 
 - 论文原句：
-- 我的翻译：
-- 输入 / 输出：⏳（in = 题目 + 一个中间步骤；out = 分数 0.001 / 1 / 20）
-- 伪代码：⏳
-- 代码位置：⏳（`bfs.py:6-26` + `game24.py` 的 `value_prompt_wrap` / `value_outputs_unwrap`）
-- 我做的验证：⏳
-- 我还不懂：⏳
+  §3（状态评估）：“a value prompt reasons about the state s to generate a scalar value v (e.g. 1-10) or a classification (e.g. sure/likely/impossible) that could be heuristically turned into a value.”
+  §4.1（Game of 24）：“we prompt LM to evaluate each thought candidate as ‘sure/maybe/impossible’ with regard to reaching 24.”
+  ⚠️ 论文写 maybe，代码写 likely（game24.py:90）——论文与代码不一致的一处，复现以代码为准。
+- 我的翻译：把“走到这一步还剩哪些数字”喂给模型，让它猜这个状态离 24 有多近；猜出来的词映射成固定分数，用来给候选排序。
+- 输入 / 输出：in = 题目 x + 一条候选轨迹 y（取其最后一步的剩余数字填进模板）；out = 分数：impossible→0.001、likely→1、sure→20（e 次采样求和，数字越大越有戏）
+- 伪代码函数
+打分(题目 x, 候选轨迹 y):
+##
+    if y 已满 4 行且没有 answer:       # 死局保护（game24.py 里的隐藏规则）
+        return 0
+    提示词 = 模板_value(剩余数字)       # y 最后一行没有 left: 时换“最后一步”模板
+    输出 = 模型(提示词, n=e)            # 采样 e 次（我们 e=1，论文 e=3）
+    分数 = 0
+    for 每次采样 in 输出:
+        词 = 采样的最后一行             # sure / likely / impossible 之一
+        分数 += {impossible: 0.001, likely: 1, sure: 20}[词]
+    return 分数                        # 这 3 个权重是官方代码自注 ad hoc 的
+##
+- 代码位置：（`bfs.py:6-26` 的 get_value / get_values）+（`game24.py:76-92` 的 value_prompt_wrap / value_outputs_unwrap，已打开核对）
+- 我做的验证：把 propose 输出的垃圾标题行 “Possible next steps:” 当候选送 value 打分 → 模型判 sure（20 分），垃圾候选反而进了 beam。证明 value 模型按“看起来像不像”打分，不真的验算。
+- 我还不懂：value 模型到底是在心里做了一次搜索/心算，还是纯模式匹配？把剩余数字换个顺序（“left: 6 9 10” 写成 “left: 9 6 10”）会不会改变它的打分？没做过对照实验。
 
 ## 复现实验设计（Day 3-4）
 
