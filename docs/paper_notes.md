@@ -38,7 +38,7 @@
 per step. This is used for Game of 24 and Creative Writing where the tree depth is limit
 (T ≤3), and initial thought steps can be evaluated and pruned to a small set (b ≤ 5).
 - 我的翻译：广度优先搜索———bfs保留了b个最有潜力的想法，并且不断迭代，保持只有5个最有潜力的想法，这被用在了24点和创意写作游戏上，根据思维树的深度，它可以被限制在一定的合集里面。
-- 输入 / 输出：⏳（in = 题目 x + 当前候选 ys；out = 4 步之后的最终候选）
+- 输入 / 输出：in = 题目 x + 当前候选 ys；out = 4 步之后的最终候选
 - 伪代码函数 
 搜索(题目编号 idx):
 ##
@@ -71,7 +71,7 @@ per step. This is used for Game of 24 and Creative Writing where the tree depth 
     return 当前候选集合, infos
 ##
 - 代码位置：（`bfs.py:66-105`，已打开核对）
-- 我做的验证：⏳
+- 我做的验证：拿官方 gpt-4 日志在同样 15 题上用同一个 test_output 复算，CoT 3.5%、ToT 73.3%，与论文 4.0%/74% 对得上 → 证明我们的管道没改坏；另在 911 题全链路（propose→value→greedy→Answer→判定）跑通 r=1
 - 我还不懂：bfs反馈提示词给模型之后，应该生成多少个候选
 
 ## 模块二：状态打分（Day 3 填）
@@ -102,7 +102,7 @@ per step. This is used for Game of 24 and Creative Writing where the tree depth 
 ## 复现实验设计（Day 3-4）
 
 - 要复现的数字：论文 CoT 4.0% vs ToT 74%（100 题 × 100 样本，GPT-4）
-- 我的规模：⏳（约 20 题 × 100 样本；模型待定）
+- 我的规模：15 题（900-914）× 每题 100 样本；模型 glm-5.3-flash（T=0.7）；ToT b=3、e=1（论文 b=5、e=3）
 - 环境适配（**不算改评测代码**，评测逻辑 `test_output` 一行没动）：
   1. `--backend` 增加网关模型名
   2. `gpt()` 默认 max_tokens 1000→3000（推理模型思考 token 计入上限）
