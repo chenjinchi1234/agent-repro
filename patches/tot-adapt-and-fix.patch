@@ -1,0 +1,339 @@
+From cd8b9efee8b1e63372d1fce800047b9a09331133 Mon Sep 17 00:00:00 2001
+From: hemus <1095316880@qq.com>
+Date: Sun, 20 Sep 2026 21:30:29 +0800
+Subject: [PATCH 1/2] =?UTF-8?q?=E9=80=82=E9=85=8D=20OpenCode=20=E7=BD=91?=
+ =?UTF-8?q?=E5=85=B3=20+=20glm-5.3-flash=20=E5=90=8E=E7=AB=AF=EF=BC=88?=
+ =?UTF-8?q?=E4=B8=8D=E6=94=B9=E5=8F=98=E8=AF=84=E6=B5=8B=E9=80=BB=E8=BE=91?=
+ =?UTF-8?q?=EF=BC=89?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ run.py                 |  2 +-
+ src/tot/methods/bfs.py | 31 ++++++++++++++++++++++++-------
+ src/tot/models.py      | 19 +++++++++++++------
+ 3 files changed, 38 insertions(+), 14 deletions(-)
+
+diff --git a/run.py b/run.py
+index e4b6777..83d4367 100644
+--- a/run.py
++++ b/run.py
+@@ -42,7 +42,7 @@ def run(args):
+ 
+ def parse_args():
+     args = argparse.ArgumentParser()
+-    args.add_argument('--backend', type=str, choices=['gpt-4', 'gpt-3.5-turbo', 'gpt-4o'], default='gpt-4')
++    args.add_argument('--backend', type=str, choices=['gpt-4', 'gpt-3.5-turbo', 'gpt-4o', 'deepseek-v4-pro', 'deepseek-v4-flash', 'glm-5.3', 'glm-5.3-flash'], default='gpt-4')
+     args.add_argument('--temperature', type=float, default=0.7)
+ 
+     args.add_argument('--task', type=str, required=True, choices=['game24', 'text', 'crosswords'])
+diff --git a/src/tot/methods/bfs.py b/src/tot/methods/bfs.py
+index 4675bb9..b9d4085 100644
+--- a/src/tot/methods/bfs.py
++++ b/src/tot/methods/bfs.py
+@@ -3,24 +3,24 @@ import numpy as np
+ from functools import partial
+ from tot.models import gpt
+ 
+-def get_value(task, x, y, n_evaluate_sample, cache_value=True):
++def get_value(task, x, y, n_evaluate_sample, cache_value=True, reasoning_effort=None):
+     value_prompt = task.value_prompt_wrap(x, y)
+     if cache_value and value_prompt in task.value_cache:
+         return task.value_cache[value_prompt]
+-    value_outputs = gpt(value_prompt, n=n_evaluate_sample, stop=None)
++    value_outputs = gpt(value_prompt, n=n_evaluate_sample, stop=None, reasoning_effort=reasoning_effort)
+     value = task.value_outputs_unwrap(x, y, value_outputs)
+     if cache_value:
+         task.value_cache[value_prompt] = value
+     return value
+ 
+-def get_values(task, x, ys, n_evaluate_sample, cache_value=True):
++def get_values(task, x, ys, n_evaluate_sample, cache_value=True, reasoning_effort=None):
+     values = []
+     local_value_cache = {}
+     for y in ys:  # each partial output
+         if y in local_value_cache:  # avoid duplicate candidates
+             value = 0
+-        else:    
+-            value = get_value(task, x, y, n_evaluate_sample, cache_value=cache_value)
++        else:
++            value = get_value(task, x, y, n_evaluate_sample, cache_value=cache_value, reasoning_effort=reasoning_effort)
+             local_value_cache[y] = value
+         values.append(value)
+     return values
+@@ -31,11 +31,28 @@ def get_votes(task, x, ys, n_evaluate_sample):
+     values = task.vote_outputs_unwrap(vote_outputs, len(ys))
+     return values
+ 
+-def get_proposals(task, x, y): 
++def get_proposals(task, x, y):
+     propose_prompt = task.propose_prompt_wrap(x, y)
+     proposals = gpt(propose_prompt, n=1, stop=None)[0].split('\n')
++    # glm-5.3-flash 会输出 "Possible next steps:" 标题行、示例回显行、✅ 等垃圾，需要过滤；
++    # 合法行两类：① "4 + 5 = 9 (left: 6 9 10)" 步骤行（可能带 "- " 项目符号）；② 到达 24 时走 cot 提示产生的 "Answer: ... = 24" 行（字母开头，必须放行）
++    cleaned = []
++    for _ in proposals:
++        _ = _.strip()
++        if _.startswith(('- ', '• ')):  # 去掉项目符号前缀
++            _ = _[2:].strip()
++        if not _ or not _.isascii():
++            continue
++        if _.lower().startswith('answer'):
++            cleaned.append(_)
++        elif _[0].isdigit() and 'left:' in _:
++            cleaned.append(_)
++    proposals = cleaned
++    if not proposals:  # 过滤后为空（如已达 24 或死局）时保留原仓库"永不为空"语义，退化为一个空步骤候选
++        proposals = ['']
+     return [y + _ + '\n' for _ in proposals]
+ 
++
+ def get_samples(task, x, y, n_generate_sample, prompt_sample, stop):
+     if prompt_sample == 'standard':
+         prompt = task.standard_prompt_wrap(x, y)
+@@ -65,7 +82,7 @@ def solve(args, task, idx, to_print=True):
+         if args.method_evaluate == 'vote':
+             values = get_votes(task, x, new_ys, args.n_evaluate_sample)
+         elif args.method_evaluate == 'value':
+-            values = get_values(task, x, new_ys, args.n_evaluate_sample)
++            values = get_values(task, x, new_ys, args.n_evaluate_sample, reasoning_effort=('low' if args.backend == 'glm-5.3' else None))  # glm-5.3 value 判定需低推理档防空输出
+ 
+         # selection
+         if args.method_select == 'sample':
+diff --git a/src/tot/models.py b/src/tot/models.py
+index 709085f..62142c8 100644
+--- a/src/tot/models.py
++++ b/src/tot/models.py
+@@ -19,17 +19,21 @@ if api_base != "":
+ def completions_with_backoff(**kwargs):
+     return openai.ChatCompletion.create(**kwargs)
+ 
+-def gpt(prompt, model="gpt-4", temperature=0.7, max_tokens=1000, n=1, stop=None) -> list:
++def gpt(prompt, model="gpt-4", temperature=0.7, max_tokens=3000, n=1, stop=None, reasoning_effort=None) -> list:  # deepseek-v4-pro 有思考过程，思考 token 计入 max_tokens，1000 会导致 content 为空，实测 3000 足够
+     messages = [{"role": "user", "content": prompt}]
+-    return chatgpt(messages, model=model, temperature=temperature, max_tokens=max_tokens, n=n, stop=stop)
+-    
+-def chatgpt(messages, model="gpt-4", temperature=0.7, max_tokens=1000, n=1, stop=None) -> list:
++    return chatgpt(messages, model=model, temperature=temperature, max_tokens=max_tokens, n=n, stop=stop, reasoning_effort=reasoning_effort)
++
++def chatgpt(messages, model="gpt-4", temperature=0.7, max_tokens=1000, n=1, stop=None, reasoning_effort=None) -> list:
+     global completion_tokens, prompt_tokens
+     outputs = []
+     while n > 0:
+-        cnt = min(n, 20)
++        # 网关不支持 n>1，改为每次请求取 1 个样本、循环取满 n 个
++        cnt = 1
+         n -= cnt
+-        res = completions_with_backoff(model=model, messages=messages, temperature=temperature, max_tokens=max_tokens, n=cnt, stop=stop)
++        kwargs = dict(model=model, messages=messages, temperature=temperature, max_tokens=max_tokens, n=cnt, stop=stop)
++        if reasoning_effort is not None:  # glm-5.3 的 value 判定若用默认推理档会耗竭 max_tokens 返回空内容
++            kwargs['reasoning_effort'] = reasoning_effort
++        res = completions_with_backoff(**kwargs)
+         outputs.extend([choice.message.content for choice in res.choices])
+         # log completion tokens
+         completion_tokens += res.usage.completion_tokens
+@@ -44,4 +48,7 @@ def gpt_usage(backend="gpt-4"):
+         cost = completion_tokens / 1000 * 0.002 + prompt_tokens / 1000 * 0.0015
+     elif backend == "gpt-4o":
+         cost = completion_tokens / 1000 * 0.00250 + prompt_tokens / 1000 * 0.01
++    else:
++        # 网关模型不走 GPT-4 计价，成本以网关 usage 接口为准
++        cost = 0
+     return {"completion_tokens": completion_tokens, "prompt_tokens": prompt_tokens, "cost": cost}
+-- 
+2.53.0
+
+
+From 37cb0b116b83d6bc80d07e0699b106b6275b0972 Mon Sep 17 00:00:00 2001
+From: hemus <1095316880@qq.com>
+Date: Fri, 25 Sep 2026 18:38:05 +0800
+Subject: [PATCH 2/2] =?UTF-8?q?fix:propose=20=E8=BF=87=E6=BB=A4=E5=99=A8?=
+ =?UTF-8?q?=E5=8A=A0=E6=95=B0=E5=AD=97=E6=B1=A0=E6=A0=A1=E9=AA=8C+?=
+ =?UTF-8?q?=E6=8F=90=E8=AE=AE=E9=87=8D=E8=AF=95=EF=BC=8C=E4=BF=AE=E5=A4=8D?=
+ =?UTF-8?q?=E8=B7=91=E5=81=8F?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+---
+ src/tot/methods/bfs.py        | 50 +++++++++++++++----
+ tests/test_proposal_filter.py | 90 +++++++++++++++++++++++++++++++++++
+ 2 files changed, 132 insertions(+), 8 deletions(-)
+ create mode 100644 tests/test_proposal_filter.py
+
+diff --git a/src/tot/methods/bfs.py b/src/tot/methods/bfs.py
+index b9d4085..5b38469 100644
+--- a/src/tot/methods/bfs.py
++++ b/src/tot/methods/bfs.py
+@@ -1,5 +1,7 @@
+ import itertools
++import re
+ import numpy as np
++from collections import Counter
+ from functools import partial
+ from tot.models import gpt
+ 
+@@ -31,13 +33,27 @@ def get_votes(task, x, ys, n_evaluate_sample):
+     values = task.vote_outputs_unwrap(vote_outputs, len(ys))
+     return values
+ 
+-def get_proposals(task, x, y):
+-    propose_prompt = task.propose_prompt_wrap(x, y)
+-    proposals = gpt(propose_prompt, n=1, stop=None)[0].split('\n')
+-    # glm-5.3-flash 会输出 "Possible next steps:" 标题行、示例回显行、✅ 等垃圾，需要过滤；
+-    # 合法行两类：① "4 + 5 = 9 (left: 6 9 10)" 步骤行（可能带 "- " 项目符号）；② 到达 24 时走 cot 提示产生的 "Answer: ... = 24" 行（字母开头，必须放行）
++def _current_pool(x, y):
++    """当前剩余数字池。game24 风格轨迹用 "left: ..." 标注剩余数字；
++    非该格式（其它任务）返回 None，表示不做数字池校验。"""
++    tail = y.strip().split('\n')[-1] if y.strip() else x
++    if 'left: ' in tail:
++        tail = tail.split('left: ')[-1].split(')')[0]
++    nums = tail.split()
++    if nums and all(re.fullmatch(r'[\d.]+', n) for n in nums):
++        return Counter(nums)
++    return None
++
++
++def _clean_proposals(raw_lines, pool):
++    """过滤模型输出，只留合法行：
++    ① "4 + 5 = 9 (left: 6 9 10)" 步骤行（可能带 "- " 项目符号）；
++       pool 非 None 时还要求两个操作数都在池里——否则就是模型在回显 propose 的 1-shot 示例
++       （示例输入是 "2 8 8 14"，回显行形状与合法行完全一样，光看格式区分不了）；
++    ② 到达 24 时走 cot 提示产生的 "Answer: ... = 24" 行（字母开头，必须放行）。
++    """
+     cleaned = []
+-    for _ in proposals:
++    for _ in raw_lines:
+         _ = _.strip()
+         if _.startswith(('- ', '• ')):  # 去掉项目符号前缀
+             _ = _[2:].strip()
+@@ -46,9 +62,27 @@ def get_proposals(task, x, y):
+         if _.lower().startswith('answer'):
+             cleaned.append(_)
+         elif _[0].isdigit() and 'left:' in _:
++            if pool is not None:
++                m = re.match(r'([\d.]+)\s*[+\-*/]\s*([\d.]+)\s*=', _)
++                if not m or pool[m.group(1)] <= 0 or pool[m.group(2)] <= 0:
++                    continue
+             cleaned.append(_)
+-    proposals = cleaned
+-    if not proposals:  # 过滤后为空（如已达 24 或死局）时保留原仓库"永不为空"语义，退化为一个空步骤候选
++    return cleaned
++
++
++def get_proposals(task, x, y, max_retry=3):
++    propose_prompt = task.propose_prompt_wrap(x, y)
++    pool = _current_pool(x, y)
++    proposals = []
++    for attempt in range(max_retry + 1):
++        raw = gpt(propose_prompt, n=1, stop=None)[0].split('\n')
++        proposals = _clean_proposals(raw, pool)
++        if proposals:
++            break
++        # 全部被滤掉（模型回显 1-shot 示例 / 输出格式跑偏）→ 重试，避免搜索空转
++        if attempt < max_retry:
++            print(f'  [retry] propose 无合法候选（第 {attempt + 1} 次尝试），重试…')
++    if not proposals:  # 重试后仍为空（如已达 24 或死局）时保留原仓库"永不为空"语义，退化为一个空步骤候选
+         proposals = ['']
+     return [y + _ + '\n' for _ in proposals]
+ 
+diff --git a/tests/test_proposal_filter.py b/tests/test_proposal_filter.py
+new file mode 100644
+index 0000000..c89d640
+--- /dev/null
++++ b/tests/test_proposal_filter.py
+@@ -0,0 +1,90 @@
++"""get_proposals 过滤器的单测（任务书 §8.2：先写一个能失败的检查）
++
++样本全部取自真实日志：
++  - 回显行：题 900 的 new_ys 原文（模型把 propose prompt 的 1-shot 示例抄了一遍）
++  - 合法行：用题 900 的数字 4 5 6 10 构造
++运行：  cd repro/tot && .venv/bin/python tests/test_proposal_filter.py
++"""
++import os
++import sys
++
++sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'src'))
++from tot.methods.bfs import _clean_proposals, _current_pool   # noqa: E402
++
++# ---------- 真实样本 ----------
++# 题 900 = "4 5 6 10"，但模型回显了 propose prompt 的示例（输入 2 8 8 14）
++ECHO_LINES = [
++    '2 + 8 = 10 (left: 8 10 14)',
++    '8 / 2 = 4 (left: 4 8 14)',
++    '14 + 2 = 16 (left: 8 8 16)',
++    '2 * 8 = 16 (left: 8 14 16)',
++    '8 - 2 = 6 (left: 6 8 14)',
++    '14 - 8 = 6 (left: 2 6 8)',
++    '14 /  2 = 7 (left: 7 8 8)',
++    '14 - 2 = 12 (left: 8 8 12)',
++]
++VALID_LINES = [
++    '4 + 5 = 9 (left: 6 9 10)',
++    '10 - 6 = 4 (left: 4 5 4)',
++    '- 6 * 4 = 24 (left: 5 10 24)',      # 带项目符号，且已到 24
++]
++GARBAGE = ['Possible next steps:', '✅', '好的，我来试试', '', '   ']
++ANSWER_LINE = ['Answer: (10 - 4) * 5 - 6 = 24']
++
++POOL_900 = _current_pool('4 5 6 10', '')     # 轨迹为空 → 池 = 题目数字
++
++
++def check(name, got, want):
++    ok = got == want
++    print(f"  {'PASS' if ok else 'FAIL'}  {name}")
++    if not ok:
++        print(f"        期望 {want}\n        实际 {got}")
++    return ok
++
++
++def main():
++    all_ok = True
++    print("=== 1. 数字池推导 ===")
++    all_ok &= check("空轨迹 → 池=题目数字", sorted(POOL_900.elements()), ['10', '4', '5', '6'])
++    all_ok &= check("有 left: 标注 → 池=剩余数字",
++                    sorted(_current_pool('x', '4 + 5 = 9 (left: 6 9 10)\n').elements()),
++                    ['10', '6', '9'])
++    all_ok &= check("非 game24 格式 → 池=None（不做校验）",
++                    _current_pool('Write a passage about coffee.', ''), None)
++
++    print("\n=== 2. 回显行必须被滤掉（本 bug 的核心）===")
++    got = _clean_proposals(ECHO_LINES, POOL_900)
++    all_ok &= check("8 行示例回显全部拒绝", got, [])
++
++    print("\n=== 3. 合法行必须放行 ===")
++    got = _clean_proposals(VALID_LINES, POOL_900)
++    all_ok &= check("3 行合法步骤行全部接受", len(got), 3)
++
++    print("\n=== 4. 其它格式 ===")
++    all_ok &= check("Answer 行放行（不查池）", _clean_proposals(ANSWER_LINE, POOL_900), ANSWER_LINE)
++    all_ok &= check("标题行/表情/中文/空行全拒绝", _clean_proposals(GARBAGE, POOL_900), [])
++    all_ok &= check("pool=None 时退回旧行为（不校验数字池）",
++                    len(_clean_proposals(ECHO_LINES, None)), len(ECHO_LINES))
++
++    print("\n=== 5. 回归对照：旧过滤规则（只看格式）会放行回显 ===")
++    def old_filter(lines):
++        out = []
++        for _ in lines:
++            _ = _.strip()
++            if _.startswith(('- ', '• ')):
++                _ = _[2:].strip()
++            if not _ or not _.isascii():
++                continue
++            if _.lower().startswith('answer') or (_[0].isdigit() and 'left:' in _):
++                out.append(_)
++        return out
++    old_got = old_filter(ECHO_LINES)
++    all_ok &= check("旧规则放行了全部 8 行回显（= bug 成因）", len(old_got), 8)
++
++    print("\n" + ("=" * 50))
++    print("全部通过 ✅" if all_ok else "存在失败 ❌")
++    return 0 if all_ok else 1
++
++
++if __name__ == '__main__':
++    sys.exit(main())
+-- 
+2.53.0
+
