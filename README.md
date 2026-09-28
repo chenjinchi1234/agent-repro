@@ -21,7 +21,7 @@
 **方向一致（ToT > CoT），但差距从 70 个百分点缩小到约 15 个百分点。**
 
 1. **基线被抬高（主因）**：论文里 GPT-4 单次只有 4%，需要外部搜索兜底才到 74%；而现在模型单次就到 85%（我们抓取 `reasoning_content` 拿到一手证据：模型自己在隐藏推理流里"尝试→发现数字没用完→推翻→换路"，一条样本里试了 5 次）。**外部搜索的增量空间只剩 15 个点。**
-2. **配置弱化**：我们的 ToT 是 b=3、e=1（论文 b=5、e=3），这是逐候选只有 82.2% 的部分原因。
+2. **配置差异（b=3、e=1 vs 论文 b=5、e=3）**：这是声明过的差异，但**不能说它压低了逐候选率**——方向其实不确定：b 变小只是丢掉分数最低的那两个候选，逐候选率反而可能更高；只有 e 变小才会因排序噪声变大而变差。而且**修复后 b=3/e=1 拿到了 io 15/15 = 100%**，说明这批题上它没有可见损失。详见 [REPORT.md](REPORT.md) 归因第 3 条。
 3. **限定**：n=15，ToT 15/15 的 95% 置信下界约 78%，与 CoT 85.07%±0.9% 区间重叠 → 只能说 **"ToT 不劣于 CoT"**，不能说"显著优于"。
 
 **曾经被写错的归因（已撤回）**：首轮说"价值模型误剪是净损失"，证据是"900 题 CoT 99/100 对、ToT 0/3 全灭"。那个 0/3 全灭**是搜索跑偏造成的**（候选用的是 propose 示例的数字 2/8/14），不是 value 误剪。修复后同一题 ToT = [1,0,1]。
@@ -30,20 +30,57 @@
 
 **底线声明**：判定函数 `test_output` 一行未改；搜索机制与论文同构；**所有失败运行都保留**在 `repro/tot/logs/` 与 `logs/archive/`。每个数字的来源见 REPORT.md 逐题明细。
 
-## 怎么跑（别人 clone 下来一条命令能跑）
+## 怎么跑（从零到出数字）
 
-实验代码在 `repro/tot/`（官方仓库 + 我们的适配 commit `cd8b9ef`）。WSL2 Ubuntu 里：
+> ⚠️ **`repro/` 不在仓库里**——`.gitignore` 把它排除了（里面是另一个 git 仓库 + venv）。
+> **代码通过 `patches/` 提供**。所以一条命令跑不了，完整路线是下面 5 步（每一步都在干净环境里实测过）。
+
+### ① 拿代码：clone 官方仓库 + 打补丁
 
 ```bash
+git clone https://github.com/princeton-nlp/tree-of-thought-llm.git repro/tot
 cd repro/tot
+git checkout 8050e67          # 补丁基于这个 commit（官方仓库当前 HEAD 就是它）
+git apply ../../patches/tot-adapt-and-fix.patch
 ```
 
-（环境：uv 建 venv 后装官方 requirements，见该仓库 README。环境变量必须在命令里 inline——wsl bash -c 非交互，不加载 .bashrc。完整分步走法：开机检查 → 最小验证 → 后台跑 → 收工 → 汇总，见 [AGENTS.md](AGENTS.md)。）
+补丁里是**两份东西**：本组的网关适配（`run.py` 后端名 / `models.py` 的 max_tokens 与 n=1、`bfs.py` 的过滤器）+ 这次修的 propose 过滤器缺陷。**不含任何密钥。**
+
+### ② 装环境
 
 ```bash
-# 先跑单测（验证 propose 过滤器，用真实日志样本做断言）
+uv venv .venv --python 3.11
+uv pip install -r requirements.txt
+uv pip install -e .            # ← 别漏这行
+```
+
+> **`uv pip install -e .` 不能少**：官方 README（第 40 行）有这一步，漏了会让 `run.py` 直接报
+> `ModuleNotFoundError: No module named 'tot'`。（`tot` 是 `src/` 下的包，要装进 venv 才能 import。）
+
+### ③ 起本地代理（**必须有**）
+
+> ② 到 ⑤ 步都在 `repro/tot/` 目录里执行（第 ① 步结尾就停在那里），所以仓库根目录是 `../../`。
+
+```bash
+node ../../tools/proxy.js &    # 监听 127.0.0.1:8787（脚本在仓库的 tools/ 里）
+```
+
+> **为什么必须有**：网关**要求 `x-opencode-session` 头**。直连不带它会返回
+> `400 {"type":"MissingSessionID"}`，而 `models.py` 有无限指数退避重试——
+> 表象就是**进程活着、一个请求都出不来、永远卡着**。
+> 代理干的就两件事：补这个头 + 把 Claude Code 的认证格式转成网关认的（`proxy.js:21-27`）。
+>
+> 实测对照：直连不带头 → `400 MissingSessionID`；直连**带头** → `200 OK`（1.2 秒）；走代理 → `200 OK`。
+
+### ④ 先跑单测（**不需要 key，10 秒**）
+
+```bash
 .venv/bin/python tests/test_proposal_filter.py
 ```
+
+应该全部 PASS。它验证 propose 过滤器——**这次就是靠这条链上的检查发现实现缺陷的**（详见 `REPORT.md` 附录 B）。
+
+### ⑤ 跑实验
 
 ```bash
 # CoT 基线：每题 100 样本，5 题一批
@@ -60,13 +97,17 @@ OPENAI_API_KEY=sk-... OPENAI_API_BASE=http://127.0.0.1:8787/v1 .venv/bin/python 
   --n_evaluate_sample 1 --n_select_sample 3 --backend glm-5.3-flash
 ```
 
+**自检信号**：命令一跑应立即打印 `Warning: OPENAI_API_BASE is set to http://127.0.0.1:8787/v1`。
+**没看到这行 = 环境变量没带对**，进程会静默挂死（原因见 ③）。
+
+> 环境变量必须 inline 在命令前缀里（`wsl.exe bash -c` 是非交互 shell，不加载 `.bashrc`）。
 > API key 只放环境变量，不进代码、不进 git（任务书 0.3）。结果 json 在 `repro/tot/logs/game24/`。
 
 ## 怎么自查结果（不是"跑通了就算"）
 
 ```bash
 # 门禁测试：轨迹第 1 步是否用题目数字起步（判据经官方 gpt-4 日志对照验证）
-.venv/bin/python ~/gate_tot_valid.py "logs/game24/<某个 ToT 日志>.json"
+.venv/bin/python ../../tools/gate_tot_valid.py "logs/game24/<某个 ToT 日志>.json"
 ```
 
 通过标准：输出 `PASS`、且"全坏题 0/15"。**修复前这个测试是 FAIL**（6/15 题失效）——
@@ -94,8 +135,11 @@ OPENAI_API_KEY=sk-... OPENAI_API_BASE=http://127.0.0.1:8787/v1 .venv/bin/python 
 | `agent_log.md` | Agent 出错记录（≥2 例，附 prompt/原话/发现过程） |
 | `debug_log.md` | Bug 根因记录（五类根因） |
 | `progress.md` | 每日进度 |
+| `evidence/` | **报告里每个数字的原始数据**（结果 json）+ 复算说明；官方 gpt-4 校准日志随官方仓库 clone 自带，不在这里 |
+| `patches/tot-adapt-and-fix.patch` | **实验代码的补丁**（`repro/` 不在仓库里，靠它分发；含网关适配 + 过滤器修复） |
+| `tools/` | 本地代理 `proxy.js` + 全部复算/自查脚本（`combine.py`、`gate_tot_valid.py`、`verify_numbers.py` 等） |
 | `skills/wsl-api-experiment/SKILL.md` | 本周沉淀的 skill（后台长 API 实验流程） |
 | `skills/explain-code/SKILL.md` | 逐行讲代码的 skill（本周沉淀，面向零基础读者，不绑定本仓库） |
-| `repro/tot/tests/test_proposal_filter.py` | propose 过滤器的单测（用真实日志样本做断言） |
+| `repro/tot/tests/test_proposal_filter.py` | propose 过滤器的单测（**在补丁里**，打完补丁才有） |
 | `docs/presentation.md` | 5 分钟汇报稿 |
 | `AGENTS.md` | 与 Agent 协作的接口说明 |

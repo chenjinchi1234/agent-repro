@@ -6,13 +6,28 @@
 
 - 所有命令在 **WSL2 Ubuntu** 里运行（本机 Windows 11，无独显 → 纯 API 实验）
 - Python 用 **uv** 管理；实验 venv 在 `repro/tot/.venv`（Python 3.11；系统 python3 是 3.14、没有 sympy，别用它跑实验）
-- API：**OpenCode Go** key（网关）。实验代码走 OpenAI 兼容端点 `http://127.0.0.1:8787/v1`（本地代理 `~/proxy.js`，node 进程，自动转接 `https://opencode.ai/zen/go/v1`）
+- API：**OpenCode Go** key（网关）。实验代码走 OpenAI 兼容端点 `http://127.0.0.1:8787/v1`（本地代理，node 进程）。代理干两件事：补上网关**必须**的 `x-opencode-session` 头、转接 `https://opencode.ai/zen/go/v1`。**代理脚本在仓库里：`tools/proxy.js`**（2026-09-28 加入——原先只放在 WSL 家目录，别人 clone 不到，照本文档跑必然卡死）
 - 关键坑：`wsl.exe bash -c` 是非交互 shell，**不加载 .bashrc** → OPENAI_API_KEY/OPENAI_API_BASE 必须 inline 在命令前缀
 
 ## 怎么装（只装一次）
 
-- 实验代码：`princeton-nlp/tree-of-thought-llm`（clone 到 `repro/tot/`，官方 commit 8050e67 + 适配 commit cd8b9ef）
-- 装法以该仓库 README 为准（uv venv + requirements.txt）；装完用下面第 1 步的 `ls` 命令自检
+> ⚠️ **`repro/` 不在这个仓库里**（`.gitignore` 排除了它，因为里面是另一个 git 仓库 + venv）。
+> clone 本仓库后先做**前两步**才谈得上"怎么跑"——完整版见 `README.md` 的「怎么跑」。
+
+- **第 1 步：拿代码**——clone 官方仓库到 `repro/tot/`，checkout `8050e67`，然后打本仓库的补丁：
+  ```bash
+  git clone https://github.com/princeton-nlp/tree-of-thought-llm.git repro/tot
+  cd repro/tot && git checkout 8050e67
+  git apply ../../patches/tot-adapt-and-fix.patch
+  ```
+  （补丁 = 网关适配 + propose 过滤器修复；`cd8b9ef` 那个本地 commit 的内容也在里面）
+- **第 2 步：装环境**：
+  ```bash
+  uv venv .venv --python 3.11
+  uv pip install -r requirements.txt
+  uv pip install -e .      # ← 不能漏：漏了 run.py 会报 ModuleNotFoundError: No module named 'tot'
+  ```
+  装完用下面第 1 步的 `ls` 命令自检。
 
 ## 怎么跑：从零到出数字（按顺序敲，已验证）
 
@@ -33,7 +48,7 @@ ls .venv/bin/python     # ① venv 在（没有 → 按官方 README 装）
 ```
 
 ```bash
-ps aux | grep proxy.js | grep -v grep     # ② 代理进程在（没有 → nohup node ~/proxy.js > ~/proxy.log 2>&1 &）
+ps aux | grep proxy.js | grep -v grep     # ② 代理进程在（没有 → nohup node ../../tools/proxy.js > ~/proxy.log 2>&1 &）
 ```
 
 ```bash
@@ -93,14 +108,14 @@ ps aux | grep run.py     # 确认没有孤儿进程
 ### 第 6 步：汇总出数字
 
 ```bash
-.venv/bin/python ~/combine.py 'logs/game24/glm-5.3-flash_0.7_naive_cot_sample_100_start9*.json' CoT
+.venv/bin/python ../../tools/combine.py 'logs/game24/glm-5.3-flash_0.7_naive_cot_sample_100_start9*.json' CoT
 ```
 
 ```bash
-.venv/bin/python ~/combine.py 'logs/game24/glm-5.3-flash_0.7_propose1_value1_greedy3_start9*.json' ToT
+.venv/bin/python ../../tools/combine.py 'logs/game24/glm-5.3-flash_0.7_propose1_value1_greedy3_start9*.json' ToT
 ```
 
-`combine.py` 在 WSL 家目录（`~/combine.py`，不在 git 里）；它会同时打两个口径：逐样本准确率（CoT 口径）和「每题目至少一次成功」（ToT io 口径）。**任何汇总数字都要人工复核**（列加和 vs 分母对账）。
+`combine.py` 现在在仓库里（`tools/combine.py`）；它会同时打两个口径：逐样本准确率（CoT 口径）和「每题目至少一次成功」（ToT io 口径）。**任何汇总数字都要人工复核**（列加和 vs 分母对账）。
 
 ### 参数说明（每个 flag 什么意思）
 
