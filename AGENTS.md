@@ -32,8 +32,10 @@ cd ~/repos/agent-repro/repro/tot
 ### 第 1 步：开机三件套（每条命令有正常输出 = 过）
 
 ```bash
-ls .venv/bin/python     # ① venv 在（没有 → 按官方 README 装）
+ls .venv/bin/python     # ① venv 在（没有 → 按 README「怎么跑」第①②步装）
 ```
+> ⚠️ 别只"按官方 README 装"——那样会**漏掉本仓库的补丁**（代码里的 propose 过滤器修复在 `patches/` 里），
+> 也会漏 `uv pip install -e .`。完整的安装命令见 `README.md`「怎么跑」①②步。
 
 ```bash
 ps aux | grep proxy.js | grep -v grep     # ② 代理进程在（没有 → nohup node ../../tools/proxy.js > ~/proxy.log 2>&1 &）
@@ -43,7 +45,17 @@ ps aux | grep proxy.js | grep -v grep     # ② 代理进程在（没有 → noh
 curl -H 'Authorization: Bearer sk-你的key' https://opencode.ai/zen/go/v1/usage     # ③ key 活着，顺便看配额
 ```
 
-### 第 2 步：最小验证（1 题 × 1 样本，约 1 分钟）
+### 第 2 步：最小验证
+
+**先跑免费的过滤器单测**（10 秒，**不需要 key**）——它验证 propose 过滤器，本次找出实现缺陷就是靠这条链上的检查：
+
+```bash
+.venv/bin/python tests/test_proposal_filter.py
+```
+
+应该全部 PASS。**换模型、改过滤器之后先跑它，再上大实验。**
+
+然后是 1 题最小验证（1 题 × 1 样本，约 1 分钟）：
 
 ```bash
 OPENAI_API_KEY=sk-你的key OPENAI_API_BASE=http://127.0.0.1:8787/v1 .venv/bin/python run.py \
@@ -96,21 +108,30 @@ ps aux | grep run.py     # 确认没有孤儿进程
 ### 第 6 步：汇总出数字
 
 ```bash
-.venv/bin/python ../../tools/combine.py 'logs/game24/glm-5.3-flash_0.7_naive_cot_sample_100_start9*.json' CoT
+# CoT：指向你这次跑的【那一个】文件
+.venv/bin/python ../../tools/combine.py logs/game24/glm-5.3-flash_0.7_naive_cot_sample_100_start900_end915.json CoT
 ```
 
 ```bash
-.venv/bin/python ../../tools/combine.py 'logs/game24/glm-5.3-flash_0.7_propose1_value1_greedy3_start9*.json' ToT
+# ToT：
+.venv/bin/python ../../tools/combine.py logs/game24/glm-5.3-flash_0.7_propose1_value1_greedy3_start900_end915.json ToT
 ```
 
-`combine.py` 现在在仓库里（`tools/combine.py`）；它会同时打两个口径：逐样本准确率（CoT 口径）和「每题目至少一次成功」（ToT io 口径）。**任何汇总数字都要人工复核**（列加和 vs 分母对账）。
+> ⚠️ **别用 `start9*.json` 这类宽通配符**（2026-09-28 修）——它会同时命中**分片文件**
+> （`start900_end905`、`start905_end910`…）**和合并文件**，还会把 915-919 带进来。
+> `combine.py` 把命中的文件简单相加、**不去重**，于是：
+> **题目数从 15 变成 32、准确率从 85.1% 变成 84.4%** —— 数字看起来很像真的，但是错的。
+> 要合并多个文件就**明确列出文件名**，不要靠通配符。
+>
+> `combine.py` 在仓库里（`tools/combine.py`），它同时打两个口径：逐样本准确率（CoT 口径）和
+> 「每题目至少一次成功」（ToT io 口径）。**任何汇总数字都要人工复核**（列加和 vs 分母对账）。
 
 ### 参数说明（每个 flag 什么意思）
 
 | flag | 含义 | 我们的值 |
 |---|---|---|
 | `--task game24` | 跑 24 点任务 | game24 |
-| `--task_start_index` / `--task_end_index` | 题目行号区间，**左闭右开**（`range(start, end)`，来自 24.csv 的行号） | 900 / 915（=第 900-914 题） |
+| `--task_start_index` / `--task_end_index` | 题目区间，**左闭右开**（`range(start, end)`）。⚠️ 代码里的 index `i` 对应官方 CSV 的 **Rank `i+1`**——所以 `900 / 915` 抓到的是 **Rank 901-915**（论文也说"indices 901-1000"）。详见 REPORT 附录 A.7 | 900 / 915 |
 | `--naive_run` | 不搜索、单次生成（= CoT 基线） | CoT 用 |
 | `--prompt_sample` | 提示类型：`cot`（CoT）/ `propose`（生成下一步） | cot |
 | `--n_generate_sample` | 每题采样次数（CoT：样本数；ToT：每个节点生成的候选数） | 100 / 1 |
@@ -132,5 +153,6 @@ ps aux | grep run.py     # 确认没有孤儿进程
 
 - 进度看 `progress.md`；Agent 出错记录写 `agent_log.md`；bug 根因写 `debug_log.md`
 - 论文笔记写 `docs/paper_notes.md`；复现结论写 `REPORT.md`；汇报稿 `docs/presentation.md`
-- `repro/` 是嵌套 git 仓库，父仓库不要 `git add repro/` 整体提交；结果 json 默认不进 git（量大），需要时可挑选关键日志提交
+- `repro/` 是嵌套 git 仓库（已被 `.gitignore` 排除）：**代码靠 `patches/tot-adapt-and-fix.patch` 分发**，不要 `git add repro/`
+- 结果 json 的**关键几份已随仓库分发**（在 `evidence/`，配 `evidence/README.md` 说明哪个文件对应报告里哪个数字）；新跑出来的 json 不要直接提交（量大，靠 evidence 挑选）
 - API key 只放环境变量，不进代码、不进 git
