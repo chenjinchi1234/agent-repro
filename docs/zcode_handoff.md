@@ -29,8 +29,8 @@
 | 代码 | `princeton-nlp/tree-of-thought-llm` 官方 commit 8050e67 + 本组适配 commit cd8b9ef（`repro/tot/`） |
 | Python | 3.11（venv 用 uv 管；系统 python3 是 3.14 没有 sympy，别用它） |
 | 依赖 | 官方 requirements.txt，**openai==0.27.7**（新版不兼容） |
-| 网络（本机） | 本地代理 `http://127.0.0.1:8787/v1`（`~/proxy.js`，node 进程，自动转接 `https://opencode.ai/zen/go/v1`） |
-| 网络（其他机器/云端） | 不需要代理，`OPENAI_API_BASE` 直连 `https://opencode.ai/zen/go/v1` |
+| 网络（本机） | 本地代理 `http://127.0.0.1:8787/v1`（脚本在仓库里：`tools/proxy.js`，node 进程，自动转接 `https://opencode.ai/zen/go/v1`） |
+| 网络（直连） | ⚠️ **直连会失败**（2026-09-28 修）：网关**要求 `x-opencode-session` 头**，不带它返回 `400 {"type":"MissingSessionID"}`；而 `models.py` 有无限退避重试 → 表象是**进程活着但永远不出结果**。所以必须走代理。 |
 | 模型 | `glm-5.3-flash`（网关名，直接当 `--backend` 参数） |
 | 配额 | 查询端点：`curl -H "Authorization: Bearer sk-你的key" https://opencode.ai/zen/go/v1/usage` |
 
@@ -105,14 +105,14 @@ ps aux | grep run.py
 ### 第 6 步：汇总出数字（人工复核）
 
 ```bash
-.venv/bin/python ~/combine.py logs/game24/glm-5.3-flash_0.7_naive_cot_sample_100_start900_end915.json CoT
+.venv/bin/python ../../tools/combine.py logs/game24/glm-5.3-flash_0.7_naive_cot_sample_100_start900_end915.json CoT
 ```
 
 ```bash
-.venv/bin/python ~/combine.py logs/game24/glm-5.3-flash_0.7_propose1_value1_greedy3_start900_end915.json ToT
+.venv/bin/python ../../tools/combine.py logs/game24/glm-5.3-flash_0.7_propose1_value1_greedy3_start900_end915.json ToT
 ```
 
-`combine.py` 在 WSL 家目录（统计脚本，未进 git）。它打两个口径：逐样本准确率（CoT 口径）和每题至少一次成功（ToT io 口径）。**任何汇总数字都要人工对账**（列加和 vs 分母）。
+`combine.py` 现在在仓库里（`tools/combine.py`）。它打两个口径：逐样本准确率（CoT 口径）和每题至少一次成功（ToT io 口径）。**任何汇总数字都要人工对账**（列加和 vs 分母）。
 
 > **注（2026-09-22 接手人核查补充）：ToT 存在两次运行，别混淆**
 >
@@ -174,4 +174,4 @@ mkdir -p logs/archive && cp logs/game24/glm-5.3-flash_0.7_naive_cot_sample_100_s
 | `repro/tot/src/tot/` | 实验代码（判定逻辑 `tasks/game24.py:44-55`，红线区） |
 | `repro/tot/logs/game24/` | 结果 json（含官方 gpt-4 校准日志） |
 | `repro/tot/logs/archive/` | 已存档的正式结果 |
-| `~/combine.py` | 汇总脚本（WSL 家目录，未进 git） |
+| `tools/combine.py` | 汇总脚本（**已进仓库**） |

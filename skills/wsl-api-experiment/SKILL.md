@@ -53,4 +53,4 @@ description: 在本机 WSL2 上跑长 API 实验（后台启动、实时监控�
 
 ## 附：代理说明（本机架构）
 
-本地 `~/proxy.js` 监听 127.0.0.1:8787：Anthropic 协议路径（/v1/messages）把 Bearer 转成 x-api-key；OpenAI 路径（/v1/chat/completions）保持 Bearer 原样；统一加 `/zen/go` 前缀转发到 `opencode.ai`。实验代码全部走 `http://127.0.0.1:8787/v1`。
+本地 `tools/proxy.js` 监听 127.0.0.1:8787：Anthropic 协议路径（/v1/messages）把 Bearer 转成 x-api-key；OpenAI 路径（/v1/chat/completions）保持 Bearer 原样；统一加 `/zen/go` 前缀转发到 `opencode.ai`。实验代码全部走 `http://127.0.0.1:8787/v1`。
