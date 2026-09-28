@@ -12,22 +12,10 @@
 ## 怎么装（只装一次）
 
 > ⚠️ **`repro/` 不在这个仓库里**（`.gitignore` 排除了它，因为里面是另一个 git 仓库 + venv）。
-> clone 本仓库后先做**前两步**才谈得上"怎么跑"——完整版见 `README.md` 的「怎么跑」。
-
-- **第 1 步：拿代码**——clone 官方仓库到 `repro/tot/`，checkout `8050e67`，然后打本仓库的补丁：
-  ```bash
-  git clone https://github.com/princeton-nlp/tree-of-thought-llm.git repro/tot
-  cd repro/tot && git checkout 8050e67
-  git apply ../../patches/tot-adapt-and-fix.patch
-  ```
-  （补丁 = 网关适配 + propose 过滤器修复；`cd8b9ef` 那个本地 commit 的内容也在里面）
-- **第 2 步：装环境**：
-  ```bash
-  uv venv .venv --python 3.11
-  uv pip install -r requirements.txt
-  uv pip install -e .      # ← 不能漏：漏了 run.py 会报 ModuleNotFoundError: No module named 'tot'
-  ```
-  装完用下面第 1 步的 `ls` 命令自检。
+> **拿代码 + 装环境**的完整命令见 `README.md` 的「怎么跑」第 ①② 步——这里不重复，只列两个最容易漏的点：
+>
+> - 补丁基于官方 commit `8050e67`：clone 官方仓库后要**先 checkout 再 apply**
+> - `uv pip install -e .` **不能漏**：漏了 `run.py` 会报 `ModuleNotFoundError: No module named 'tot'`
 
 ## 怎么跑：从零到出数字（按顺序敲，已验证）
 
