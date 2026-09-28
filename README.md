@@ -79,9 +79,10 @@ OPENAI_API_KEY=sk-... OPENAI_API_BASE=http://127.0.0.1:8787/v1 .venv/bin/python 
 - 实测：全周实验（CoT 三次共约 4500 次调用 + ToT 若干次搜索 + 调试 + 修复后全量重跑）
   把月额度从 11% 用到 **15%**（10-14 重置）；本轮同期 CoT 重跑 1500 次调用约 1.25M token。
 
-## 用的 skill（任务书 7.1）
+## 用的 skill（任务书 7.1 / 7.2）
 
 - 本周自建并用上 `skills/wsl-api-experiment/`（后台长实验标准流程）——省掉了"每次启动都要重新踩环境变量、缓冲、监控三连坑"这一步。
+- 本周还自建了 `skills/explain-code/`（逐行讲解代码，面向零编程基础的读者）：读本机实际文件、把调用链一并读出来、每行讲清"做什么 / 为什么需要 / 关键符号"，被调用的外部函数就在那一行下面就地讲。它是这次"读源码搞懂核心模块"（任务书 §4）过程中重复了十几次的流程。**它不绑定本仓库**——换一个人、换一个仓库照样能用。
 - ⏳ 组里现成的 skill 用了哪 2 个、各省了哪一步：<待你补一句>
 
 ## 文件地图
@@ -93,7 +94,8 @@ OPENAI_API_KEY=sk-... OPENAI_API_BASE=http://127.0.0.1:8787/v1 .venv/bin/python 
 | `agent_log.md` | Agent 出错记录（≥2 例，附 prompt/原话/发现过程） |
 | `debug_log.md` | Bug 根因记录（五类根因） |
 | `progress.md` | 每日进度 |
-| `skills/wsl-api-experiment/SKILL.md` | 本周沉淀的 skill |
+| `skills/wsl-api-experiment/SKILL.md` | 本周沉淀的 skill（后台长 API 实验流程） |
+| `skills/explain-code/SKILL.md` | 逐行讲代码的 skill（本周沉淀，面向零基础读者，不绑定本仓库） |
 | `repro/tot/tests/test_proposal_filter.py` | propose 过滤器的单测（用真实日志样本做断言） |
 | `docs/presentation.md` | 5 分钟汇报稿 |
 | `AGENTS.md` | 与 Agent 协作的接口说明 |
