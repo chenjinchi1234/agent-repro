@@ -1,1 +1,3 @@
 repro/
+__pycache__/
+*.pyc

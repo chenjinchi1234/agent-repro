@@ -1,0 +1,2062 @@
+[
+    {
+        "idx": 905,
+        "ys": [
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (13 - 11) * (11 + 1) = 24",
+            "Steps:\n11 + 11 = 22 (left: 2 11 22)\n13 - 11 = 2 (left: 2 22)\n22 + 2 = 24 (left: 24)\nAnswer: (11 + 11) + (13 - 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (13 - 11) * (11 + 1) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (13 - 11) * (11 + 1) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n1 + 11 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (1 + 11) * (13 - 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (13 - 11) * (11 + 1) = 24",
+            "Steps:\n1 + 11 = 12 (left: 11 12 13)\n13 - 11 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (1 + 11) * (13 - 11) = 24",
+            "Steps:\n11 + 1 = 12 (left: 11 12 13)\n13 - 11 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n1 + 11 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (13 - 11) * (1 + 11) = 24",
+            "Steps:\n1 + 11 = 12 (left: 11 12 13)\n13 - 11 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (1 + 11) * (13 - 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n1 + 11 = 12 (left: 11 12 13)\n13 - 11 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (1 + 11) * (13 - 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n1 + 11 = 12 (left: 11 12 13)\n13 - 11 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (1 + 11) * (13 - 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (13 - 11) * (11 + 1) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n1 + 11 = 12 (left: 11 12 13)\n13 - 11 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (1 + 11) * (13 - 11) = 24We need answer solve. Need steps. Need find 24 with 1,11,11,13. Let's solve. Need use each once binary.\n\nTry 13-11=2, 11? 1. Need 24 from 2,11,1: 11*(2+?) no 11*2=22 +1=23. 13+11=24 then need make 1 from 11,1? 11/11 no only one 11 left and 1: can 11-? no. If create 1 with 11 and1? 11/11 impossible. 13+11=24, remaining 11 and1 must combine neutral: 11-? no 1? 11*? not. But maybe use 13 and 1 to make 12, and 11+11=22 etc. 12+11+1? no.\n\nLet's brute force mentally. Pair results:\n1,11 ->12,-10,10,11,1/11\n1,13 ->14,-12,12,13,1/13\n11,11 ->22,0,121,1\n11,13 ->24,-2,2,143,11/13\n\nNeed combine two pair results maybe:\n(1+11)=12 and (13-11)=2 => 12*2=24. Yes! Steps: 1+11=12 left 11,12,13; 13-11=2 left 2,12; 12*2=24. Answer (1+11)*(13-11). Ensure two 11s. Good. final format.Steps:\n1 + 11 = 12 (left: 11 12 13)\n13 - 11 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (1 + 11) * (13 - 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 - 2 = 9 (left: 1 9)\n9 + 1 = 10... no, let me redo:\n11 * 2 = 22 (left: 1 22)\n22 + 1 = 23... \n\nTry: 13 + 11 = 24 (left: 1 11 24)\n11 - 1 = 10... \n\nTry: 11 + 11 = 22 (left: 1 13 22)\n22 + 13 = 35...\n\nTry: 13 - 11 = 2 (left: 1 2 11)\n2 * 11 = 22 (left: 1 22)\n22 + 1 = 23 \u2717\n\nTry: 13 - 1 = 12 (left: 11 11 12)\n11 + 11 = 22...\n\nTry: 11 + 1 = 12 (left: 11 12 13)\n13 - 12 = 1...\n\nTry: 11 - 1 = 10 (left: 10 11 13)\n13 + 11 = 24 (left: 10 24)\n24 * 10 = 240...\n\nTry: 13 + 11 = 24 (left: 1 11 24)\n24 - 11 = 13 (left: 1 13)\n13 - 1 = 12 \u2717\n\nTry: 13 - 11 = 2 (left: 1 2 11)\n11 + 2 = 13 (left: 1 13)\n13 + 1 = 14 \u2717\n\nTry: 11 * 11 = 121 (left: 1 13 121)\n121 - 13 = 108...\n\nTry: 13 * 11 = 143...\n\nTry: 11 - 1 = 10 (left: 10 11 13)\n11 - 10 = 1 (left: 1 13)\n13 * 1 = 13 \u2717\n\nTry: 13 + 1 = 14 (left: 11 11 14)\n14 - 11 = 3 (left: 3 11)\n3 * 11 = 33 \u2717\n\nTry: 13 + 1 = 14 (left: 11 11 14)\n14 * 11 = 154...\n\nTry: 11 / 1 = 11 (left: 11 11 13)\n13 - 11 = 2 (left: 2 11)\n2 * 11 = 22 \u2717\n\nTry: 11 - 1 = 10 (left: 10 11 13)\n10 + 11 = 21 (left: 21 13)\n21 + 13 = 34 \u2717\n\nTry: 13 - 11 = 2 (left: 1 2 11)\n1 * 2 = 2 (left: 2 11)\n2 + 11 = 13 \u2717\n\nTry: 11 * 1 = 11 (left: 11 11 13)\n13 + 11 = 24 (left: 11 24)\n24 - 11 = 13 \u2717\n\nTry: 11 + 1 = 12 (left: 11 12 13)\n13 - 11 = 2 (left: 2 12)\n12 * 2 = 24 \u2713\n\nAnswer: (13 - 11) * (11 + 1) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (13 - 11) * (11 + 1) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (13 - 11) * (11 + 1) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (13 - 11) * (11 + 1) = 24",
+            "Steps:\n11 + 13 = 24 (left: 1 11 24)\n11 / 11 = 1 (left: 1 24)\n24 * 1 = 24 (left: 24)\nAnswer: (11 + 13) * (11 / 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n1 + 11 = 12 (left: 11 12 13)\n13 - 11 = 2 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (1 + 11) * (13 - 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n11 + 13 = 24 (left: 1 11 24)\n11 - 1 = 10 (left: 10 24)\n... no solution here \u2014 let me try again:\n\nSteps:\n13 - 11 = 2 (left: 2 11 1)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (13 - 11) * (11 + 1) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n1 + 11 = 12 (left: 11 12 13)\n13 - 11 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (1 + 11) * (13 - 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n11 + 13 = 24 (left: 1 11 24)\n11 / 11 = 1 (left: 1 24)\n24 * 1 = 24 (left: 24)\nAnswer: (11 + 13) * (11 / 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (13 - 11) * (11 + 1) = 24",
+            "Steps:\n11 / 11 = 1 (left: 1 1 13)\n13 + 1 = 14 (left: 1 14)\n1 + 14 = 15... \n\nLet me redo:\n11 / 11 = 1 (left: 1 1 13)\n13 + 1 = 14 (left: 1 14)\n14 + 1 = 15 (left: 15) \u2014 not 24.\n\nCorrect steps:\n11 + 13 = 24 (left: 1 11 24)\n11 / 1 = 11 (left: 11 24)\n24 * ? \u2014 not 24.\n\nCorrect steps:\n13 - 11 = 2 (left: 1 2 11)\n2 * 11 = 22 (left: 1 22)\n22 + 1 = 23 \u2014 not 24.\n\nCorrect steps:\n11 + 13 = 24 (left: 1 11 24)\n11 - 1 = 10 (left: 10 24)\n10 + 24 = 34 \u2014 no.\n\nCorrect steps:\n13 + 11 = 24 (left: 1 11 24)\n24 - 11 = 13 (left: 1 13)\n13 * 1 = 13 \u2014 no.\n\nCorrect solution:\n(11 - 1) = 10 (left: 10 11 13)\n13 - 10 = 3 (left: 3 11)\n3 * 11 = 33 \u2014 no.\n\nCorrect steps:\n11 * 1 = 11 (left: 11 11 13)\n11 + 13 = 24 (left: 11 24)\n24 - 11 = 13 \u2014 no.\n\nCorrect steps:\n11 + 11 = 22 (left: 1 13 22)\n22 + 1 = 23 (left: 13 23)\n23 + 13 = 36 \u2014 no.\n\nCorrect steps:\n13 - 1 = 12 (left: 11 11 12)\n11 + 11 = 22... no. 12 + 11 = 23, +11 no.\n\nCorrect steps:\n11 - 1 = 10 (left: 10 11 13)\n11 + 13 = 24 (left: 10 24)\n24 / 10 \u2014 no.\n\nCorrect steps:\n(13 - 11) + 1 = 3 (left: 3 11)\n3 * 11 = 33 \u2014 no.\n\nTry: 11 + 13 = 24, and 11 - 1 = 10... 24 * 1 = 24 needs second pair = 1: 11/11 = 1, but then both 11s used with 1 left over. 1 * 1 = 1? We have numbers 1, 11, 11, 13: pair (11,11) \u2192 1, left (1, 13): 13+1=14, 14... no. Pair (13,11) \u2192 2, left (1,11): 2*11=22, 22+1=23; 2+11=13, 13+1=14; 2-1=1... no. Pair (13,1) \u2192 12, left (11,11): 12+11=23, 12*11=132, 12-11=1... 23 no. Pair (11,1) \u2192 10 or 12 or 11: 12 with 11*? (11+1)=12, then 12+13=25, 13-12=1... 12*13 no. (11-1)=10, 10+13=23, 13-10=3... no. (11*1)=11, 11+13=24, 24*? nothing left.\n\nHmm \u2014 try non-obvious: 13 + 11 = 24; 11 - 1 = 10; 24 - 10 = 14. 13 - 11 = 2; 11 + 1 = 12; 12 * 2 = 24! \u2713\n\nSteps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (13 - 11) * (11 + 1) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (13 - 11) * (11 + 1) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (13 - 11) * (11 + 1) = 24",
+            "Steps:\n11 - 1 = 10 (left: 10 11 13)\n13 - 10 = 3 (left: 3 11)\n11 * 3 = 33... let me try again.\n\nSteps:\n11 + 13 = 24 (left: 1 11 24)\n11 - 1 = 10 (left: 10 24)\n... 24 needs 1, but we have 10.\n\nSteps:\n13 - 11 = 2 (left: 1 2 11)\n11 * 2 = 22 (left: 1 22)\n22 + 1 = 23 (left: 23) \u2014 no.\n\nSteps:\n11 * 11 = 121 (left: 1 13 121) \u2014 no.\n\nSteps:\n13 + 11 = 24 (left: 1 11 24)\n24 * 1 = 24 (left: 11 24) \u2014 can't merge.\n\nSteps:\n11 - 1 = 10 (left: 10 11 13)\n10 + 11 = 21 (left: 13 21)\n21 + 13 = 34 \u2014 no.\n\nSteps:\n13 + 11 = 24 (left: 1 11 24)\n11 - 1 = 10 (left: 10 24) \u2014 stuck.\n\nTry: 11 + 11 = 22, 22 + 13 = 35, no. 22 - 13 = 9, 9 * 1 = 9, no.\n\nTry: 13 - 1 = 12 (left: 11 11 12)\n11 + 11 = 22... no. 12 + 11 = 23... 12 * 11 no.\n\nTry: 13 + 11 = 24, then 24 / (11 - 1)? But that's using 24 and two numbers \u2014 not allowed sequentially.\n\nActually: (11 - 1) = 10, (13 + 11) = 24, 24 * 10 no. But 24 needs factor 1: 11 - 1 = 10 no; 13 - 11 = 2, 13 - 1 = 12, 12 * 2 = 24!\n\nSteps:\n13 - 11 = 2 (left: 1 2 13)\n13 - 1 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (13 - 1) * (13 - 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (13 - 11) * (11 + 1) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n11 + 13 = 24 (left: 1 11 24)\n24 * 1 = 24 (left: 11 24)\n24 * 11 = 264 \u2014 no, we already have 24; stop.\nAnswer: (11 + 13) * 1 = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n13 + 11 = 24 (left: 1 11 24)\n11 / 1 = 11 (left: 11 24) \u2014 no, better: 11 / 11 = 1\nSteps:\n13 + 11 = 24 (left: 1 11 24)\n11 / 11 = 1 \u2014 wait, only one 11 left. Correct path:\nSteps:\n11 / 11 = 1 (left: 1 1 13)\n13 - 1 = 12 (left: 1 12)\n12 + 1 = 13 \u2014 no. Use: 12 * 1 = 12 \u2014 no.\nAlternative:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (13 - 11) * (11 + 1) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (13 - 11) * (11 + 1) = 24",
+            "Steps:\n1 + 11 = 12 (left: 11 12 13)\n13 - 11 = 2 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (1 + 11) * (13 - 11) = 24",
+            "Steps:\n1 + 11 = 12 (left: 11 12 13)\n13 - 11 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (1 + 11) * (13 - 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 - 2 = 9 (left: 1 9)\n9 + 1 = 10... no, let me redo:\n11 * 2 = 22 (left: 1 22)\n22 + 1 = 23... \n\nTry again:\n11 - 1 = 10 (left: 10 11 13)\n13 - 11 = 2 (left: 2 10)\n10 + 2 = 12... no.\n\nTry:\n11 + 11 = 22 (left: 1 13 22)\n22 + 13 = 35 (left: 1 35)\n35 - 1 = 34... no.\n\nTry:\n13 * 11 = 143... too big.\n\nTry:\n11 - 11 = 0 (left: 0 1 13)\n13 + 1 = 14... no.\n\nTry:\n13 + 11 = 24 (left: 11 24)\n11 - 1 = 10 (left: 10 24)\n24 - 10 = 14... no.\n\nTry:\n11 * 1 = 11... \n\nTry:\n13 - 1 = 12 (left: 11 11 12)\n11 + 11 = 22 (left: 12 22)\n22 - 12 = 10... no.\n\nTry:\n11 / 11 = 1 (left: 1 1 13)\n13 - 1 = 12 (left: 1 12)\n12 * 1 = 12... no.\n\nTry:\n13 - 11 = 2 (left: 1 2 11)\n11 + 2 = 13 (left: 1 13)\n13 + 1 = 14... no.\n\nTry:\n11 + 11 = 22 (left: 1 13 22)\n22 - 13 = 9 (left: 1 9)\n9 * 1 = 9... no.\n\nTry:\n11 + 13 = 24 (left: 1 11 24)\n24 - 11 = 13 (left: 1 13)\n13 + 1 = 14... no.\n\nTry:\n13 - 11 = 2 (left: 1 2 11)\n2 * 11 = 22 (left: 1 22)\n22 + 1 = 23... no.\n\nTry:\n11 - 1 = 10 (left: 10 11 13)\n13 - 10 = 3 (left: 3 11)\n3 * 11 = 33... no.\n\nTry:\n13 - 11 = 2 (left: 1 2 11)\n11 - 2 = 9 (left: 1 9)\n9 + 1 = 10... no.\n\nTry:\n1 * 11 = 11 (left: 11 11 13)\n11 + 13 = 24 (left: 11 24)\n24 - 11 = 13... no.\n\nTry:\n11 + 11 = 22 (left: 1 13 22)\n13 - 1 = 12 (left: 12 22)\n22 - 12 = 10... no.\n\nTry:\n1 + 11 = 12 (left: 11 12 13)\n13 - 11 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (13 - 11) * (1 + 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n11 / 11 = 1 (left: 1 1 13)\n13 + 11 = 24 (left: 1 24)\n24 * 1 = 24 (left: 24)\nAnswer: (13 + 11) * (11 / 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n13 - 1 = 12 (left: 11 11 12)\n11 / 11 = 1 (left: 1 12)\n12 * 1 = 24 (left: 24)\nAnswer: (13 - 1) * (11 / 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (13 - 11) * (11 + 1) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n13 + 11 = 24 (left: 11 24)\n11 - 11 = 0 (left: 0 24)\n24 + 0 = 24 (left: 24)\nAnswer: (13 + 11) + (11 - 11) = 24",
+            "Steps:\n1 + 11 = 12 (left: 11 12 13)\n13 - 11 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (1 + 11) * (13 - 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (13 - 11) * (11 + 1) = 24",
+            "Steps:\n11 + 1 = 12 (left: 11 12 13)\n13 - 11 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n13 + 11 = 24 (left: 11 11 24)\n11 / 11 = 1 (left: 1 24)\n24 * 1 = 24 (left: 24)\nAnswer: (13 + 11) * (11 / 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n2 + 1 = 3 (left: 3 11)\n11 * 3 = 33... let me redo.\n\nBetter:\n11 + 13 = 24 (left: 1 11 24)\n11 - 1 = 10 (left: 10 24)\nNo...\n\nTry:\n11 - 1 = 10 (left: 10 11 13)\n13 - 10 = 3 (left: 3 11)\n3 * 11 = 33. No.\n\nTry:\n13 - 1 = 12 (left: 11 11 12)\n11 - 11 = 0. No.\n11 + 12 = 23. No.\n\nTry:\n11 * 11 = 121 (left: 1 13 121)\n121 - 13 = 108. No.\n121 / 13... not integer.\n\nTry:\n11 + 1 = 12 (left: 11 12 13)\n13 - 12 = 1 (left: 1 11)\n11 * 1 = 11. No.\n11 + 1 = 12. No.\n\nTry:\n13 - 11 = 2 (left: 1 2 11)\n11 - 2 = 9 (left: 1 9)\n1 * 9 = 9. No.\n9 + 1 = 10. No.\n\nTry:\n11 + 13 = 24 (left: 1 11 24)\n24 - 11 = 13... wait need to use 1: 24 - 11 = 13, left: 1 13. 13 - 1 = 12. No.\n24 - 1 = 23, left: 11 23. 23 - 11 = 12. No.\n\nTry:\n13 * 1 = 13 (left: 11 11 13)\n11 + 13 = 24 (left: 11 24)\n24 - 11 = 13. No.\n\nTry:\n11 + 11 = 22 (left: 1 13 22)\n22 + 13 = 35. No. 22 + 1 = 23. No. 22 - 13 = 9, 9 + 1... no, only two left: 9 + 1 = 10, 9 * 1 = 9, 13 - 9 = 4... wait 22 - 13 = 9, left: 1 9. No.\n\nTry:\n13 + 11 = 24 (left: 1 11 24)\n24 / 1 = 24 (left: 11 24)\nNo.\n\nTry:\n11 / 1 = 11 (left: 11 11 13)\n13 - 11 = 2 (left: 2 11)\n2 * 11 = 22. No.\n\nTry:\n13 * 11 = 143 (left: 1 11 143)\n143 / 11 = 13, left: 1 13. 13 - 1 = 12, 13 + 1 = 14, 13 * 1 = 13, 13 / 1 = 13. No.\n\nTry:\n11 - 1 = 10 (left: 10 11 13)\n11 + 13 = 24 (left: 10 24). No.\n11 * 13 = 143, left: 10 143. No.\n\nTry:\n11 + 1 = 12 (left: 11 12 13)\n11 + 13 = 24 (left: 12 24)\n24 - 12 = 12. No... wait, 24 - 12 = 12, not 24.\n\nTry:\n11 * 2... \n\nTry:\n13 - 11 = 2 (left: 1 2 11)\n11 * 2 = 22 (left: 1 22)\n22 + 1 = 23. No. 22 - 1 = 21. No.\n\nTry:\n1 * 11 = 11 (left: 11 11 13)\n11 * 11 = 121... covered.\n\nTry:\n13 + 11 = 24 (left: 1 11 24)\n24 / 11... no.\n\nTry:\n11 - 13 = -2 (left: 1 -2 11)\n11 - (-2) = 13... left: 1 13. No.\n-2 * 11 = -22, +1 = -21. No.\n\nTry:\n1 / 11 = 1/11... messy.\n\nTry:\n13 / 13... \n\nTry:\n11 * 13 = 143 (left: 1 11 143)\n143 - 11 = 132, left: 1 132. No.\n\nTry:\n11 + 11 = 22 (left: 1 13 22)\n22 / 1 = 22... 13 + 22 = 35, 22 - 13 = 9, 13 - 22 = -9, 22 * 1... \n\nTry:\n1 + 13 = 14 (left: 11 11 14)\n14 - 11 = 3 (left: 3 11)\n3 * 11 = 33, 11 + 3 = 14, 11 - 3 = 8. No.\n\nTry:\n1 + 13 = 14 (left: 11 11 14)\n14 + 11 = 25 (left: 11 25)\n25 - 11 = 14. No.\n\nTry:\n1 - 13 = -12 (left: 11 11 -12)\n11 - (-12) = 23 (left: 11 23)\n23 - 11 = 12. No.\n\nTry:\n1 * 13 = 13 (left: 11 11 13)\n13 - 11 = 2 (left: 2 11)\n11 + 2 = 13. No.\n\nTry:\n11 / 11 = 1 (left: 1 1 13)\n13 + 1 = 14 (left: 1 14)\n14 - 1 = 13, 14 + 1 = 15, 14 * 1 = 14. No.\n13 - 1 = 12 (left: 1 12)\n12 * 1 = 12, 12 + 1 = 13. No.\n1 * 1 = 1 (left: 1 13). No.\n1 + 1 = 2 (left: 2 13). No.\n\nTry:\n1 + 11 = 12 (left: 11 12 13)\n12 * 13... no. 13 - 12 = 1 (left: 1 11). No. 12 + 13 = 25 (left: 11 25). 25 - 11 = 14. No. 13 * 12 = 156 (left: 11 156). 156 / 11... no.\n\nTry:\n13 - 1 = 12 (left: 11 11 12)\n11 * 12 = 132 (left: 11 132). 132 / 11 = 12. No.\n12 / 11... no.\n11 + 12 = 23 (left: 11 23). 23 - 11 = 12. No.\n12 - 11 = 1 (left: 1 11). No.\n\nHmm, seems 1 11 11 13 might be unsolvable... but puzzle expects solution. Try fractions:\n13 / 11 = 13/11 (left: 1 11 13/11)\n11 - 13/11 = 108/11 (left: 1 108/11). 108/11 - 1 = 97/11. No.\n1 - 13/11 = -2/11 (left: -2/11 11). 11 / (-2/11) = -60.5. No. 11 * (-2/11) = -2. No.\n\n1 / 13 = 1/13 (left: 11 11 1/13)\n11 - 1/13 = 142/13 (left: 11 142/13). 142/13 * 11 = 1562/13. No. 11 - 142/13... no.\n\n11 / 13 = 11/13 (left: 1 11 11/13)\n11 - 11/13 = 132/13 (left: 1 132/13). 132/13 - 1 = 119/13. No. 132/13 * 1... no.\n\n11 * 1 = 11 (left: 11 11 13)\n11 + 13 = 24 (left: 11 24)\n24 - 11 = 13. No.\n24 / 11... no.\n\n11 + 13 = 24 (left: 1 11 24)\n24 * 1 = 24 (left: 11 24). No.\n24 - 1 = 23 (left: 11 23). No.\n1 - 24 = -23 (left: 11 -23). No.\n\n11 - 13 = -2 (left: 1 11 -2)\n11 * -2 = -22 (left: 1 -22). No.\n-2 - 11 = -13, left: 1 -13. No.\n-2 / 11... no.\n\n11 + 11 = 22 (left: 1 13 22)\n22 - 1 = 21 (left: 13 21). No.\n22 + 1 = 23 (left: 13 23). 23 - 13 = 10. No.\n22 * 1 = 22 (left: 13 22). No.\n22 / 1 = 22. Same.\n1 - 22 = -21 (left: 13 -21). No.\n22 - 13 = 9 (left: 1 9). No.\n13 - 22 = -9 (left: 1 -9). No.\n22 / 13... no.\n13 / 22... no.\n\nHmm. Consider 24 = (13 - 11/11) + ... 13 - 1 = 12, then 12 + 11 = 23, 12 * 11 no.\n\n24 = 11 + 13 needs to neutralize the other 11 and 1: 11 * 1 = 11, then 11 + 13 = 24 but that uses only 3 numbers... wait: 11 * 1 = 11 (left: 11 11 13), then 11 + 13 = 24 (left: 11 24), then 24 - 11 = 13. No.\n\nWhat about 24 = 11 * (13 - 11) + ... 13 - 11 = 2, 11 * 2 = 22, +1 = 23, no.\n\n24 = (11 + 13) + 1 - 11? That's 14. No: 24 + 1 - 11 = 14. Hmm, 24 + 1 = 25, 25 - 11 = 14. 24 - 1 = 23, +11 = 34. No.\n\n24 = 13 * 2 - 2 where 2 = 13 - 11 and 2 = 11 - 1? 13 - 11 = 2, 11 - 1 = 10. No.\n\n24 = (11 - 1) * (13 - 11)/1? (10)*(2) = 20. No.\n\n24 = 11 + 13 * 1 + 11 - 11? Can't, only 4 numbers.\n\nSeems genuinely unsolvable. But wait: (11 - 1) * (13 - 11) = 10 * 2 = 20. (13 + 11) * 1 = 24 needs 11 left over. Actually (13 + 11) * (11/11)? Uses 11 three times. No.\n\nTry: 11 + 11 + 1 = 23, +13? That's 5 numbers. (11+11+1)+13 no.\n\n(13 - 1) * (11/11) = 12 * 1 = 12. No.\n(13 + 11) - (11 * 1) = 24 - 11 = 13. No.\n(13 + 11) / (11/11)? No.\n(13 - 11/11) * ... 13 - 1 = 12, * ? only 11 left: 12+11=23, no.\n\nTruly unsolvable? The expected answer likely: (13 - 11) * 11 + 1 = 23. No.\n\nHmm: 11 / (13 - 11) = 5.5, * ... no.\n\nActually maybe: (11 * 13 + 1) / ... 144 / 11? No. 143+1=144, 144/11 not integer. But 144 = 12\u00b2, and if we had 12... \n\n(13 + 11) * (11 - 11)? 0.\n\nI'll conclude... but user expects an answer. Perhaps intended: 13 + 11 = 24, then 11 - 1 = 10... no. Maybe intended answer: (13 - 11) * (11 + 1) = 24! Check: 13-11=2, 11+1=12, 2*12=24. Yes!Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n11 + 13 = 24 (left: 1 11 24)\n11 / 11 = 1 (left: 1 24)\n24 * 1 = 24 (left: 24)\nAnswer: (11 + 13) * (11 / 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (13 - 11) * (11 + 1) = 24",
+            "Steps:\n13 + 11 = 24 (left: 1 11 24)\n11 / 11 = 1 (left: 1 24)\n24 * 1 = 24 (left: 24)\nAnswer: (13 + 11) * (11 / 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n1 + 11 = 12 (left: 11 12 13)\n13 - 11 = 2 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (1 + 11) * (13 - 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (13 - 11) * (11 + 1) = 24",
+            "Steps:\n11 + 11 = 22 (left: 1 13 22)\n22 + 13 = 35 (left: 1 35)\n35 - 1 = 34 (left: 34)\n\nHmm, let me redo this:\n11 + 13 = 26 (left: 1 11 26)\n26 - 11 = 15 (left: 1 15)\n15 + 1 = 16 (left: 16)\n\nLet me try again:\n13 - 11 = 2 (left: 1 2 11)\n11 + 2 = 13 (left: 1 13)\n13 + 1 = 14 (left: 14)\n\nTry another way:\n11 + 11 = 22 (left: 1 13 22)\n22 + 1 = 23 (left: 13 23)\n23 + 13 = 36 (left: 36)\n\nTry:\n13 - 11 = 2 (left: 1 2 11)\n2 * 11 = 22 (left: 1 22)\n22 + 1 = 23 (left: 23)\n\nTry:\n11 - 1 = 10 (left: 10 11 13)\n13 - 10 = 3 (left: 3 11)\n3 * 11 = 33 (left: 33)\n\nTry:\n11 * 11 = 121 (left: 1 13 121)\n121 - 13 = 108 (left: 1 108)\n108 / 1 = 108 (left: 108)\n\nTry:\n13 + 11 = 24 (left: 1 11 24)\n24 * 1 = 24 (left: 11 24)\n24 + 11 = 35 (left: 35)\n\nTry:\n13 + 11 = 24 (left: 1 11 24)\n11 - 1 = 10 (left: 10 24)\n\nHmm, need 24 from 10 and 24 \u2014 no.\n\nTry:\n11 - 1 = 10 (left: 10 11 13)\n10 + 13 = 23 (left: 11 23)\n23 + 11 = 34\n\nTry:\n11 - 1 = 10, 13 - 11 = 2... only one at a time.\n13 + 1 = 14 (left: 11 11 14)?\n14 + 11 = 25 (left: 11 25)\n25 - 11 = 14\n\nTry:\n11 * 13 = 143... \n\nTry:\n11 + 1 = 12 (left: 11 12 13)\n12 + 13 = 25 (left: 11 25)\n25 - 11 = 14\n\nTry:\n11 + 1 = 12 (left: 11 12 13)\n13 - 11 = 2 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (13 - 11) * (11 + 1) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (13 - 11) * (11 + 1) = 24",
+            "Steps:\n13 + 11 = 24 (left: 1 11 24)\n11 - 1 = 10 (left: 10 24)\n24 - 10 = 24 (left: 24)\nAnswer: (13 + 11) - (11 - 1) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (13 - 11) * (11 + 1) = 24",
+            "Steps:\n11 + 13 = 24 (left: 1 11 24)\n11 - 1 = 10 (left: 10 24)\n24 + 10 - 10? No \u2014 must combine two numbers.\n\nTry: 11 + 1 = 12 (left: 11 13 12)\n13 - 11 = 2 (left: 12 2)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n11 * 1 = 11 (left: 11 11 11)\n11 + 13 = 24 (left: 11 24)\n24 * 1... wait, let me redo properly.\n\nSteps:\n1 * 11 = 11 (left: 11 11 13)\n11 + 13 = 24 (left: 11 24)\n24 - 11 = 13 (left: 13)\n\nBetter:\nSteps:\n11 * 1 = 11 (left: 11 11 13)\n11 + 13 = 24 (left: 11 24)\n24 * ... use 11: 24 - 11 = 13\n\nAnswer: (11 * 1) + 13 = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n13 + 11 = 24 (left: 1 11 24)\n11 / 11 = 1 (left: 1 24)\n24 * 1 = 24 (left: 24)\nAnswer: (13 + 11) * (11 / 11) = 24",
+            "Steps:\n1 + 11 = 12 (left: 11 12 13)\n13 - 11 = 2 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (1 + 11) * (13 - 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n1 + 11 = 12 (left: 11 12 13)\n13 - 11 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (1 + 11) * (13 - 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (13 - 11) = 24",
+            "Steps:\n1 * 11 = 11 (left: 11 13)\n11 + 13 = 24 (left: 24)\nAnswer: 1 * 11 + 13 = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (13 - 11) * (11 + 1) = 24",
+            "Steps:\n11 + 13 = 24 (left: 1 11 24)\n11 - 1 = 10 ... no, better:\n11 / 11 = 1 (left: 1 24)\n24 * 1 = 24 (left: 24)\nAnswer: (11 + 13) * (11 / 11) = 24",
+            "Steps:\n11 + 13 = 24 (left: 11 24)\n11 / 11 = 1 (left: 1 24)\n24 * 1 = 24 (left: 24)\nAnswer: (11 + 13) * (11 / 11) = 24",
+            "Steps:\n13 + 11 = 24 (left: 1 11 24)\n11 / 11 = 1 (left: 1 24)\n24 * 1 = 24 (left: 24)\nAnswer: (13 + 11) * (11 / 11) = 24",
+            "Steps:\n1 + 11 = 12 (left: 11 12 13)\n13 - 11 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (1 + 11) * (13 - 11) = 24",
+            "Steps:\n13 + 11 = 24 (left: 1 11 24)\n11 / 11 = 1 (left: 1 24)\n24 * 1 = 24 (left: 24)\nAnswer: (13 + 11) * (11 / 11) = 24",
+            "Steps:\n13 - 11 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (13 - 11) * (11 + 1) = 24",
+            "Steps:\n1 + 11 = 12 (left: 11 12 13)\n13 - 11 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (1 + 11) * (13 - 11) = 24"
+        ],
+        "infos": [
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            }
+        ],
+        "usage_so_far": {
+            "completion_tokens": 31340,
+            "prompt_tokens": 44200,
+            "cost": 0
+        }
+    },
+    {
+        "idx": 906,
+        "ys": [
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (10 - 8) * (11 + 1) = 24",
+            "Steps:\n10 - 1 = 9 (left: 8 9 11)\n11 - 8 = 3 (left: 3 9)\n9 * 3 = 27 (left: 27)... \n\nBetter:\nSteps:\n10 - 1 = 9 (left: 8 9 11)\n11 - 8 = 3 (left: 3 9)\n9 * 3 = 27 \u2014 no. Use division:\n\nSteps:\n10 - 1 = 9 (left: 8 9 11)\n11 - 8 = 3 (left: 3 9)\n9 / 3 = 3 (left: 3) \u2014 no.\n\nCorrect solution:\nSteps:\n11 - 8 = 3 (left: 1 3 10)\n10 - 1 = 9 (left: 3 9)\n3 * 9 = 27 \u2014 no. \n\nFinal:\nSteps:\n10 + 8 = 18 (left: 1 11 18)\n11 - 1 = 10 \u2014 no. \n\nSteps:\n(10 - 1) = 9 (left: 8 9 11)\n9 * 8 = 72 (left: 11 72)\n72 / 3 \u2014 no 3. But 72 / (11 - 8)... 11 already used? No: 11 remains:\n72 / ... need 3 from 11 alone \u2014 impossible.\n\nAnswer: ((10 - 1) * 8) / (11 - 8) = 24\nSteps:\n10 - 1 = 9 (left: 8 9 11)\n8 * 9 = 72 (left: 11 72)\n11 - 8 \u2014 8 already used. \n\nCorrect final:\nSteps:\n11 - 8 = 3 (left: 1 3 10)\n10 - 1 = 9 (left: 3 9)\n9 * 3 = 27 \u2014 no.\n\nTry: 24 = 8 * (1 + 11 - 10)? = 8*2=16 no. 24 = (11+1)*(10-8)=12*2=24 \u2713\n\nSteps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n2 + 1 = 3 (left: 3 11)\n11 - 3 = 8... wait, better: 3 * 8 = 24 (left: 24)\nAnswer: (10 - 8 + 1) * 8 = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (10 - 8) * (11 + 1) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (10 - 8) * (11 + 1) = 24",
+            "Steps:\n11 + 1 = 12 (left: 2 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (10 - 8) * (11 + 1) = 24",
+            "Steps:\n11 - 1 = 10 (left: 8 10 10)\n10 + 10 = 20 (left: 8 20)\n20 + 8 = 28... \n\nLet me try again:\n10 - 8 = 2 (left: 1 2 11)\n11 * 2 = 22 (left: 1 22)\n22 + 1 = 23... \n\nTry again:\n11 - 8 = 3 (left: 1 3 10)\n10 - 1 = 9 (left: 3 9)\n9 * 3 = 27... \n\nTry again:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n1 + 11 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (1 + 11) * (10 - 8) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n2 + 1 = 3 (left: 3 11)\n3 * 8 = 24 (left: 24)\nAnswer: (1 + (10 - 8)) * 8 = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Input: 1 8 10 11\nSteps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (10 - 8) * (11 + 1) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (10 - 8) * (11 + 1) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (10 - 8) * (11 + 1) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (10 - 8) * (11 + 1) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (10 - 8) * (11 + 1) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (10 - 8) * (11 + 1) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (10 - 8) * (11 + 1) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 - 10 = 1 (left: 1 1 8)\n8 * 1 = 8 (left: 1 8)\n8 + 1 = 9 (left: 9)\n\nAlternative:\n10 + 8 = 18 (left: 1 11 18)\n18 - 11 = 7 (left: 1 7)\n7 * 1 = 7 (left: 7)\n\nAlternative:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n1 + 11 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (1 + 11) * (10 - 8) = 24We need answer solve. Need steps. Find 1 8 10 11 ->24. Try (11-1)=10, 10+8=18 no. 11+10+8-1=28. 11+10+1*? no. (11-8)=3, need 8 from 10,1 -> 10-1=9, 3*8? wait combine pairwise: (11-8)*(10-1)=27. (10-8)=2, (11+1)=12 =>24. Steps: 10-8=2 left 1 11 2; 11+1=12 left 2 12; 12*2=24. Answer (10-8)*(11+1)=24.Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (10 - 8) * (11 + 1) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (10 - 8) * (11 + 1) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n1 + 11 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (1 + 11) * (10 - 8) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 - 10 = 1 (left: 1 1 8)\n8 - 1 = 7 (left: 1 7)\nHmm, let me try again.\n\nSteps:\n11 - 1 = 10 (left: 8 10 10)\n10 / 10 = 1 (left: 1 8)\n8 * 1... wait, that's 8 not 24.\n\nSteps:\n10 - 8 = 2 (left: 1 2 11)\nHmm.\n\nLet me try:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (10 - 8) * (11 + 1) = 24",
+            "Steps:\n1 + 11 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (1 + 11) * (10 - 8) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (10 - 8) * (11 + 1) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (10 - 8) * (11 + 1) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 - 8 = 3 (left: 1 3 10)\n10 + 1 = 11 (left: 3 11)\n3 * 11 = 33... no\n\nLet me try again:\n10 + 11 = 21 (left: 1 8 21)\n8 - 1 = 7 (left: 7 21)\n21 + 7 = 28... no\n\nTry:\n10 - 8 = 2 (left: 1 2 11)\n11 * 2 = 22 (left: 1 22)\n22 + 1 = 23... no\n\nTry:\n11 - 10 = 1 (left: 1 1 8)\n8 * 1 = 8 (left: 1 8)\n8 * 1 = 8... no\n\nTry:\n11 - 1 = 10 (left: 8 10 10)\n10 + 10 = 20 (left: 8 20)\n20 + 8 = 28... no\n\nTry:\n10 + 8 = 18 (left: 1 11 18)\n18 - 11 = 7 (left: 1 7)\n7 * 1 = 7... no\n\nTry:\n11 + 1 = 12 (left: 8 10 12)\n12 * 8 = 96 (left: 10 96)\n96 / 10... no\n\nTry:\n10 - 1 = 9 (left: 8 9 11)\n9 + 11 = 20 (left: 8 20)\n20 + 8 = 28... no\n\nTry:\n11 + 8 = 19 (left: 1 10 19)\n19 - 10 = 9 (left: 1 9)\n9 * 1 = 9... no\n\nTry:\n8 * 10 = 80 (left: 1 11 80)\n80 / (11 - 1)... \n\nTry:\n11 - 8 = 3 (left: 1 3 10)\n10 * 3 = 30 (left: 1 30)\n30 - 1 = 29... no\n\nTry:\n10 * 8 = 80 (left: 1 11 80)\n80 - 11 = 69... no\n\nTry:\n11 * 8 = 88 (left: 1 10 88)\n88 / 10... no\n\nTry:\n10 + 1 = 11 (left: 8 11 11)\n11 + 11 = 22 (left: 8 22)\n22 + 8 = 30... no\n\nTry:\n10 - 8 = 2 (left: 1 2 11)\n2 + 11 = 13 (left: 1 13)\n13 - 1 = 12... no\n\nTry:\n11 * 10 = 110 (left: 1 8 110)\n110 / ... \n\nTry:\n8 / 1 = 8 (left: 8 10 11)\n11 - 10 = 1 (left: 1 8)\n1 * 8 = 8... no\n\nTry:\n1 + 8 = 9 (left: 9 10 11)\n10 + 11 = 21 (left: 9 21)\n21 + 9 = 30... no\n\nTry:\n1 + 8 = 9 (left: 9 10 11)\n10 - 9 = 1 (left: 1 11)\n11 * 1 = 11... no\n\nTry:\n1 + 8 = 9 (left: 9 10 11)\n11 - 9 = 2 (left: 2 10)\n2 * 10 = 20... no\n\nTry:\n1 + 10 = 11 (left: 8 11 11)\n11 + 11 = 22 (left: 8 22)\n22 + 8 = 30... no\n\nTry:\n1 + 10 = 11 (left: 8 11 11)\n11 - 8 = 3 (left: 3 11)\n3 * 11 = 33... no\n\nTry:\n1 + 11 = 12 (left: 8 10 12)\n12 - 10 = 2 (left: 2 8)\n2 * 8 = 16... no\n\nTry:\n1 + 11 = 12 (left: 8 10 12)\n12 + 8 = 20 (left: 10 20)\n20 + 10 = 30... no\n\nTry:\n1 + 11 = 12 (left: 8 10 12)\n10 + 8 = 18 (left: 12 18)\n18 - 12 = 6... no\n\nTry:\n8 - 1 = 7 (left: 7 10 11)\n10 + 11 = 21 (left: 7 21)\n21 - 7 = 14... no\n\nTry:\n8 - 1 = 7 (left: 7 10 11)\n11 - 10 = 1 (left: 1 7)\n7 + 1 = 8... no\n\nTry:\n8 - 1 = 7 (left: 7 10 11)\n7 + 10 = 17 (left: 11 17)\n17 + 11 = 28... no\n\nTry:\n8 - 1 = 7 (left: 7 10 11)\n7 + 11 = 18 (left: 10 18)\n18 - 10 = 8... no\n\nTry:\n10 - 1 = 9 (left: 8 9 11)\n11 - 8 = 3 (left: 3 9)\n3 * 9 = 27... no\n\nTry:\n10 - 1 = 9 (left: 8 9 11)\n9 * 8 = 72 (left: 11 72)\n72 / 11... no\n\nTry:\n10 - 1 = 9 (left: 8 9 11)\n11 + 9 = 20 (left: 8 20)\n20 - 8 = 12... no\n\nTry:\n10 - 1 = 9 (left: 8 9 11)\n8 + 9 = 17 (left: 11 17)\n17 + 11 = 28... no\n\nTry:\n11 - 1 = 10 (left: 8 10 10)\n10 - 8 = 2 (left: 2 10)\n2 * 10 = 20... no\n\nTry:\n11 - 1 = 10 (left: 8 10 10)\n10 * 10 = 100 (left: 8 100)\n100 / 8... no\n\nTry:\n11 - 1 = 10 (left: 8 10 10)\n8 + 10 = 18 (left: 10 18)\n18 - 10 = 8... no\n\nTry:\n8 * 1 = 8 (left: 8 10 11)\n11 - 10 = 1 (left: 1 8)\n8 * 1 = 8... no\n\nTry:\n8 * 1 = 8 (left: 8 10 11)\n10 + 11 = 21 (left: 8 21)\n21 - 8 = 13... no\n\nTry:\n8 * 1 = 8 (left: 8 10 11)\n11 + 8 = 19 (left: 10 19)\n19 - 10 = 9... no\n\nTry:\n8 * 1 = 8 (left: 8 8 10)\n10 - 8 = 2 (left: 2 8)\n2 * 8 = 16... no\n\nTry:\n8 / 1 = 8 (left: 8 10 11)\n10 + 11 = 21 (left: 8 21)\n21 - 8 = 13... no\n\nTry:\n8 / 1 = 8 (left: 8 10 11)\n11 - 8 = 3 (left: 3 10)\n3 * 10 = 30... no\n\nTry:\n8 / 1 = 8 (left: 8 10 11)\n10 - 8 = 2 (left: 2 11)\n2 * 11 = 22... no\n\nTry:\n8 / 1 = 8 (at 8 10 11)\n10 + 8 = 18 (left: 11 18)\n18 - 11 = 7... no\n\nTry:\n11 + 10 = 21 (left: 1 8 21)\n21 - 1 = 20 (left: 8 20)\n20 - 8 = 12... no\n\nTry:\n11 + 10 = 21 (left: 1 8 21)\n21 - 8 = 13 (left: 1 13)\n13 - 1 = 12... no\n\nTry:\n11 * 10 = 110 (left: 1 8 110)\n110 / 8... no\n\nTry:\n11 * 8 = 88 (left: 1 10 88)\n88 - 10 = 78... no\n\nTry:\n10 * 8 = 80 (left: 1 11 80)\n80 - 1 = 79... no\n\nTry:\n11 - 10 = 1 (left: 1 1 8)\n8 - 1 = 7 (left: 1 7)\n1 * 7 = 7... no\n\nTry:\n11 - 10 = 1 (left: 1 1 8)\n8 + 1 = 9 (left: 1 9)\n9 * 1 = 9... no\n\nTry:\n11 - 10 = 1 (left: 1 1 8)\n1 + 1 = 2 (left: 2 8)\n2 * 8 = 16... no\n\nTry:\n10 + 8 = 18 (left: 1 11 18)\n18 - 1 = 17 (left: 11 17)\n17 - 11 = 6... no\n\nTry:\n10 + 8 = 18 (left: 1 11 18)\n18 + 1 = 19 (left: 11 19)\n19 - 11 = 8... no\n\nTry:\n10 + 8 = 18 (left: 1 11 18)\n11 - 1 = 10 (left: 10 18)\n18 - 10 = 8... no\n\nTry:\n10 + 8 = 18 (left: 1 11 18)\n11 + 1 = 12 (left: 12 18)\n18 - 12 = 6... no\n\nTry:\n11 + 8 = 19 (left: 1 10 19)\n19 - 1 = 18 (left: 10 18)\n18 - 10 = 8... no\n\nTry:\n11 + 8 = 19 (left: 1 10 19)\n19 + 1 = 20 (left: 10 20)\n20 - 10 = 10... no\n\nTry:\n11 + 8 = 19 (left: 1 10 19)\n10 - 1 = 9 (left: 9 19)\n19 - 9 = 10... no\n\nTry:\n11 + 8 = 19 (left: 1 10 19)\n10 + 1 = 11 (left: 11 19)\n19 - 11 = 8... no\n\nTry:\n11 + 8 = 19 (left: 1 10 19)\n19 / 1 = 19 (left: 10 19)\n19 - 10 = 8... no\n\nTry:\n10 * 1 = 10 (left: 8 10 11)\n11 + 10 = 21 (left: 8 21)\n21 - 8 = 13... no\n\nTry:\n10 * 1 = 10 (left: 8 10 11)\n11 - 8 = 3 (left: 3 10)\n3 * 10 = 30... no\n\nTry:\n10 * 1 = 10 (left: 8 10 11)\n10 - 8 = 2 (left: 2 10)\n2 * 10 = 20... no\n\nTry:\n10 * 1 = 10 (left: 8 10 11)\n10 + 8 = 18 (left: 11 18)\n18 - 11 = 7... no\n\nTry:\n11 * 1 = 11 (left: 8 10 11)\n10 - 8 = 2 (left: 2 11)\n2 * 11 = 22... no\n\nTry:\n11 * 1 = 11 (left: 8 10 11)\n10 + 8 = 18 (left: 11 18)\n18 - 11 = 7... no\n\nTry:\n11 * 1 = 11 (left: 8 10 11)\n11 - 8 = 3 (left: 3 10)\n3 * 10 = 30... no\n\nTry:\n11 * 1 = 11 (left: 8 10 11)\n10 + 11 = 21 (left: 8 21)\n21 - 8 = 13... no\n\nTry:\n11 - 8 = 3 (left: 1 3 10)\n3 * 1 = 3 (left: 3 10)\n10 * 3 = 30... no\n\nTry:\n11 - 8 = 3 (left: 1 3 10)\n1 + 3 = 4 (left: 4 10)\n4 * 10 = 40... no\n\n",
+            "Input: 1 8 10 11\nSteps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 - 10 = 1 (left: 1 1 8)\n1 + 8 = 9 (left: 1 9)\n9 * 1 = 9... let me redo:\n\nSteps:\n11 - 1 = 10 (left: 8 10 10)\n10 - 8 = 2 (left: 2 10)\n2 + 10 = 12... not 24. Try again:\n\nSteps:\n10 - 1 = 9 (left: 8 9 11)\n11 - 9 = 2 (left: 2 8)\n8 + 2 = 10... no.\n\nSteps:\n8 + 1 = 9 (left: 9 10 11)\n11 - 9 = 2 (left: 2 10)\n10 + 2 = 12... no. Try:\n\nSteps:\n11 - 8 = 3 (left: 1 3 10)\n10 * 3 = 30... no. \n\nSteps:\n10 + 11 = 21 (left: 1 8 21)\n21 + 1 = 22... no.\n\nSteps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n10 - 1 = 9 (left: 8 9 11)\n11 - 8 = 3 (left: 3 9)\n9 * 8 = 72 (left: 3 72)\n72 / 3 = 24 (left: 24)\nAnswer: (10 - 1) * 8 / (11 - 8) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n10 - 1 = 9 (left: 8 9 11)\n9 * 8 = 72 (left: 11 72)\n11 - 8 = 3 (left: 3 72)\n72 / 3 = 24 (left: 24)\nAnswer: (10 - 1) * 8 / (11 - 8) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (10 - 8) * (11 + 1) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n10 - 1 = 9 (left: 8 9 11)\n9 * 8 = 72 (left: 3 72)\n11 - 8 = 3 (left: 3 72)\n72 / 3 = 24 (left: 24)\nAnswer: ((10 - 1) * 8) / (11 - 8) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 - 10 = 1 (left: 1 1 8)\n1 + 1 = 2 (left: 2 8)\n2 * 8 = 16... let me redo.\n\nSteps:\n8 - 1 = 7 (left: 7 10 11)\n11 - 7 = 4 (left: 4 10)\n10 + 4 = 14... let me redo.\n\nSteps:\n10 + 11 = 21 (left: 1 8 21)\n21 + 1 = 22 (left: 8 22)\n22 + 8 = 30... let me redo.\n\nSteps:\n11 - 1 = 10 (left: 8 10 10)\n10 - 8 = 2 (left: 2 10)\n10 + 2 = 12... let me redo.\n\nSteps:\n8 * 1 = 8 (left: 8 10 11)\n11 - 8 = 3 (left: 3 10)\n10 - 3 = 7... let me redo.\n\nSteps:\n10 - 1 = 9 (left: 8 9 11)\n11 - 9 = 2 (left: 2 8)\n2 * 8 = 16... let me redo.\n\nSteps:\n11 - 8 = 3 (left: 1 3 10)\n10 + 3 = 13 (left: 1 13)\n13 * 1 = 13... let me redo.\n\nSteps:\n10 + 1 = 11 (left: 8 11 11)\n11 - 8 = 3 (left: 3 11)\n11 * 3 = 33... let me redo.\n\nSteps:\n10 * 1 = 10 (left: 8 10 11)\n11 - 10 = 1 (left: 1 8)\n1 + 8 = 9... let me redo.\n\nSteps:\n11 - 10 = 1 (left: 1 1 8)\n8 * 1 = 8 (left: 1 8)\n8 * 1 = 8... let me redo.\n\nSteps:\n11 + 10 = 21 (left: 1 8 21)\n21 - 1 = 20 (left: 8 20)\n20 + 8 = 28... let me redo.\n\nSteps:\n10 - 8 = 2 (left: 1 2 11)\n11 * 2 = 22 (left: 1 22)\n22 + 1 = 23... let me redo.\n\nSteps:\n10 - 8 = 2 (left: 1 2 11)\n2 + 1 = 3 (left: 3 11)\n3 * 11 = 33... let me redo.\n\nSteps:\n11 - 1 = 10 (left: 8 10 10)\n10 + 10 = 20 (left: 8 20)\n20 + 8 = 28... let me redo.\n\nSteps:\n11 * 8 = 88 (left: 1 10 88)\n88 / 10 = 8.8... let me redo.\n\nSteps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 2 = 13 (left: 1 13)\n13 - 1 = 12... let me redo.\n\nSteps:\n8 / 1 = 8 (left: 8 10 11)\n10 + 8 = 18 (left: 11 18)\n18 + 11 = 29... let me redo.\n\nSteps:\n11 - 8 = 3 (left: 1 3 10)\n10 * 1 = 10 (left: 3 10)\n3 * 10 = 30... let me redo.\n\nSteps:\n10 + 11 = 21 (left: 1 8 21)\n8 - 1 = 7 (left: 7 21)\n21 * 7 = 147... let me redo.\n\nSteps:\n1 * 8 = 8 (left: 8 10 11)\n10 + 11 = 21 (left: 8 21)\n21 + 8 = 29... let me redo.\n\nSteps:\n11 + 10 = 21 (left: 1 8 21)\n21 / 1 = 21 (left: 8 21)\n21 + 8 = 29... let me redo.\n\nSteps:\n11 + 8 = 19 (left: 1 10 19)\n19 - 1 = 18 (left: 10 18)\n18 + 10 = 28... let me redo.\n\nSteps:\n11 + 8 = 19 (left: 1 10 19)\n19 + 10 = 29 (left: 1 29)\n29 - 1 = 28... let me redo.\n\nSteps:\n11 + 8 = 19 (left: 1 10 19)\n10 - 1 = 9 (left: 9 19)\n19 + 9 = 28... let me redo.\n\nSteps:\n10 + 1 = 11 (left: 8 11 11)\n11 + 11 = 22 (left: 8 22)\n22 + 8 = 30... let me redo.\n\nSteps:\n10 + 1 = 11 (left: 8 11 11)\n11 - 8 = 3 (left: 3 11)\n11 + 3 = 14... let me redo.\n\nSteps:\n11 + 1 = 12 (left: 8 10 12)\n12 - 10 = 2 (left: 2 8)\n2 * 8 = 16... let me redo.\n\nSteps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (10 - 8) * (11 + 1) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (10 - 8) * (11 + 1) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (10 - 8) * (11 + 1) = 24",
+            "Input: 1 8 10 11\nSteps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (10 - 8) * (11 + 1) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 - 8 = 3 (left: 1 3 10)\n10 + 1 = 11 (left: 3 11)\n3 * 11 = 33... no\n\nAlternative:\n11 - 1 = 10 (left: 8 10 10)\n10 - 8 = 2 (left: 2 10)\n2 * 10 = 20... no\n\nAlternative:\n10 - 8 = 2 (left: 1 2 11)\n11 + 2 = 13... no\n\nAlternative:\n11 - 10 = 1 (left: 1 1 8)\n8 * 1 = 8 (left: 1 8)\n8 * 1 = 8... no\n\nAlternative:\n8 - 1 = 7 (left: 7 10 11)\n11 - 7 = 4 (left: 4 10)\n4 * 10 = 40... no\n\nAlternative:\n10 + 11 = 21 (left: 1 8 21)\n21 - 8 = 13 (left: 1 13)\n13 * 1 = 13... no\n\nAlternative:\n11 - 8 = 3 (left: 1 3 10)\n10 - 3 = 7 (left: 1 7)\n7 * 1 = 7... no\n\nAlternative:\n8 * 10 = 80 (left: 1 11 80)\n80 - 11 = 69... no\n\nAlternative:\n11 * 8 = 88 (left: 1 10 88)\n88 / 10 = 8.8... no\n\nAlternative:\n1 + 8 = 9 (left: 9 10 11)\n11 - 9 = 2 (left: 2 10)\n2 * 10 = 20... no\n\nAlternative:\n1 + 10 = 11 (left: 8 11 11)\n11 * 8 = 88 (left: 11 88)\n88 / 11 = 8... no\n\nAlternative:\n1 + 8 = 9 (left: 9 10 11)\n10 - 9 = 1 (left: 1 11)\n11 * 1 = 11... no\n\nAlternative:\n11 + 10 = 21 (left: 1 8 21)\n21 / 1 = 21 (left: 8 21)\n21 + 8 = 29... no\n\nAlternative:\n1 * 8 = 8 (left: 8 10 11)\n11 - 8 = 3 (left: 3 10)\n3 * 10 = 30... no\n\nAlternative:\n1 * 10 = 10 (left: 8 10 11)\n11 - 10 = 1 (left: 1 8)\n1 + 8 = 9... no\n\nAlternative:\n1 * 11 = 11 (left: 8 10 11)\n10 - 8 = 2 (left: 2 11)\n2 * 11 = 22... no\n\nAlternative:\n8 + 10 = 18 (left: 1 11 18)\n18 - 11 = 7 (left: 1 7)\n7 * 1 = 7... no\n\nAlternative:\n8 + 10 = 18 (left: 1 11 18)\n18 / 1 = 18 (left: 11 18)\n18 + 11 = 29... no\n\nAlternative:\n8 + 11 = 19 (left: 1 10 19)\n19 - 10 = 9 (left: 1 9)\n9 * 1 = 9... no\n\nAlternative:\n8 + 11 = 19 (left: 1 10 19)\n19 / 1 = 19 (left: 10 19)\n19 + 10 = 29... no\n\nAlternative:\n10 + 11 = 21 (left: 1 8 21)\n21 * 1 = 21 (left: 8 21)\n21 + 8 = 29... no\n\nAlternative:\n8 - 10 = -2 (left: 1 -2 11)\n11 - (-2) = 13 (left: 1 13)\n13 * 1 = 13... no\n\nAlternative:\n10 - 11 = -1 (left: 1 -1 8)\n8 - (-1) = 9 (left: 1 9)\n9 * 1 = 9... no\n\nAlternative:\n1 - 8 = -7 (left: -7 10 11)\n10 - (-7) = 17 (left: 11 17)\n17 - 11 = 6... no\n\nAlternative:\n1 - 10 = -9 (left: -9 8 11)\n8 - (-9) = 17 (left: 11 17)\n17 - 11 = 6... no\n\nAlternative:\n1 - 11 = -10 (left: -10 8 10)\n10 - (-10) = 20 (left: 8 20)\n20 + 8 = 28... no\n\nAlternative:\n8 / 10 = 0.8 (left: 0.8 1 11)\n1 + 0.8 = 1.8 (left: 1.8 11)\n1.8 * 11 = 19.8... no\n\nAlternative:\n8 / 10 = 0.8 (left: 0.8 1 11)\n11 - 1 = 10 (left: 0.8 10)\n0.8 * 10 = 8... no\n\nAlternative:\n10 - 8 = 2 (left: 1 2 11)\n11 - 2 = 9 (left: 1 9)\n9 * 1 = 9... no\n\nAlternative:\n10 - 8 = 2 (left: 1 2 11)\n2 - 1 = 1 (left: 1 11)\n11 * 1 = 11... no\n\nAlternative:\n10 - 8 = 2 (left: 1 2 11)\n11 * 2 = 22 (left: 1 22)\n22 + 1 = 23... no\n\nAlternative:\n10 - 8 = 2 (left: 1 2 11)\n11 * 2 = 22 (left: 1 22)\n22 + 1 = 23... no\n\nAlternative:\n10 - 8 = 2 (left: 1 2 11)\n11 + 2 = 13 (left: 1 13)\n13 - 1 = 12... no\n\nAlternative:\n11 - 10 = 1 (left: 1 1 8)\n1 + 8 = 9 (left: 1 9)\n9 * 1 = 9... no\n\nAlternative:\n11 - 10 = 1 (left: 1 1 8)\n8 - 1 = 7 (left: 1 7)\n7 * 1 = 7... no\n\nAlternative:\n11 - 10 = 1 (left: 1 1 8)\n1 + 1 = 2 (left: 2 8)\n2 * 8 = 16... no\n\nAlternative:\n11 - 10 = 1 (left: 1 1 8)\n8 / 1 = 8 (left: 1 8)\n8 * 1 = 8... no\n\nAlternative:\n11 - 10 = 1 (with the other 1: 1 1 8)\n1 * 8 = 8 (left: 1 8)\n8 + 1 = 9... no\n\nAlternative:\n10 + 8 = 18 (left: 1 11 18)\n18 + 1 = 19 (left: 11 19)\n19 + 11 = 30... no\n\nAlternative:\n11 / 1 = 11 (left: 8 10 11)\n10 - 8 = 2 (left: 2 11)\n2 * 11 = 22... no\n\nAlternative:\n10 / 1 = 10 (left: 8 10 11)\n11 - 8 = 3 (left: 3 10)\n3 * 10 = 30... no\n\nAlternative:\n8 / 1 = 8 (left: 8 10 11)\n11 - 10 = 1 (left: 1 8)\n8 * 1 = 8... no\n\nAlternative:\n1 + 11 = 12 (left: 8 10 12)\n12 - 8 = 4 (left: 4 10)\n4 * 10 = 40... no\n\nAlternative:\n1 + 11 = 12 (left: 8 10 12)\n12 / 2... wait, 8 and 10 remain\n8 + 10 = 18 (left: 12 18)\n18 - 12 = 6... no\n\nAlternative:\n1 + 11 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (10 - 8) * (1 + 11) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (10 - 8) * (11 + 1) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (10 - 8) * (11 + 1) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n11 + 1 = 12 (left: 8 10 12)\n10 - 8 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24",
+            "Steps:\n10 - 8 = 2 (left: 1 2 11)\n11 + 1 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (11 + 1) * (10 - 8) = 24"
+        ],
+        "infos": [
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            }
+        ],
+        "usage_so_far": {
+            "completion_tokens": 67835,
+            "prompt_tokens": 88400,
+            "cost": 0
+        }
+    },
+    {
+        "idx": 907,
+        "ys": [
+            "Steps:\n6 - 2 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (6 - 2) * (9 - 3) = 24",
+            "Steps:\n6 - 2 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (6 - 2) * (9 - 3) = 24",
+            "Steps:\n6 - 3 = 3 (left: 2 3 9)\n9 + 3 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (9 + (6 - 3)) * 2 = 24",
+            "Input: 2 3 6 9\nSteps:\n9 - 6 = 3 (left: 2 3 3)\n2 + 6 = 8 (left: 3 8)\n3 * 8 = 24 (left: 24)\nAnswer: (9 - 6) * (2 + 6) = 24",
+            "Steps:\n9 - 6 = 3 (left: 2 3 3)\n3 + 3 = 6 (left: 2 6)\n6 * 2 = 12... no wait, 6 * 2 = 12, that's wrong.\n\nLet me redo:\nSteps:\n9 - 6 = 3 (left: 2 3 3)\n3 * 2 = 6 (left: 3 6)\n6 * 3... no wait, that's 18. Hmm.\n\nLet me try again:\nSteps:\n9 - 2 = 7 (left: 3 6 7)\n6 - 3 = 3 (left: 3 7)\n3 * 7 = 21. No.\n\nTry:\nSteps:\n6 / 2 = 3 (left: 3 3 9)\n3 + 9 = 12 (left: 3 12)\n12 * 3 = 36. No.\n\nTry:\nSteps:\n9 / 3 = 3 (left: 2 3 6)\n6 + 3 = 9... no.\n\nTry:\nSteps:\n3 * 6 = 18 (left: 2 9 18)\n18 / 9 = 2... then 2+2=4. No.\n\nTry:\nSteps:\n9 - 3 = 6 (left: 2 6 6)\n6 / 2 = 3 (left: 3 6)\n3 * 6 = 18. No.\n\nTry:\nSteps:\n6 * 2 = 12 (left: 3 9 12)\n12 + 3 = 15... 15 + 9 = 24 but 9 already used? No, 9 remains: 15 + 9 = 24 \u2713 but wait, 3 and 9: 12 + 3 = 15 (left: 9 15), then 15 + 9 = 24 \u2713\n\nSteps:\n6 * 2 = 12 (left: 3 9 12)\n12 + 3 = 15 (left: 9 15)\n15 + 9 = 24 (left: 24)\nAnswer: (6 * 2 + 3) + 9 = 24",
+            "Steps:\n6 - 2 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (6 - 2) * (9 - 3) = 24",
+            "Steps:\n9 - 3 = 6 (left: 2 6 6)\n6 - 2 = 4 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (9 - 3) * (6 - 2) = 24",
+            "Steps:\n9 * 3 = 27 (left: 2 6 27)\n6 / 2 = 3 (left: 3 27)\n27 - 3 = 24 (left: 24)\nAnswer: (9 * 3) - (6 / 2) = 24",
+            "Steps:\n9 - 3 = 6 (left: 2 6 6)\n6 - 2 = 4 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (9 - 3) * (6 - 2) = 24We need answer follow format. Need solve 2 3 6 9. Need 24. Try (9-6)=3, 3*? 8? 2+3=5 no. (9+3)=12, 6/2=3, 12*? no 36. (9-3)=6, 6+6=12, *2=24 yes: (9-3+6)*2? Steps: 9-3=6 left 2 6 6; 6+6=12 left 2 12; 2*12=24. final (9-3+6)*2. Ensure choose two each step.Steps:\n9 - 3 = 6 (left: 2 6 6)\n6 + 6 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (9 - 3 + 6) * 2 = 24",
+            "Steps:\n9 + 6 = 15 (left: 2 3 15)\n15 + 3 = 18 (left: 2 18)\n18 + 2 = 24 (left: 24)\nAnswer: ((9 + 6) + 3) + 2 = 24",
+            "Steps:\n9 - 3 = 6 (left: 2 6 6)\n6 + 6 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (6 + (9 - 3)) * 2 = 24",
+            "Steps:\n6 / 2 = 3 (left: 3 3 9)\n9 * 3 = 27 (left: 3 27)\n27 - 3 = 24 (left: 24)\nAnswer: 9 * 3 - 6 / 2 = 24",
+            "Steps:\n6 * 9 = 54 (left: 2 3 54)\n54 / 2 = 27 (left: 3 27)\n27 - 3 = 24 (left: 24)\nAnswer: (6 * 9) / 2 - 3 = 24",
+            "Steps:\n9 - 3 = 6 (left: 2 6 6)\n6 + 6 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: ((9 - 3) + 6) * 2 = 24",
+            "Steps:\n6 * 2 = 12 (left: 3 9 12)\n9 + 3 = 12 (left: 12 12)\n12 + 12 = 24 (left: 24)\nAnswer: (6 * 2) + (9 + 3) = 24",
+            "Steps:\n6 - 2 = 4 (left: 4 3 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (6 - 2) * (9 - 3) = 24",
+            "Steps:\n9 - 6 = 3 (left: 2 3 3)\n3 + 3 = 6 (left: 2 6)\n2 * 6 = 24 (left: 24)\nAnswer: ((9 - 6) + 3) * 2 = 24",
+            "Steps:\n6 * 2 = 12 (left: 3 9 12)\n12 + 9 = 21 (left: 3 21)\n21 + 3 = 24 (left: 24)\nAnswer: ((6 * 2) + 9) + 3 = 24",
+            "Steps:\n6 / 2 = 3 (left: 3 3 9)\n3 * 9 = 27 (left: 3 27)\n27 - 3 = 24 (left: 24)\nAnswer: (9 * (6 / 2)) - 3 = 24",
+            "Steps:\n6 - 2 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (6 - 2) * (9 - 3) = 24",
+            "Steps:\n2 + 6 = 8 (left: 3 8 9)\n9 - 6 = 3 (left: 3 8)\n3 * 8 = 24 (left: 24)\nAnswer: (9 - 6) * (2 + 6) = 24",
+            "Steps:\n6 - 2 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (6 - 2) * (9 - 3) = 24",
+            "Steps:\n9 / 3 = 3 (left: 2 3 6)\n2 + 6 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: (2 + 6) * (9 / 3) = 24",
+            "Steps:\n6 + 2 = 8 (left: 3 6 8)\n9 - 6 = 3 (left: 3 8)\n3 * 8 = 24 (left: 24)\nAnswer: (9 - 6) * (6 + 2) = 24",
+            "Steps:\n9 + 6 = 15 (left: 2 3 15)\n15 - 3 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: ((9 + 6) - 3) * 2 = 24",
+            "Steps:\n9 - 6 = 3 (left: 2 3 3)\n3 + 3 = 6 (left: 2 6)\n2 * 6 = 12... wait, let me try again.\n\nSteps:\n6 * 2 = 12 (left: 3 9 12)\n12 - 9 = 3 (left: 3 3)\n3 * 3 = 9... not 24, retry.\n\nSteps:\n9 + 3 = 12 (left: 2 6 12)\n12 + 6 = 18 (left: 2 18)\n18 + 2 = 20... retry.\n\nSteps:\n9 - 3 = 6 (left: 2 6 6)\n6 * 2 = 12 (left: 6 12)\n12 + 6 = 18... retry.\n\nSteps:\n6 / 2 = 3 (left: 3 3 9)\n9 * 3 = 27 (left: 3 27)\n27 - 3 = 24 (left: 24)\nAnswer: 9 * (6 / 2) - 3 = 24",
+            "Steps:\n9 - 3 = 6 (left: 2 6 6)\n6 - 2 = 4 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (9 - 3) * (6 - 2) = 24",
+            "Steps:\n9 + 6 = 15 (left: 2 3 15)\n15 - 3 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: ((9 + 6) - 3) * 2 = 24",
+            "Steps:\n9 - 3 = 6 (left: 2 6 6)\n6 - 2 = 4 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (9 - 3) * (6 - 2) = 24",
+            "Steps:\n6 - 2 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (6 - 2) * (9 - 3) = 24",
+            "Steps:\n9 - 3 = 6 (left: 2 6 6)\n6 + 6 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: ((9 - 3) + 6) * 2 = 24",
+            "Steps:\n6 - 2 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (6 - 2) * (9 - 3) = 24",
+            "Steps:\n3 + 9 = 12 (left: 2 6 12)\n12 * 2 = 24 (left: 6 24)\nAnswer: (3 + 9) * 2 = 24",
+            "6 / 3 = 2 (left: 2 9 9)\n9 + 9 = 18 ... no \u2014 use: 9 + 3 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (9 + 3) * (6 / 3) = 24",
+            "Steps:\n9 * 3 = 27 (left: 2 6 27)\n6 / 2 = 3 (left: 3 27)\n27 - 3 = 24 (left: 24)\nAnswer: (9 * 3) - (6 / 2) = 24",
+            "Steps:\n6 - 2 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (6 - 2) * (9 - 3) = 24",
+            "Steps:\n6 / 2 = 3 (left: 3 3 9)\n9 * 3 = 27 (left: 3 27)\n27 - 3 = 24 (left: 24)\nAnswer: (9 * 3) - (6 / 2) = 24",
+            "Steps:\n9 - 3 = 6 (left: 2 6 6)\n6 + 6 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: ((9 - 3) + 6) * 2 = 24",
+            "Steps:\n6 * 9 = 54 (left: 2 3 54)\n54 / 2 = 27 (left: 3 27)\n27 - 3 = 24 (left: 24)\nAnswer: (6 * 9) / 2 - 3 = 24",
+            "Steps:\n9 - 3 = 6 (left: 2 6 6)\n6 + 6 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (9 - 3 + 6) * 2 = 24",
+            "Steps:\n9 + 6 = 15 (left: 2 3 15)\n15 - 3 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: ((9 + 6) - 3) * 2 = 24",
+            "Steps:\n6 * 9 = 54 (left: 2 3 54)\n54 / 2 = 27 (left: 3 27)\n27 - 3 = 24 (left: 24)\nAnswer: (6 * 9) / 2 - 3 = 24",
+            "Steps:\n9 + 3 = 12 (left: 2 6 12)\n6 * 2 = 12 (left: 12 12)\n12 + 12 = 24 (left: 24)\nAnswer: (9 + 3) + (6 * 2) = 24",
+            "Steps:\n6 - 2 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (6 - 2) * (9 - 3) = 24",
+            "Steps:\n2 * 6 = 12 (left: 3 9 12)\n9 + 3 = 12 (left: 12 12)\n12 + 12 = 24 (left: 24)\nAnswer: (2 * 6) + (9 + 3) = 24",
+            "Steps:\n9 - 3 = 6 (left: 2 6 6)\n6 - 2 = 4 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (9 - 3) * (6 - 2) = 24",
+            "Steps:\n9 - 6 = 3 (left: 2 3 3)\n3 * 3 = 9 (left: 2 9)\n9 + 2 = 11... let me redo:\n9 + 3 = 12 (left: 2 6 12)\n12 * 2 = 24 (left: 6 24)\n6 - 6? No\u2014\nCorrect steps:\n6 / 3 = 2 (left: 2 2 9)\n2 * 9 = 18 (left: 2 18)\n18 + 2 = 20... \n\nTry again:\n9 / 3 = 3 (left: 2 3 6)\n6 * 3 = 18... \n6 + 3 = 9 (left: 2 9 9)\n9 + 9 = 18...\n\nSolution:\n9 - 3 = 6 (left: 2 6 6)\n6 + 6 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (6 + (9 - 3)) * 2 = 24",
+            "Steps:\n2 + 3 = 5 (left: 5 6 9)\n9 - 5 = 4 (left: 4 6)\n6 * 4 = 24 (left: 24)\nAnswer: 6 * (9 - (2 + 3)) = 24",
+            "Steps:\n6 / 2 = 3 (left: 3 3 9)\n9 * 3 = 27 (left: 3 27)\n27 - 3 = 24 (left: 24)\nAnswer: 9 * (6 / 2) - 3 = 24",
+            "Steps:\n9 - 6 = 3 (left: 2 3 3)\n3 + 3 = 6 (left: 2 6)\n6 * 2 = 12... let me redo:\n6 / 2 = 3 (left: 3 3 9)\n9 - 3 = 6 (left: 3 6)\n3 * 6 = 18... try again:\n9 + 3 = 12 (left: 2 6 12)\n6 * 2 = 12... use:\n6 + 2 = 8 (left: 3 9 8)\n9 * 8 = 72... \nSolution: 6 / (9 - 3 - ... \n\nSteps:\n9 - 3 = 6 (left: 2 6 6)\n6 + 6 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: ((9 - 3) + 6) * 2 = 24",
+            "Steps:\n9 - 6 = 3 (left: 2 3 3)\n3 * 3 = 9 (left: 2 9)\n2 + 9 = 11... no.\n\nLet me retry:\n2 + 3 = 5 (left: 5 6 9)\n5 + 9 = 14... no.\n\nSteps:\n9 - 3 = 6 (left: 2 6 6)\n6 / 2 = 3 (left: 3 6)\n3 * 6 = 18... no.\n\nSteps:\n6 / 2 = 3 (left: 3 3 9)\n3 * 9 = 27 (left: 3 27)\n27 - 3 = 24 (left: 24)\nAnswer: (3 * 9) - (6 / 2) = 24",
+            "Steps:\n6 - 2 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (6 - 2) * (9 - 3) = 24",
+            "Steps:\n9 - 3 = 6 (left: 2 6 6)\n6 - 2 = 4 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (6 - 2) * (9 - 3) = 24",
+            "Steps:\n2 * 6 = 12 (left: 3 9 12)\n9 + 3 = 12 (left: 12 12)\n12 + 12 = 24 (left: 24)\nAnswer: (2 * 6) + (9 + 3) = 24",
+            "Steps:\n9 - 6 = 3 (left: 2 3 3)\n3 * 2 = 6 (left: 3 6)\n6 * 3 = 18... let me redo:\n2 * 6 = 12 (left: 3 9 12)\n9 - 3 = 6... \nBetter:\n6 / 2 = 3 (left: 3 3 9)\n3 + 9 = 12 (left: 3 12)\n12 * 3 = 36... no.\nTry: 9 / 3 = 3 (left: 2 3 6)\n6 * 3 = 18 (left: 2 18)\n18 + 2 = 20... no.\nTry: 3 * 6 = 18 (left: 2 9 18)\n18 / 2 = 9 (left: 9 9)\n9 * 9 = 81... no.\nTry: 2 + 6 = 8 (left: 3 8 9)\n8 * 3 = 24 (left: 9 24)\n24 * 9 = 216... \n24 + 9 = 33... 24 - 9 = 15... no.\nTry: 2 * 3 = 6 (left: 6 6 9)\n6 * 6 = 36... 36 - 9 = 27... 36 + 9 = 45... 36 / 9 = 4... no.\nHmm.\nTry: 6 - 2 = 4 (left: 3 4 9)\n4 * 9 = 36... 36 / 3 = 12... no.\n3 * 4 = 12 (left: 9 12)\n12 + 9 = 21... 12 * 9 = 108... no.\nTry: 9 - 3 = 6 (left: 2 6 6)\n6 + 6 = 12 (left: 2 12)\n12 * 2 = 24 \u2713\nAnswer: ((9 - 3) + 6) * 2 = 24",
+            "Steps:\n6 / 2 = 3 (left: 3 3 9)\n9 * 3 = 27 (left: 3 27)\n27 - 3 = 24 (left: 24)\nAnswer: (9 * (6 / 2)) - 3 = 24",
+            "Steps:\n9 - 3 = 6 (left: 2 6 6)\n6 - 2 = 4 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: 6 * ((9 - 3) - 2) = 24",
+            "Steps:\n9 - 3 = 6 (left: 2 6 6)\n6 + 6 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (2 * ((9 - 3) + 6)) = 24",
+            "Steps:\n6 / 2 = 3 (left: 3 3 9)\n9 * 3 = 27 (left: 3 27)\n27 - 3 = 24 (left: 24)\nAnswer: 9 * (6 / 2) - 3 = 24",
+            "Steps:\n6 / 2 = 3 (left: 3 3 9)\n9 * 3 = 27 (left: 3 27)\n27 - 3 = 24 (left: 24)\nAnswer: 9 * (6 / 2) - 3 = 24",
+            "Steps:\n9 - 3 = 6 (left: 2 6 6)\n6 + 6 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: ((9 - 3) + 6) * 2 = 24",
+            "Steps:\n6 * 2 = 12 (left: 3 9 12)\n9 + 3 = 12 (left: 12 12)\n12 + 12 = 24 (left: 24)\nAnswer: (6 * 2) + (9 + 3) = 24",
+            "Steps:\n6 - 2 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (6 - 2) * (9 - 3) = 24",
+            "Steps:\n9 - 6 = 3 (left: 2 3 3)\n3 * 3 = 9 (left: 2 9)\n9 + 2 = 11... no\nTry: 9 - 3 = 6 (left: 2 6 6)\n6 * 6 / 2... not allowed one step\nTry: 2 * 3 = 6 (left: 6 6 6)\n6 + 6 = 12 (left: 6 12)\n12 + 6 = 18... no\nTry: 6 * 6 = 36 (left: 6 36)\n36 / 6 = 6... no\n\nAlternative: 9 + 3 = 12 (left: 2 6 12)\n12 * 2 = 24 (left: 6 24)\n6 - 24 = -18... no\nTry: 12 - 6 = 6 (left: 2 6)\n6 * 2 = 12... no\n\nTry: 6 / 2 = 3 (left: 3 3 9)\n3 + 3 = 6 (left: 6 9)\n6 * 9 = 54... no\nTry: 9 - 3 = 6 (left: 3 6)\n6 * 3 = 18... no\nTry: 9 + 3 = 12 (left: 3 12)\n12 * 3 = 36... no\nTry: 9 * 3 = 27 (left: 3 27)\n27 - 3 = 24 \u2713\n\nSteps:\n6 / 2 = 3 (left: 3 3 9)\n9 * 3 = 27 (left: 3 27)\n27 - 3 = 24 (left: 24)\nAnswer: 9 * (6 / 2) - 3 = 24",
+            "Steps:\n6 + 2 = 8 (left: 3 8 9)\n9 - 6 = 3 (left: 3 8)\n3 * 8 = 24 (left: 24)\nAnswer: (9 - 6) * (6 + 2) = 24",
+            "Steps:\n9 - 6 = 3 (left: 2 3 3)\n3 * 3 = 9 (left: 2 9)\n9 + 2 = 11... no\n\nTry again:\n6 / 2 = 3 (left: 3 3 9)\n3 * 9 = 27 (left: 3 27)\n27 - 3 = 24 (left: 24)\n\nAnswer: (3 * 9) - (6 / 2) = 24",
+            "Steps:\n9 - 3 = 6 (left: 2 6 6)\n6 + 6 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (6 + (9 - 3)) * 2 = 24",
+            "Steps:\n2 + 6 = 8 (left: 3 8 9)\n9 / 3 = 3 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: (2 + 6) * (9 / 3) = 24",
+            "Steps:\n9 + 6 = 15 (left: 2 3 15)\n15 - 3 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: ((9 + 6) - 3) * 2 = 24",
+            "Steps:\n9 - 3 = 6 (left: 2 6 6)\n6 - 2 = 4 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (9 - 3) * (6 - 2) = 24",
+            "Steps:\n2 + 6 = 8 (left: 3 8 9)\n3 + 9 = 12 (left: 8 12)\n8 + 12 = 24 (left: 24)\nAnswer: (2 + 6) + (3 + 9) = 24Need solve 2 3 6 9 to 24. Find solution. 6*? maybe 6/(?)... 9-3=6, 6+? 2? 6*? Let's find: 6/(?)... 9+6=15, *? no. 3*6=18, +? 9-2=7 =>25, -? 9+2=11 =>29. 6/(3/9)=18, +? 2=20. 9/(3/?)... 9/(3/6)=18, +? 6? no. 2*(9+3)=24 yes! 2*(9+3)=24 uses 2,9,3, leaving 6 unused though need use all four. Need incorporate 6 as identity: 6/6? no only one 6. Could do 2*(9+3)* (6/6)? impossible. Need use 6 somehow maybe 6-6? no.\n\nFind expression using all: (9-6)*? =3*8=24 need 8 from 2,3? no 2+3=5, 2*3=6, 3-2=1, 3/2=1.5. (9+?)*? etc. (6-2)*? =4*6=24 need 6 from 9,3: 9-3=6 yes! (6-2)*(9-3)=24. Great.\n\nSteps:\n6 - 2 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24\nAnswer: (6 - 2) * (9 - 3) = 24Steps:\n6 - 2 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (6 - 2) * (9 - 3) = 24",
+            "Steps:\n9 - 3 = 6 (left: 2 6 6)\n6 / 2 = 3 (left: 3 6)\n6 * 3 = 18... let me redo:\n9 - 6 = 3 (left: 2 3 6)\n6 / 3 = 2 (left: 2 2)\n2 * 2 = 4... let me redo:\n9 - 3 = 6 (left: 2 6 6)\n6 + 6 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (6 + (9 - 3)) * 2 = 24",
+            "Steps:\n9 + 6 = 15 (left: 2 3 15)\n15 - 3 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: ((9 + 6) - 3) * 2 = 24",
+            "Steps:\n9 - 3 = 6 (left: 2 6 6)\n6 + 6 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: 2 * (6 + (9 - 3)) = 24",
+            "Steps:\n6 - 2 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (6 - 2) * (9 - 3) = 24",
+            "Steps:\n2 * 3 = 6 (left: 6 6 9)\n6 + 6 = 12 (left: 9 12)\n12 + 9 = 21 (left: 21)\n\nThat's not right. Let me try again.\n\nSteps:\n9 - 6 = 3 (left: 2 3 3)\n3 * 3 = 9 (left: 2 9)\n2 * 9 = 18 (left: 18)\n\nNot 24. Try again.\n\nSteps:\n6 * 2 = 12 (left: 3 9 12)\n9 - 3 = 6 (left: 6 12)\n12 * 6 = 72\n\nNo. Try again.\n\nSteps:\n9 - 3 = 6 (left: 2 6 6)\n6 / 2 = 3 (left: 3 6)\n3 * 6 = 18\n\nNo. Try again.\n\nSteps:\n6 + 2 = 8 (left: 3 8 9)\n8 * 3 = 24 (left: 9 24)\n9 * 24 = 216\n\nNo. Try again.\n\nSteps:\n9 + 3 = 12 (left: 2 6 12)\n12 / 2 = 6 (left: 6 6)\n6 * 6 = 36\n\nNo. Try again.\n\nSteps:\n9 - 2 = 7 (left: 3 6 7)\n\nHmm, not promising. Try again.\n\nSteps:\n6 - 3 = 3 (left: 2 3 9)\n9 * 3 = 27 (left: 2 27)\n27 - 2 = 25\n\nNo. Try again.\n\nSteps:\n6 / 3 = 2 (left: 2 2 9)\n2 + 2 = 4 (left: 4 9)\n4 * 9 = 36\n\nNo. Try again.\n\nSteps:\n9 / 3 = 3 (left: 2 3 6)\n6 + 3 = 9 (left: 2 9)\n2 * 9 = 18\n\nNo. Try again.\n\nSteps:\n9 + 6 = 15 (left: 2 3 15)\n15 + 3 = 18 (left: 2 18)\n18 + 2 = 20\n\nNo. Try again.\n\nSteps:\n6 * 3 = 18 (left: 2 9 18)\n18 / 2 = 9 (left: 9 9)\n9 + 9 = 18\n\nNo. Try again.\n\nSteps:\n9 * 2 = 18 (left: 3 6 18)\n18 - 6 = 12 (left: 3 12)\n12 * 3 = 36\n\nNo. Try again.\n\nSteps:\n3 * 9 = 27 (left: 2 6 27)\n6 / 2 = 3 (left: 3 27)\n27 + 3 = 30\n\nNo. Try again.\n\nSteps:\n6 - 2 = 4 (left: 3 4 9)\n9 - 4 = 5 (left: 3 5)\n3 * 5 = 15\n\nNo. Try again.\n\nSteps:\n3 * 2 = 6 (left: 6 6 9)\n9 - 6 = 3 (left: 3 6)\n6 * 3 = 18\n\nNo. Try again.\n\nSteps:\n9 * 6 = 54 (left: 2 3 54)\n54 / 3 = 18 (left: 2 18)\n18 + 2 = 20\n\nNo. Try again.\n\nSteps:\n9 + 2 = 11 (left: 3 6 11)\n11 + 6 = 17 (left: 3 17)\n17 + 3 = 20\n\nNo. Try again.\n\nSteps:\n9 + 2 = 11 (left: 3 6 11)\n11 - 3 = 8 (left: 6 8)\n6 * 8 = 48\n\nNo. Try again.\n\nSteps:\n6 + 3 = 9 (left: 2 9 9)\n9 + 9 = 18 (left: 2 18)\n18 + 2 = 20\n\nNo. Try again.\n\nSteps:\n9 - 6 = 3 (left: 2 3 3)\n2 + 3 = 5 (left: 3 5)\n5 * 3 = 15\n\nNo. Try again.\n\nSteps:\n6 / 2 = 3 (left: 3 3 9)\n9 - 3 = 6 (left: 3 6)\n6 * 3 = 18\n\nNo. Try again.\n\nSteps:\n6 + 9 = 15 (left: 2 3 15)\n15 / 3 = 5 (left: 2 5)\n5 * 2 = 10\n\nNo. Try again.\n\nSteps:\n6 * 9 = 54 (left: 2 3 54)\n54 - 3 = 51 (left: 2 51)\n51 / 2 not integer... \n\nHmm. Try again.\n\nSteps:\n9 - 3 = 6 (left: 2 6 6)\n6 + 6 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (6 + 6) * 2 = 24 where 6 = 9 - 3",
+            "Steps:\n2 + 6 = 8 (left: 3 8 9)\n9 / 3 = 3 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: (2 + 6) * (9 / 3) = 24",
+            "Steps:\n6 * 2 = 12 (left: 3 9 12)\n9 - 3 = 6 (left: 6 12)\n12 + 6 = 18 (left: 18)... no\n\nLet me retry:\n9 - 6 = 3 (left: 2 3 3)\n3 * 3 = 9 (left: 2 9)... no\n\nRetry:\n6 / 3 = 2 (left: 2 2 9)\n2 + 2 = 4 (left: 4 9)\n4 * 9 = 36... no\n\nRetry:\n9 + 3 = 12 (left: 2 6 12)\n6 - 2 = 4 (left: 4 12)\n4 * 12 = 48... no\n\nRetry:\n6 * 2 = 12 (left: 3 9 12)\n12 - 9 = 3 (left: 3 3)\n3 * 3 = 9... no\n\nRetry:\n9 * 2 = 18 (left: 3 6 18)\n18 - 6 = 12 (left: 3 12)\n12 * 3 = 36... no\n\nRetry:\n6 * 3 = 18 (left: 2 9 18)\n18 + 2 = 20 (left: 9 20)... no\n\nRetry:\n9 + 6 = 15 (left: 2 3 15)\n15 / 3 = 5 (left: 2 5)\n5 * 2 = 10... no\n\nRetry:\n3 * 2 = 6 (left: 6 6 9)\n6 + 6 = 12 (left: 9 12)\n12 + 9 = 21... no\n\nRetry:\n9 / 3 = 3 (left: 2 3 6)\n6 * 3 = 18 (left: 2 18)... no\n\nRetry:\n9 - 2 = 7 (left: 3 6 7)... no\n\nRetry:\n6 + 2 = 8 (left: 3 8 9)\n9 - 3 = 6 (left: 6 8)... no\n\nRetry:\n9 - 3 = 6 (left: 2 6 6)\n6 * 6 = 36 (left: 2 36)... no\n\nRetry:\n9 - 3 = 6 (left: 2 6 6)\n6 + 2 = 8 (left: 6 8)\n6 * 8 = 48... no\n\nRetry:\n9 - 3 = 6 (left: 2 6 6)\n6 / 2 = 3 (left: 3 6)\n6 * 3 = 18... no\n\nRetry:\n9 / 3 = 3 (left: 2 3 6)\n6 + 3 = 9 (left: 2 9)... no\n\nRetry:\n3 / 2 = 1.5 (left: 1.5 6 9)\n9 * 1.5 = 13.5... no\n\nRetry:\n9 + 2 = 11 (left: 3 6 11)... no\n\nRetry:\n6 - 2 = 4 (left: 3 4 9)\n9 * 4 = 36 (left: 3 36)... no\n\nRetry:\n6 - 2 = 4 (left: 3 4 9)\n9 - 4 = 5 (left: 3 5)... no\n\nRetry:\n6 - 2 = 4 (left: 3 4 9)\n9 / 3 = 3 (left: 3 4)\n3 * 4 = 12... no\n\nRetry:\n6 - 2 = 4 (left: 3 4 9)\n4 * 3 = 12 (left: 9 12)\n12 - 9 = 3... no\n\nRetry:\n6 - 2 = 4 (left: 3 4 9)\n9 + 3 = 12 (left: 4 12)\n12 * 4 = 48... no\n\nRetry:\n6 - 2 = 4 (left: 3 4 9)\n9 + 4 = 13 (left: 3 13)... no\n\nRetry:\n6 - 2 = 4 (left: 3 4 9)\n4 + 3 = 7 (left: 7 9)... no\n\nRetry:\n6 - 2 = 4 (left: 3 4 9)\n9 * 3 = 27 (left: 4 27)\n27 - 4 = 23... no\n\nRetry:\n6 - 2 = 4 (left: 3 4 9)\n9 / 4 = 2.25... no\n\nRetry:\n9 * 3 = 27 (left: 2 6 27)\n27 / 2 = 13.5... no\n\nRetry:\n9 * 3 = 27 (left: 2 6 27)\n27 - 2 = 25 (left: 6 25)... no\n\nRetry:\n9 * 3 = 27 (left: 2 6 27)\n6 + 2 = 8 (left: 8 27)... no\n\nRetry:\n9 * 3 = 27 (left: 2 6 27)\n6 - 2 = 4 (left: 4 27)... no\n\nRetry:\n9 * 3 = 27 (left: 2 6 27)\n6 / 2 = 3 (left: 3 27)\n27 - 3 = 24 \u2713 (left: 24)\nAnswer: 9 * 3 - 6 / 2 = 24",
+            "Steps:\n9 + 6 = 15 (left: 2 3 15)\n15 - 3 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: ((9 + 6) - 3) * 2 = 24",
+            "Steps:\n9 - 3 = 6 (left: 2 6 6)\n6 + 6 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: ((9 - 3) + 6) * 2 = 24",
+            "Steps:\n9 - 3 = 6 (left: 2 6 6)\n6 - 2 = 4 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (9 - 3) * (6 - 2) = 24",
+            "Steps:\n9 - 3 = 6 (left: 2 6 6)\n6 + 6 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (9 - 3 + 6) * 2 = 24",
+            "Steps:\n9 - 3 = 6 (left: 2 6 6)\n6 + 6 = 12 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (9 - 3 + 6) * 2 = 24",
+            "Steps:\n2 + 6 = 8 (left: 3 8 9)\n9 / 3 = 3 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: (2 + 6) * (9 / 3) = 24",
+            "Steps:\n6 - 2 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (6 - 2) * (9 - 3) = 24",
+            "Steps:\n6 - 2 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (6 - 2) * (9 - 3) = 24",
+            "Steps:\n2 + 6 = 8 (left: 8 9)\n9 - 6 = 3 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: (2 + 6) * (9 - 6) = 24",
+            "Steps:\n6 + 2 = 8 (left: 3 8 9)\n9 - 3 = 6 (left: 6 8)\n8 * 6 = 48... no\n\nLet me retry:\n9 - 6 = 3 (left: 2 3 3)\n3 * 3 = 9... no\n\nBetter:\n9 * 2 = 18 (left: 3 6 18)\n18 - 6 = 12 (left: 3 12)\n12 * 3 = 36... no\n\nTry:\n9 + 3 = 12 (left: 2 6 12)\n12 + 6 = 18... no\n\nTry:\n6 * 2 = 12 (left: 3 9 12)\n9 + 3 = 12 (left: 12 12)\n12 + 12 = 24 (left: 24)\nAnswer: (6 * 2) + (9 + 3) = 24",
+            "Steps:\n9 - 6 = 3 (left: 2 3 3)\n6 + 2 = 8 (left: 3 8)\n3 * 8 = 24 (left: 24)\nAnswer: (9 - 6) * (6 + 2) = 24",
+            "Steps:\n9 - 3 = 6 (left: 2 6 6)\n6 + 6 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (9 - 3 + 6) * 2 = 24",
+            "Steps:\n9 - 3 = 6 (left: 2 6 6)\n6 + 6 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: ((9 - 3) + 6) * 2 = 24",
+            "Steps:\n9 - 6 = 3 (left: 2 3 3)\n3 + 2 = 5 (left: 3 5)\n5 * 3 = 15 (left: 15)\n\nHmm, let me try again.\n\nSteps:\n9 - 3 = 6 (left: 2 6 6)\n6 / 2 = 3 (left: 3 6)\n6 * 3 = 18 (left: 18)\n\nTry once more:\n2 * 6 = 12 (left: 3 9 12)\n9 - 3 = 6 (left: 6 12)\n12 * 6 = 72... no.\n\nCorrect solution:\n3 * 6 = 18 (left: 2 9 18)\n9 - 2 = 7... no.\n\nTry: 9 + 3 = 12 (left: 2 6 12)\n12 - 6 = 6... no.\n\nTry: 6 + 2 = 8 (left: 3 8 9)\n8 * 3 = 24 (left: 9 24)\n24 - 9 = 15... no.\n\nTry: 9 * 6 = 54 (left: 2 3 54)\n54 / 3 = 18... no.\n\nTry: 9 / 3 = 3 (left: 2 3 6)\n6 * 3 = 18... no.\n\nTry: 6 / 3 = 2 (left: 2 2 9)\n2 + 2 = 4... no.\n\nTry: 9 - 2 = 7 (left: 3 6 7)\n7 * 3 = 21 (left: 6 21)\n21 + 6 = 27... no.\n\nTry: 9 - 6 = 3 (left: 2 3 3)\n3 + 3 = 6... no.\n\nTry: 9 + 6 = 15 (left: 2 3 15)\n15 + 3 = 18 (left: 2 18)\n18 + 2 = 20... no.\n\nTry: 9 * 3 = 27 (left: 2 6 27)\n27 - 6 = 21 (left: 2 21)\n21 + 2 = 23... no.\n\nTry: 9 * 2 = 18 (left: 3 6 18)\n18 - 6 = 12 (left: 3 12)\n12 * 3 = 36... no.\n\nTry: 6 * 2 = 12 (left: 3 9 12)\n12 + 9 = 21... no.\n\nTry: 6 - 2 = 4 (left: 3 4 9)\n9 - 4 = 5... no.\n\nTry: 6 - 3 = 3 (left: 2 3 9)\n9 * 2 = 18... no.\n\nTry: 9 - 3 = 6 (left: 2 6 6)\n6 + 6 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: ((9 - 3) + 6) * 2 = 24",
+            "Steps:\n9 - 6 = 3 (left: 2 3 3)\n3 * 3 = 9 (left: 2 9)\n9 * 2 = 18... not 24. Try again:\n3 * 2 = 6 (left: 6 6 9)\n6 * 6 = 36 (left: 9 36)\n36 - 9 = 27... not 24. Try again:\n6 * 9 = 54 (left: 2 3 54)\n54 / 3 = 18 (left: 2 18)\n18 + 2 = 20... not 24. Try again:\n9 - 3 = 6 (left: 2 6 6)\n6 + 6 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: ((9 - 3) + 6) * 2 = 24",
+            "Steps:\n9 + 6 = 15 (left: 2 3 15)\n15 - 3 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: ((9 + 6) - 3) * 2 = 24",
+            "Steps:\n9 * 6 = 54 (left: 2 3 54)\n54 / 2 = 27 (left: 3 27)\n27 - 3 = 24 (left: 24)\nAnswer: (9 * 6) / 2 - 3 = 24",
+            "Steps:\n2 + 3 = 5 (left: 5 6 9)\n9 - 5 = 4 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (9 - (2 + 3)) * 6 = 24",
+            "Steps:\n3 + 6 = 9 (left: 2 9 9)\n9 - 2 = 7 (left: 7 9)\n... try another path:\n9 / 3 = 3 (left: 3 6 9)\n6 - 3 = 3 (left: 3 9)\n... correct path:\n6 / 2 = 3 (left: 3 3 9)\n9 + 3 = 12 (left: 3 12)\n3 * 12 = 36 \u2717\n\nCorrect solution:\n9 - 3 = 6 (left: 2 6 6)\n6 + 6 = 12 (left: 2 12)\n... no:\n9 * 2 = 18 (left: 3 6 18)\n18 / 3 = 6 (left: 6 6)\n6 + 6 = 12 \u2717\n\nActual:\n3 * 6 = 18 (left: 2 9 18)\n18 + 9 = 27 (left: 2 27)\n27 - 2 = 25 \u2717\n\nWorking it out: (2 + 6) * (9 - 3)? = 8 * 6 = 48 \u2717. (9 - 6) * 2 * ... only three left. 9 + 6 = 15, 15 + 3 = 18, *2=36. 9 * 6 = 54, 54 / 3 = 18, *2 = 36. 9 - 6 = 3, 3 + 3 = 6... 6 * 2 = 12. 9 / 3 = 3, 3 * 6 = 18, 18 + 2 = 20. 9 / 3 = 3, 3 + 6 = 9, 9 * 2 = 18. 9 + 3 = 12, 12 + 6 = 18... 9 * 3 = 27, 27 - 6 = 21, +2=23. 27 - 2 = 25, 25... 6 - 3 = 3, 9 * 3 = 27, 27 - 2 = 25. 6 - 2 = 4, 9 + 3 = 12, 12 + 4 = 16. 9 - 2 = 7, 7 + 3 = 10... 9 * 2 = 18, 18 - 6 = 12, 12 * 3 = 36. 18 / 6 = 3, 3 * 9 = 27. 9 - 6 = 3, 3 * 3 = 9... 9 * 6 = 54, 54 - 2 = 52... 8 * 3: 2+6=8, 9-3=6? uses 3 twice. 2 * 6 = 12, 12 - 3 = 9, 9 + 9? no. 2 * 3 = 6, 6 + 6 = 12, 12 * ... 9? 108. 12 - 9 = 3, 3... 6+6=12, 12+9=21, 21+... 2 used. 6*6=36? 2*3=6, 9-6=3, 3... 6*3? 6+3=9,9+9=18. 6-3=3,3*9=27,27-... 2 used in 6. 6/3=2, 2+2? no. 9/3=3, 6*3=18, 18+... 2: 20, 18-2=16, 18*2=36. 9/3=3, 3+3? no other 3... wait 6: 3+6=9, 9*9? only one 9. Hmm 9/3=3, 6-3=3, 3*3=9. 9/3=3, 3*6=18, 18/2=9. 9/3=3, 6+3=9, 9+2=11. 9/3=3, 3-6 neg. 9*3=27, 27/... 27-6=21, 27-3? no. 27/6... 27-2=25. 6/3=2, 9*2=18, 18*2? no second... 9+2=11, 11... 6/3=2, 9-2=7, 7*... 6/3=2, 9+2=11, 11*2? no. 6/3=2, 2*2=4? no. 6/3=2, 9*2=18, 18+2? no. Hmm.\n\nTry 9-6=3, 3*2=6, 6... 3 left: 6 and 3? Wait: 9-6=3 (left 2,3,3), 3*2=6 (left 3,6), 6... 3+6=9. 3*6=18. 6/3=2. Hmm. 9-6=3, 3+3=6, 6... 2: 12, 3, 4, 8. 6*2=12. 6+2=8. 6-2=4. 6/2=3. No.\n\n9+6=15, 15-3=12, 12*2=24 \u2713\n\nAnswer: (9 + 6 - 3) * 2 = 24\n\nSteps:\n9 + 6 = 15 (left: 2 3 15)\n15 - 3 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (9 + 6 - 3) * 2 = 24",
+            "Steps:\n6 / 2 = 3 (left: 3 3 9)\n3 * 9 = 27 (left: 3 27)\n27 - 3 = 24 (left: 24)\nAnswer: (9 * (6 / 2)) - 3 = 24",
+            "Steps:\n9 - 3 = 6 (left: 2 6 6)\n6 + 6 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (6 + (9 - 3)) * 2 = 24",
+            "Steps:\n9 - 3 = 6 (left: 2 6 6)\n6 + 6 = 12 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: 2 * ((9 - 3) + 6) = 24"
+        ],
+        "infos": [
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            }
+        ],
+        "usage_so_far": {
+            "completion_tokens": 95861,
+            "prompt_tokens": 132600,
+            "cost": 0
+        }
+    },
+    {
+        "idx": 908,
+        "ys": [
+            "Steps:\n9 - 3 = 6 (left: 1 4 5 6)\n5 - 1 = 4 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n3 * 5 = 15 (left: 1 9 15)\n15 + 9 = 24 (left: 1 24)\n24 * 1 = 24 (left: 24)\nAnswer: (3 * 5 + 9) * 1 = 24",
+            "Steps:\n9 / 1 = 9 (left: 3 5 9)\n5 * 3 = 15 (left: 9 15)\n15 + 9 = 24 (left: 24)\nAnswer: (5 * 3) + (9 / 1) = 24",
+            "Steps:\n9 - 3 = 6 (left: 1 5 6)\n5 - 1 = 4 (left: 4 6)\n6 * 4 = 24 (left: 24)\nAnswer: (9 - 3) * (5 - 1) = 24",
+            "Steps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n9 - 3 = 6 (left: 1 5 6)\n5 - 1 = 4 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (9 - 3) * (5 - 1) = 24",
+            "Steps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n9 - 3 = 6 (left: 1 5 6)\n5 - 1 = 4 (left: 4 6)\n6 * 4 = 24 (left: 24)\nAnswer: (9 - 3) * (5 - 1) = 24",
+            "Steps:\n1 + 3 = 4 (left: 4 5 9)\n4 * 5 = 20 (left: 9 20)\n20 + 9 = 29... let me try again.\n\nSteps:\n9 - 5 = 4 (left: 1 3 4)\n4 * 3 = 12 (left: 1 12)\n12 + 1 = 13... let me try again.\n\nSteps:\n5 + 1 = 6 (left: 3 6 9)\n9 - 3 = 6 (left: 6 6)\n6 * 6 = 24 (left: 24)\nAnswer: (5 + 1) * (9 - 3) = 24",
+            "Steps:\n1 + 3 = 4 (left: 4 5 9)\n4 + 5 = 9 (left: 9 9)\n9 * 9 = 81... let me try again\n\nSteps:\n9 - 5 = 4 (left: 1 3 4)\n3 * 4 = 12 (left: 1 12)\n12 + 1 = 13... no\n\nSteps:\n5 * 3 = 15 (left: 1 9 15)\n15 - 9 = 6 (left: 1 6)\n6 * 1 = 6... no\n\nSteps:\n9 - 1 = 8 (left: 3 5 8)\n5 - 3 = 2 (left: 2 8)\n8 * 2 = 16... no\n\nSteps:\n9 + 3 = 12 (left: 1 5 12)\n5 - 1 = 4 (left: 4 12)\n12 * 4 = 48... no\n\nSteps:\n3 - 1 = 2 (left: 2 5 9)\n2 * 5 = 10 (left: 9 10)\n10 + 9 = 19... no\n\nSteps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n5 * 3 = 15 (left: 1 9 15)\n15 + 9 = 24 (left: 1 24)\n24 / 1 = 24 (left: 24)\nAnswer: (5 * 3 + 9) / 1 = 24",
+            "Steps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n3 * 5 = 15 (left: 1 9 15)\n15 + 9 = 24 (left: 1 24)\n24 * 1 = 24 (left: 24)\nAnswer: (3 * 5 + 9) * 1 = 24",
+            "Steps:\n9 - 5 = 4 (left: 1 3 4)\n4 * 3 = 12 (left: 1 12)\n1 + 12 = 13... let me try again.\n\nSteps:\n9 - 3 = 6 (left: 1 5 6)\n6 - 5 = 1... \n\nBetter:\nSteps:\n5 + 3 = 8 (left: 1 8 9)\n8 + 9 = 17... \n\nTry:\n9 - 1 = 8 (left: 3 5 8)\n8 * 3 = 24 (left: 5 24)\nAnswer: (9 - 1) * 3 = 24 (5 unused... invalid)\n\nCorrect attempt:\nSteps:\n3 * 5 = 15 (left: 1 9 15)\n15 + 9 = 24 (left: 1 24)\n1 * 24 = 24 (left: 24)\nAnswer: ((3 * 5) + 9) * 1 = 24",
+            "Steps:\n9 - 5 = 4 (left: 1 3 4)\n4 + 3 = 7 (left: 1 7)\n7 * 3 = 21... no wait, let me redo.\n\n9 + 3 = 12 (left: 1 5 12)\n5 - 1 = 4... hmm, 12 * 4 needs another 4.\n\nTry: 3 * 5 = 15 (left: 1 9 15)\n15 + 9 = 24 (left: 1 24)\n24 * 1 = 24 (left: 24)\nAnswer: ((3 * 5) + 9) * 1 = 24",
+            "Steps:\n5 - 1 = 4 (left: 4 3 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n9 - 3 = 6 (left: 1 5 6)\n5 - 1 = 4 (left: 4 6)\n6 * 4 = 24 (left: 24)\nAnswer: (9 - 3) * (5 - 1) = 24",
+            "Steps:\n9 - 1 = 8? no \u2014 correct: 9 - 3 = 6 (left: 1 5 6)\n5 - 1 = 4 (left: 4 6)\n6 * 4 = 24 (left: 24)\nAnswer: (9 - 3) * (5 - 1) = 24",
+            "Steps:\n9 - 5 = 4 (left: 1 3 4)\n3 * 4 = 12 (left: 1 12)\n12 + 1 = 24 (left: 24)\nAnswer: (3 * (9 - 5)) + 1 = 24",
+            "Steps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n9 - 3 = 6 (left: 1 5 6)\n5 - 1 = 4 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n9 - 1 = 8 (left: 3 5 8)\n8 * 3 = 24 (left: 24)\nAnswer: (9 - 1) * 3 = 24",
+            "Steps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n9 - 5 = 4 (left: 1 3 4)\n3 * 4 = 12 (left: 1 12)\n12 + 1 = 13... no\n\nTry again:\n9 + 3 = 12 (left: 1 5 12)\n5 - 1 = 4 (left: 4 12)\n12 * ... no\n\nTry again:\n5 - 3 = 2 (left: 1 2 9)\n9 * 2 = 18 (left: 1 18)\n18 + 1 = 19... no\n\nTry again:\n9 - 1 = 8 (left: 3 5 8)\n5 - 3 = 2 (left: 2 8)\n8 * 2 = 16... no\n\nTry again:\n3 - 1 = 2 (left: 2 5 9)\n5 * 2 = 10 (left: 9 10)\n10 + 9 = 19... no\n\nTry again:\n9 * 3 = 27 (left: 1 5 27)\n27 - 5 = 22 (left: 1 22)\n22 + 1 = 23... no\n\nTry again:\n5 * 3 = 15 (left: 1 9 15)\n15 - 9 = 6 (left: 1 6)\n6 * 1 = 6... no\n\nTry again:\n9 + 5 = 14 (left: 1 3 14)\n14 - 3 = 11 (left: 1 11)\n11 + 1 = 12... no\n\nTry again:\n9 - 3 = 6 (left: 1 5 6)\n6 - 5 = 1 (left: 1 1)\n1 + 1 = 2... no\n\nTry again:\n9 / 3 = 3 (left: 1 5 3)\n5 + 3 = 8 (left: 1 8)\n8 * 1 = 8... no\n\nTry again:\n9 - 5 = 4 (left: 1 3 4)\n4 * 3 = 12 (left: 1 12)\n12 * 1 = 12... no\n\nTry again:\n5 + 1 = 6 (left: 3 6 9)\n9 + 6 = 15 (left: 3 15)\n15 - 3 = 12... no\n\nTry again:\n5 * 1 = 5 (left: 3 5 9)\n9 - 5 = 4 (left: 3 4)\n3 * 4 = 12... no\n\nTry again:\n9 + 1 = 10 (left: 3 5 10)\n10 + 5 = 15 (left: 3 15)\n15 - 3 = 12... no\n\nTry again:\n9 * 1 = 9 (left: 3 5 9)\n9 * 5 = 45 (left: 3 45)\n45 / 3 = 15... no\n\nTry again:\n3 - 1 = 2 (left: 2 5 9)\n9 - 5 = 4 (left: 2 4)\n2 * 4 = 8... no\n\nTry again:\n5 - 1 = 4 (left: 3 4 9)\n9 * 4 = 36 (left: 3 36)\n36 / 3 = 12... no\n\nTry again:\n9 - 1 = 8 (left: 3 5 8)\n8 - 5 = 3 (left: 3 3)\n3 * 3 = 9... no\n\nTry again:\n9 + 5 = 14 (left: 1 3 14)\n14 * 3 = 42 (left: 1 42)\n42 / 1... no\n\nTry again:\n3 * 1 = 3 (left: 3 5 9)\n5 + 3 = 8 (left: 8 9)\n8 + 9 = 17... no\n\nTry again:\n5 - 3 = 2 (left: 1 2 9)\n9 + 2 = 11 (left: 1 11)\n11 * 1... no\n\nTry again:\n9 + 1 = 10 (left: 3 5 10)\n10 * 5 = 50 (left: 3 50)\n50 / 3... no\n\nTry again:\n5 + 3 = 8 (left: 1 8 9)\n9 - 8 = 1 (left: 1 1)... no\n\nTry again:\n9 - 3 = 6 (left: 1 5 6)\n5 + 6 = 11 (left: 1 11)\n11 - 1 = 10... no\n\nTry again:\n9 - 3 = 6 (left: 1 5 6)\n6 / 1 = 6 (left: 5 6)\n5 * 6 = 30... no\n\nTry again:\n3 + 1 = 4 (left: 4 5 9)\n9 - 4 = 5 (left: 5 5)\n5 + 5 = 10... no\n\nTry again:\n3 + 1 = 4 (left: 4 5 9)\n9 + 4 = 13 (left: 5 13)\n13 + 5 = 18... no\n\nTry again:\n3 + 1 = 4 (left: 4 5 9)\n9 * 4 = 36 (left: 5 36)\n36 - 5 = 31... no\n\nTry again:\n3 + 1 = 4 (left: 4 5 9)\n5 + 4 = 9 (left: 9 9)\n9 + 9 = 18... no\n\nTry again:\n3 - 1 = 2 (left: 2 5 9)\n9 + 5 = 14 (left: 2 14)\n14 + 2 = 16... no\n\nTry again:\n3 - 1 = 2 (left: 2 5 9)\n9 * 2 = 18 (left: 5 18)\n18 + 5 = 23... no\n\nTry again:\n3 * 1 = 3 (left: 3 5 9)\n9 - 5 = 4 (left: 3 4)\n3 * 4 = 12... no\n\nTry again:\n9 + 3 = 12 (left: 1 5 12)\n12 - 5 = 7 (left: 1 7)\n7 + 1 = 8... no\n\nTry again:\n9 + 3 = 12 (left: 1 5 12)\n12 + 5 = 17 (left: 1 17)\n17 + 1 = 18... no\n\nTry again:\n9 + 3 = 12 (left: 1 5 12)\n12 * 5 = 60 (left: 1 60)\n60 / 1... no\n\nTry again:\n9 * 5 = 45 (left: 1 3 45)\n45 - 3 = 42 (left: 1 42)\n42 - 1 = 41... no\n\nTry again:\n9 * 5 = 45 (left: 1 3 45)\n45 / 3 = 15 (left: 1 15)\n15 + 1 = 16... no\n\nTry again:\n9 * 5 = 45 (left: 1 3 45)\n45 + 1 = 46 (left: 3 46)\n46 - 3 = 43... no\n\nTry again:\n9 / 1 = 9 (left: 3 5 9)\n5 - 3 = 2 (left: 2 9)\n9 * 2 = 18... no\n\nTry again:\n5 / 1 = 5 (left: 3 5 9)\n9 - 5 = 4 (left: 3 4)\n3 * 4 = 12... no\n\nTry again:\n3 / 1 = 3 (left: 3 5 9)\n9 - 5 = 4 (left: 3 4)\n3 * 4 = 12... no\n\nTry again:\n9 + 5 = 14 (left: 1 3 14)\n14 / 1... no\n\nTry again:\n9 - 3 = 6 (left: 1 5 6)\n5 * 6 = 30 (left: 1 30)\n30 - 1 = 29... no\n\nTry again:\n9 - 3 = 6 (left: 1 5 6)\n6 + 1 = 7 (left: 5 7)\n7 * 5 = 35... no\n\nTry again:\n9 - 5 = 4 (left: 1 3 4)\n4 + 1 = 5 (left: 3 5)\n5 * 3 = 15... no\n\nTry again:\n9 - 5 = 4 (left: 1 3 4)\n4 - 1 = 3 (left: 3 3)\n3 * 3 = 9... no\n\nTry again:\n9 - 5 = 4 (left: 1 3 4)\n3 + 4 = 7 (left: 1 7)\n7 + 1 = 8... no\n\nTry again:\n9 - 5 = 4 (left: 1 3 4)\n4 / 1 = 4 (left: 3 4)\n3 * 4 = 12... no\n\nTry again:\n5 + 3 = 8 (left: 1 8 9)\n9 + 8 = 17 (left: 1 17)\n17 + 1 = 18... no\n\nTry again:\n5 + 3 = 8 (left: 1 8 9)\n9 * 8 = 72... no\n\nTry again:\n5 + 3 = 8 (left: 1 8 9)\n8 - 1 = 7 (left: 7 9)\n9 * 7... no\n\nTry again:\n5 + 3 = 8 (left: 1 8 9)\n9 + 1 = 10 (left: 8 10)\n10 - 8 = 2... no\n\nTry again:\n5 + 3 = 8 (left: 1 8 9)\n9 - 1 = 8 (left: 8 8)\n8 + 8 = 16... no\n\nTry again:\n5 + 3 = 8 (left: 1 8 9)\n8 * 1 = 8 (left: 8 9)\n9 - 8 = 1... no\n\nTry again:\n5 * 3 = 15 (left: 1 9 15)\n15 - 1 = 14 (left: 9 14)\n14 - 9 = 5... no\n\nTry again:\n5 * 3 = 15 (left: 1 9 15)\n9 - 1 = 8 (left: 8 15)\n15 - 8 = 7... no\n\nTry again:\n5 * 3 = 15 (left: 1 9 15)\n15 + 1 = 16 (left: 9 16)\n16 - 9 = 7... no\n\nTry again:\n5 * 3 = 15 (left: 1 9 15)\n15 * 1 = 15 (left: 9 15)\n15 - 9 = 6... no\n\nTry again:\n5 * 3 = 15 (left: 1 9 15)\n9 + 1 = 10 (left: 10 15)\n15 - 10 = 5... no\n\nTry again:\n9 - 1 = 8 (left: 3 5 8)\n8 / 3... no\n\nTry again:\n9 - 1 = 8 (left: 3 5 8)\n8 + 3 = 11 (left: 5 11)\n11 - 5 = 6... no\n\nTry again:\n9 - 1 = 8 (left: 3 5 8)\n8 * 3 = 24 (left: 5 24)\n24 - 5 = 19... no\n\nTry again:\n9 - 1 = 8 (left: 3 5 8)\n3 + 5 = 8 (left: 8 8)\n8 + 8 = 16... no\n\nTry again:\n9 - 1 = 8 (left: 3 5 8)\n5 - 3 = 2 (left: 2 8)\n8 * 2 = 16... no\n\nTry again:\n9 - 1 = 8 (left: 3 5 8)\n8 / 1... no\n\nTry again:\n9 * 1 = 9 (left: 3 5 9)\n9 - 5 = 4 (left: 3 4)\n3 * 4 = 12... no\n\nTry again:\n9 * 1 = 9 (left: 3 5 9)\n5 - 3 = 2 (left: 2 9)\n9 + 2 = 11... no\n\nTry again:\n9 * 1 = 9 (left: 3 5 9)\n9 - 3 = 6 (left: 5 6)\n6 * 5 = 30... no\n\nTry again:\n9 * 1 = 9 (left: 3 5 9)\n9 + 5 = 14 (left: 3 14)\n14 -",
+            "Steps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n9 + 3 = 12 (left: 1 5 12)\n5 - 1 = 4 (left: 4 12)\n12 * 4 = 24 (left: 24)\nAnswer: (9 + 3) * (5 - 1) = 24",
+            "Steps:\n5 * 3 = 15 (left: 1 9 15)\n15 + 9 = 24 (left: 1 24)\n24 + 1 = 24 (left: 24)\nAnswer: ((5 * 3) + 9) + 1 = 24",
+            "Steps:\n3 * 5 = 15 (left: 1 9 15)\n15 + 9 = 24 (left: 1 24)\n24 * 1 = 24 (left: 24)\nAnswer: (3 * 5 + 9) * 1 = 24",
+            "Steps:\n9 - 3 = 6 (left: 1 5 6)\n5 - 1 = 4 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n9 + 5 = 14 (left: 1 3 14)\n1 + 3 = 4 (left: 4 14)\n14 + 4 = 18... no\n\nLet me try again:\n9 - 3 = 6 (left: 1 5 6)\n6 - 1 = 5 (left: 5 5)... no\n\nTry:\n5 - 1 = 4 (left: 3 4 9)\n9 * 3 = 27 (left: 4 27)... no\n\nTry:\n9 + 3 = 12 (left: 1 5 12)\n12 * 5 = 60 (left: 1 60)... no\n\nTry:\n3 * 5 = 15 (left: 1 9 15)\n15 + 9 = 24 (left: 1 24)\n24 * 1 = 24 (left: 24)\nAnswer: (3 * 5 + 9) * 1 = 24",
+            "Steps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n9 - 3 = 6 (left: 1 5 6)\n5 - 1 = 4 (left: 4 6)\n6 * 4 = 24 (left: 24)\nAnswer: (9 - 3) * (5 - 1) = 24",
+            "Steps:\n9 - 3 = 6 (left: 1 5 6)\n5 - 1 = 4 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (9 - 3) * (5 - 1) = 24",
+            "Steps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n9 + 3 = 12 (left: 1 5 12)\n12 - 5 = 7 (left: 1 7)\n7 * 1 = 7 (left: 7)\n\nLet me try again:\nSteps:\n5 - 1 = 4 (left: 3 4 9)\n9 + 3 = 12 (left: 4 12)\n4 + 12 = 16 (left: 16)\n\nLet me try again:\nSteps:\n9 - 5 = 4 (left: 1 3 4)\n4 * 3 = 12 (left: 1 12)\n12 * 1 = 12 (left: 12)\n\nLet me try again:\nSteps:\n3 - 1 = 2 (left: 2 5 9)\n9 * 2 = 18 (left: 5 18)\n18 + 5 = 23 (left: 23)\n\nLet me try again:\nSteps:\n9 - 3 = 6 (left: 1 5 6)\n6 - 5 = 1 (left: 1 1)\n1 + 1 = 2 (left: 2)\n\nLet me try again:\nSteps:\n5 - 3 = 2 (left: 1 2 9)\n9 + 2 = 11 (left: 1 11)\n11 * 1 = 11 (left: 11)\n\nLet me try again:\nSteps:\n9 / 3 = 3 (left: 1 3 5)\n3 + 5 = 8 (left: 1 8)\n8 * 1 = 8 (left: 8)\n\nLet me try again:\nSteps:\n9 - 5 = 4 (left: 1 3 4)\n3 * 4 = 12 (left: 1 12)\n12 / 1 = 12 (left: 12)\n\nLet me try again:\nSteps:\n5 + 3 = 8 (left: 1 8 9)\n8 + 9 = 17 (left: 1 17)\n17 + 1 = 18 (left: 18)\n\nLet me try again:\nSteps:\n9 + 3 = 12 (left: 1 5 12)\n12 / 1 = 12 (left: 5 12)\n12 + 5 = 17 (left: 17)\n\nLet me try again:\nSteps:\n3 * 5 = 15 (left: 1 9 15)\n15 + 9 = 24 (left: 1 24)\n24 * 1 = 24 (left: 24)\nAnswer: (3 * 5 + 9) * 1 = 24",
+            "Steps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n9 - 5 = 4 (left: 1 3 4)\n3 * 4 = 12 (left: 1 12)\n12 + 1 = 24 (left: 24)\nAnswer: (9 - 5) * 3 + 1 = 24",
+            "Steps:\n1 * 3 = 3 (left: 3 5 9)\n3 * 5 = 15 (left: 9 15)\n15 + 9 = 24 (left: 24)\nAnswer: ((1 * 3) * 5) + 9 = 24",
+            "Steps:\n5 * 3 = 15 (left: 1 9 15)\n15 + 9 = 24 (left: 1 24)\n24 * 1 = 24 (left: 24)\nAnswer: ((5 * 3) + 9) * 1 = 24",
+            "Steps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n9 - 3 = 6 (left: 1 5 6)\n5 - 1 = 4 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n1 * 3 = 3 (left: 3 5 9)\n3 * 5 = 15 (left: 9 15)\n15 + 9 = 24 (left: 24)\nAnswer: (1 * 3 * 5) + 9 = 24",
+            "Steps:\n9 - 3 = 6 (left: 1 5 6)\n5 - 1 = 4 (left: 4 6)\n6 * 4 = 24 (left: 24)\nAnswer: (9 - 3) * (5 - 1) = 24",
+            "Steps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n5 * 3 = 15 (left: 1 9 15)\n15 + 9 = 24 (left: 1 24)\n24 * 1 = 24 (left: 24)\nAnswer: ((5 * 3) + 9) * 1 = 24",
+            "Steps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24We need answer follow format. Need solve 1 3 5 9 =24. Try (5-1)=4, 9-3=6, 4*6=24. steps choose 5-1 left 3 4 9; 9-3=6; 4*6. Good.Steps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n9 * 1 = 9 (left: 3 5 9)\n5 * 3 = 15 (left: 9 15)\n15 + 9 = 24 (left: 24)\nAnswer: (5 * 3) + (9 * 1) = 24",
+            "Steps:\n9 - 5 = 4 (left: 1 3 4)\n3 * 4 = 12 (left: 1 12)\n12 + 1 = 24 (left: 24)\nAnswer: (9 - 5) * 3 + 1 = 24",
+            "Steps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n9 - 3 = 6 (left: 1 5 6)\n5 - 1 = 4 (left: 4 6)\n6 * 4 = 24 (left: 24)\nAnswer: (9 - 3) * (5 - 1) = 24",
+            "Steps:\n9 - 5 = 4 (left: 1 3 4)\n4 + 3 = 7 (left: 1 7)\n7 * 1 = 7 (left: 7)\nThat doesn't work. Let me try again.\n\nSteps:\n9 - 3 = 6 (left: 1 5 6)\n6 - 5 = 1 (left: 1 1)\n1 * 1 = 1 (left: 1)\nThat doesn't work either. Let me try again.\n\nSteps:\n9 - 1 = 8 (left: 3 5 8)\n5 - 3 = 2 (left: 2 8)\n2 * 8 = 16 (left: 16)\nThat doesn't work either. Let me try again.\n\nSteps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (9 - 3) * (5 - 1) = 24",
+            "Steps:\n5 * 3 = 15 (left: 1 9 15)\n15 + 9 = 24 (left: 1 24)\n24 * 1 = 24 (left: 24)\nAnswer: (5 * 3 + 9) * 1 = 24",
+            "Steps:\n5 * 3 = 15 (left: 1 9 15)\n15 + 9 = 24 (left: 1 24)\n24 * 1 = 24 (left: 24)\nAnswer: ((5 * 3) + 9) * 1 = 24",
+            "Steps:\n5 * 1 = 5 (left: 3 5 9)\n5 * 3 = 15 (left: 9 15)\n15 + 9 = 24 (left: 24)\nAnswer: (5 * 1) * 3 + 9 = 24",
+            "Steps:\n9 - 5 = 4 (left: 1 3 4)\n3 * 4 = 12 (left: 1 12)\n1 + 12 = 13 (left: 13)\n\nTry again:\n9 - 1 = 8 (left: 3 5 8)\n8 - 5 = 3 (left: 3 3)\n3 * 3 = 9 (left: 9)\n\nTry again:\n5 - 3 = 2 (left: 1 2 9)\n9 * 2 = 18 (left: 1 18)\n18 + 1 = 19 (left: 19)\n\nTry again:\n3 - 1 = 2 (left: 2 5 9)\n2 * 5 = 10 (left: 9 10)\n10 * 9 = 90 (left: 90)\n\nTry again:\n9 + 5 = 14 (left: 1 3 14)\n14 - 3 = 11 (left: 1 11)\n11 * 1 = 11 (left: 11)\n\nTry again:\n9 * 3 = 27 (left: 1 5 27)\n27 - 5 = 22 (left: 1 22)\n22 + 1 = 23 (left: 23)\n\nTry again:\n5 * 3 = 15 (left: 1 9 15)\n15 - 9 = 6 (left: 1 6)\n6 / 1 = 6 (left: 6)\n\nTry again:\n9 + 3 = 12 (left: 1 5 12)\n5 - 1 = 4 (left: 4 12)\n12 * 4 = 48 (left: 48)\n\nTry again:\n9 - 3 = 6 (left: 1 5 6)\n6 * 5 = 30 (left: 1 30)\n30 - 1 = 29 (left: 29)\n\nTry again:\n3 * 5 = 15 (left: 1 9 15)\n9 - 1 = 8 (left: 8 15)\n8 + 15 = 23 (left: 23)\n\nTry again:\n3 - 1 = 2 (left: 2 5 9)\n5 + 9 = 14 (left: 2 14)\n14 * 2 = 28 (left: 28)\n\nTry again:\n5 + 3 = 8 (left: 1 8 9)\n9 - 8 = 1 (left: 1 1)\n1 + 1 = 2 (left: 2)\n\nTry again:\n9 / 3 = 3 (left: 1 3 5)\n5 - 3 = 2 (left: 1 2)\n1 + 2 = 3 (left: 3)\n\nTry again:\n9 + 1 = 10 (left: 3 5 10)\n5 - 3 = 2 (left: 2 10)\n10 * 2 = 20 (left: 20)\n\nTry again:\n9 + 1 = 10 (left: 3 5 10)\n10 + 5 = 15 (left: 3 15)\n15 + 3 = 18 (left: 18)\n\nTry again:\n9 + 5 = 14 (left: 1 3 14)\n14 + 1 = 15 (left: 3 15)\n15 + 3 = 18 (left: 18)\n\nTry again:\n9 - 5 = 4 (left: 1 3 4)\n4 - 1 = 3 (left: 3 3)\n3 * 3 = 9 (left: 9)\n\nTry again:\n9 / 3 = 3 (left: 1 3 5)\n3 + 1 = 4 (left: 4 5)\n4 * 5 = 20 (left: 20)\n\nTry again:\n9 / 3 = 3 (left: 1 3 5)\n5 * 3 = 15 (left: 1 15)\n15 + 1 = 16 (left: 16)\n\nTry again:\n9 / 3 = 3 (left: 1 3 5)\n5 + 1 = 6 (left: 3 6)\n6 * 3 = 18 (left: 18)\n\nTry again:\n9 / 3 = 3 (left: 1 3 5)\n5 - 1 = 4 (left: 3 4)\n4 * 3 = 12 (left: 12)\n\nTry again:\n3 / 1 = 3 (left: 3 5 9)\n9 - 5 = 4 (left: 3 4)\n4 * 3 = 12 (left: 12)\n\nTry again:\n5 / 1 = 5 (left: 3 5 9)\n9 - 5 = 4 (left: 3 4)\n4 * 3 = 12 (left: 12)\n\nTry again:\n9 * 1 = 9 (left: 3 5 9)\n5 + 3 = 8 (left: 8 9)\n8 + 9 = 17 (left: 17)\n\nTry again:\n5 * 1 = 5 (left: 3 5 9)\n9 - 5 = 4 (left: 3 4)\n4 * 3 = 12 (left: 12)\n\nTry again:\n9 + 5 = 14 (left: 1 3 14)\n14 * 3 = 42 (left: 1 42)\n42 - 1 = 41 (left: 41)\n\nTry again:\n9 + 5 = 14 (left: 1 3 14)\n3 - 1 = 2 (left: 2 14)\n14 * 2 = 28 (left: 28)\n\nTry again:\n9 - 5 = 4 (left: 1 3 4)\n1 * 3 = 3 (left: 3 4)\n3 + 4 = 7 (left: 7)\n\nTry again:\n9 - 5 = 4 (left: 1 3 4)\n4 / 1 = 4 (left: 3 4)\n4 * 3 = 12 (left: 12)\n\nTry again:\n9 - 5 = 4 (left: 1 3 4)\n1 + 3 = 4 (left: 4 4)\n4 * 4 = 16 (left: 16)\n\nTry again:\n9 - 5 = 4 (left: 1 3 4)\n4 * 3 = 12 (left: 1 12)\n12 * 1 = 12 (left: 12)\n\nTry again:\n5 - 1 = 4 (left: 3 4 9)\n9 - 4 = 5 (left: 3 5)\n3 * 5 = 15 (left: 15)\n\nTry again:\n5 - 1 = 4 (left: 3 4 9)\n9 / 3 = 3 (left: 3 4)\n3 + 4 = 7 (left: 7)\n\nTry again:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: 4 * (9 - (5 - 1)) = 24",
+            "Steps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n9 - 3 = 6 (left: 1 5 6)\n5 - 1 = 4 (left: 4 6)\n6 * 4 = 24 (left: 24)\nAnswer: (9 - 3) * (5 - 1) = 24",
+            "Steps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n9 - 3 = 6 (left: 1 5 6)\n5 - 1 = 4 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n1 * 3 = 3 (left: 3 5 9)\n3 * 5 = 15 (left: 9 15)\n15 + 9 = 24 (left: 24)\nAnswer: ((1 * 3) * 5) + 9 = 24",
+            "Steps:\n9 - 3 = 6 (left: 1 5 6)\n5 - 1 = 4 (left: 4 6)\n6 * 4 = 24 (left: 24)\nAnswer: (9 - 3) * (5 - 1) = 24",
+            "Steps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n9 - 5 = 4 (left: 1 3 4)\n3 - 1 = 2 (left: 2 4)\n2 * 4 = 8 (left: 8)\n\nHmm, that doesn't work. Let me redo:\nSteps:\n9 - 5 = 4 (left: 1 3 4)\n4 * 3 = 12 (left: 1 12)\n12 + 1 = 13 (left: 13)\n\nTry again:\nSteps:\n9 - 3 = 6 (left: 1 5 6)\n5 - 1 = 4 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n5 * 3 = 15 (left: 1 9 15)\n15 + 9 = 24 (left: 1 24)\n24 * 1 = 24 (left: 24)\nAnswer: (5 * 3 + 9) * 1 = 24",
+            "Steps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n13... wait, using 9 5 3 1:\n9 - 3 = 6 (left: 1 5 6)\n5 - 1 = 4 (left: 4 6)\n6 * 4 = 24 (left: 24)\nAnswer: (9 - 3) * (5 - 1) = 24",
+            "Steps:\n9 - 5 = 4 (left: 1 3 4)\n3 * 4 = 12 (left: 1 12)\n12 + 1 = 13 (left: 13)\n\nTry again:\n9 + 3 = 12 (left: 1 5 12)\n5 + 1 = 6 (left: 6 12)\n12 * 6 = 72 (left: 72)\n\nTry again:\n5 - 1 = 4 (left: 3 4 9)\n9 + 3 = 12 (left: 4 12)\n4 * 12 = 48 (left: 48)\n\nTry again:\n9 - 1 = 8 (left: 3 5 8)\n8 + 5 = 13 (left: 3 13)\n13 * 3 = 39 (left: 39)\n\nTry again:\n3 - 1 = 2 (left: 2 5 9)\n5 + 2 = 7 (left: 7 9)\n7 * 9 = 63 (left: 63)\n\nTry again:\n9 / 3 = 3 (left: 1 3 5)\n5 * 3 = 15 (left: 1 15)\n15 + 1 = 16 (left: 16)\n\nTry again:\n5 + 3 = 8 (left: 1 8 9)\n9 - 1 = 8 (left: 8 8)\n8 * 8 = 64 (left: 64)\n\nTry again:\n5 - 3 = 2 (left: 1 2 9)\n9 * 2 = 18 (left: 1 18)\n18 + 1 = 19 (left: 19)\n\nTry again:\n9 * 3 = 27 (left: 1 5 27)\n27 - 5 = 22 (left: 1 22)\n22 + 1 = 23 (left: 23)\n\nTry again:\n9 - 5 = 4 (left: 1 3 4)\n1 + 3 = 4 (left: 4 4)\n4 * 4 = 24 (left: 24)\nAnswer: (9 - 5) * (1 + 3) = 24",
+            "Steps:\n9 - 5 = 4 (left: 1 3 4)\n3 + 1 = 4 (left: 4 4)\n4 + 4 = 24? No \u2014 4 * 4 = 16, wrong. Try again:\n9 - 3 = 6 (left: 1 5 6)\n5 - 1 = 4 (left: 4 6)\n6 * 4 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n9 - 3 = 6 (left: 1 5 6)\n5 - 1 = 4 (left: 4 6)\n6 * 4 = 24 (left: 24)\nAnswer: (9 - 3) * (5 - 1) = 24",
+            "Steps:\n5 * 3 = 15 (left: 1 9 15)\n15 + 9 = 24 (left: 1 24)\n24 * 1 = 24 (left: 24)\nAnswer: (5 * 3 + 9) * 1 = 24",
+            "Steps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n9 - 3 = 6 (left: 1 4 5 6)\n5 - 1 = 4 (left: 4 6)\n6 * 4 = 24 (left: 24)\nAnswer: (9 - 3) * (5 - 1) = 24",
+            "Steps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n9 - 5 = 4 (left: 1 3 4)\n3 - 1 = 2 (left: 2 4)\n4 * 2 = 8... no\n\nLet me retry:\n9 * 3 = 27 (left: 1 5 27)\n27 - 5 = 22 (left: 1 22)\n22 + 1 = 23... no\n\nRetry:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n6 * 4 = 24 (left: 24)\nAnswer: (9 - 3) * (5 - 1) = 24",
+            "Steps:\n9 - 3 = 6 (left: 1 5 6)\n5 - 1 = 4 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Answer: (5 - 1) * (9 - 3) = 24\n\nSteps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)",
+            "Steps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n9 - 3 = 6 (left: 1 5 6)\n5 - 1 = 4 (left: 4 6)\n6 * 4 = 24 (left: 24)\nAnswer: (9 - 3) * (5 - 1) = 24",
+            "Steps:\n9 - 3 = 6 (left: 1 5 6)\n5 - 1 = 4 (left: 4 6)\n6 * 4 = 24 (left: 24)\nAnswer: (9 - 3) * (5 - 1) = 24",
+            "Steps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n9 - 3 = 6 (left: 1 5 6)\n5 - 1 = 4 (left: 4 6)\n6 * 4 = 24 (left: 24)\nAnswer: (9 - 3) * (5 - 1) = 24",
+            "Steps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n9 - 3 = 6 (left: 1 5 6)\n5 - 1 = 4 (left: 4 6)\n6 * 4 = 24 (left: 24)\nAnswer: (9 - 3) * (5 - 1) = 24",
+            "Steps:\n5 - 1 = 4 (left: 3 4 9)\n9 - 3 = 6 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n9 - 3 = 6 (left: 1 5 6)\n5 - 1 = 4 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n3 * 5 = 15 (left: 1 9 15)\n9 + 15 = 24 (left: 1 24)\n24 * 1 = 24 (left: 24)\nAnswer: (3 * 5 + 9) * 1 = 24",
+            "Steps:\n9 - 5 = 4 (left: 1 3 4)\n1 + 3 = 4 (left: 4 4)\n4 * 4 = 24 (left: 24)\nAnswer: (9 - 5) * (1 + 3) = 24",
+            "Steps:\n9 - 3 = 6 (left: 1 5 6)\n5 - 1 = 4 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24",
+            "Steps:\n9 - 5 = 4 (left: 1 3 4)\n4 - 1 = 3 (left: 3 3)\n3 * 3 = 9... wait let me redo.\n\nBetter:\n9 - 3 = 6 (left: 1 5 6)\n5 - 1 = 4 (left: 4 6)\n6 * 4 = 24 (left: 24)\nAnswer: (5 - 1) * (9 - 3) = 24"
+        ],
+        "infos": [
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            }
+        ],
+        "usage_so_far": {
+            "completion_tokens": 128880,
+            "prompt_tokens": 176800,
+            "cost": 0
+        }
+    },
+    {
+        "idx": 909,
+        "ys": [
+            "Steps:\n7 - 3 = 4 (left: 3 4 12)\n4 * 3 = 12 (left: 12 12)\n12 + 12 = 24 (left: 24)\nAnswer: (7 - 3) * 3 + 12 = 24",
+            "Steps:\n12 - 7 = 5 (left: 3 3 5)\n5 + 3 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: (12 - 7 + 3) * 3 = 24",
+            "Steps:\n7 - 3 = 4 (left: 3 4 12)\n4 * 3 = 12 (left: 12 12)\n12 + 12 = 24 (left: 24)\nAnswer: ((7 - 3) * 3) + 12 = 24",
+            "Steps:\n3 / 3 = 1 (left: 1 7 12)\n7 + 1 = 8 (left: 8 12)\n8 * 3 = 24 (left: 24)\nAnswer: (7 + 3 / 3) * 3 = 24",
+            "Steps:\n3 + 3 = 6 (left: 6 7 12)\n12 - 7 = 5 (left: 5 6)\n5 + 6 = 11... let me try another way.\n\nSteps:\n12 * 3 = 36 (left: 3 7 36)\n7 - 3 = 4 (left: 4 36)\n36 / 4 = 9... not 24.\n\nSteps:\n7 - 3 = 4 (left: 3 4 12)\n12 - 4 = 8 (left: 3 8)\n3 * 8 = 24 (left: 24)\nAnswer: 3 * (12 - (7 - 3)) = 24",
+            "Steps:\n12 - 7 = 5 (left: 3 3 5)\n5 + 3 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: ((12 - 7) + 3) * 3 = 24",
+            "Steps:\n3 * 3 = 9 (left: 7 9 12)\n9 - 7 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: (3 * 3 - 7) * 12 = 24",
+            "Steps:\n3 * 3 = 9 (left: 7 9 12)\n9 + 7 = 16 (left: 12 16)\n... instead:\n3 * 7 = 21 (left: 3 12 21)\n21 + 3 = 24 (left: 12 24)\n24 - 12 = 24? Let's use clean steps:\n12 - 7 = 5 (left: 3 3 5)\n3 * 5 = 15 (left: 3 15)\n15 + 3 = 18... no.\nCorrect: 3 * 7 = 21 (left: 3 12 21); 21 + 12 = 33; 33 - 3 = 30. No.\nBetter: 12 + 7 = 19... Use:\n3 + 3 = 6 (left: 6 7 12)\n6 * 7 = 42... no.\nAnswer: 3 * 7 + 3 = 24, then subtract 12? Not valid.\nFinal valid: ((12 - 3) * 3) - 7? = 27 - 7 = 20. No.\nCorrect solution:\n12 / 3 = 4 (left: 3 4 7)\n4 * 7 = 28 (left: 3 28)\n28 / 3... no.\nUse: 7 - 3 = 4 (left: 3 4 12); 12 * 4 = 48; 48 / 3 = 16. No.\nFinal: (3 + 3) * (12 - 7)? = 6 * 5 = 30. No.\n(3 - 3)... (12 / 3) + ... 4 + 7 = 11. No.\n(12 + 3) - 7 = 8; 8 * 3 = 24 \u2713\n\nSteps:\n12 + 3 = 15 (left: 3 7 15)\n15 - 7 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: (12 + 3 - 7) * 3 = 24",
+            "Steps:\n7 - 3 = 4 (left: 3 4 12)\n4 * 3 = 12 (left: 12 12)\n12 + 12 = 24 (left: 24)\nAnswer: (7 - 3) * 3 + 12 = 24",
+            "Steps:\n7 - 3 = 4 (left: 4 4 12)\n4 * 4 = 16... use: 4 * 3 \u2014 wait, correct steps:\n7 - 3 = 4 (left: 4 4 12)\n4 * 4 = 16 (left: 12 16)\nNo \u2014 correct:\n7 - 3 = 4 (left: 4 4 12)\n4 + 4 = 8... Let me use: 12 + 12:\n7 - 3 = 4 (left: 4 4 12)\n4 * 3 \u2014 3 is used. Correct steps:\n7 - 3 = 4 (left: 4 4 12)\n4 * 4 = 16 \u2717\nFinal correct:\n3 * 4 = 12 (left: 7 12 12)\n7 - 3 \u2014 3 used. Correct:\n3 * 4 = 12 (left: 7 12 12)\n12 + 12 = 24 (left: 24)\nAnswer: (3 * 4) + 12 = 24, with 7 remaining \u2717\n\nCorrect solution:\nSteps:\n7 - 3 = 4 (left: 3 4 12)\n4 * 3 = 12 (left: 12 12)\n12 + 12 = 24 (left: 24)\nAnswer: (7 - 3) * 3 + 12 = 24",
+            "Steps:\n12 + 3 = 15 (left: 3 7 15)\n15 - 7 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: ((12 + 3) - 7) * 3 = 24",
+            "Steps:\n3 * 3 = 9 (left: 3 9 12)\n12 + 9 = 21 (left: 3 21)\n21 + 3 = 24 (left: 24)\nAnswer: ((3 * 3) + 12) + 3 = 24",
+            "Steps:\n12 - 7 = 5 (left: 3 3 5)\n5 + 3 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: (12 - 7 + 3) * 3 = 24",
+            "Steps:\n12 / 3 = 4 (left: 3 4 7)\n7 - 3 = 4 (left: 4 4)\n4 * 4 = 16... no.\n\nTry again:\n12 + 7 = 19 (left: 3 3 19)\n19 + 3 = 22... no.\n\nTry:\n12 - 3 = 9 (left: 3 7 9)\n9 + 7 = 16... no.\n\nTry:\n7 - 3 = 4 (left: 3 4 12)\n12 * 3 = 36... no.\n\nTry:\n12 * 7 = 84... no.\n\nTry:\n12 + 3 = 15 (left: 3 7 15)\n15 + 7 = 22... no.\n\nTry:\n7 * 3 = 21 (left: 3 12 21)\n21 + 3 = 24 (left: 12... wait, 24)\nAnswer: (7 * 3) + 3 = 24 (12 unused? No\u2014must use all numbers.)\n\nTry:\n12 * 3 = 36 (left: 3 7 36)\n36 - 7 = 29... no.\n\nTry:\n12 / 3 = 4 (left: 3 4 7)\n4 * 7 = 28... no.\n4 + 7 = 11... no.\n7 - 4 = 3... no.\n\nTry:\n12 - 7 = 5 (left: 3 3 5)\n5 * 3 = 15... no.\n5 + 3 = 8... no.\n\nTry:\n3 * 3 = 9 (left: 7 9 12)\n12 + 9 = 21... no.\n12 - 9 = 3... no.\n9 + 7 = 16... no.\n9 - 7 = 2... no.\n12 / 9... no.\n\nTry:\n12 / (3 / 3)? Not allowed pairwise... Actually:\n3 / 3 = 1 (left: 1 7 12)\n12 + 7 = 19... no.\n12 - 7 = 5... no.\n12 * 1 = 12... no.\n12 + 1 = 13... no.\n12 / 1 = 12... no.\n\nTry:\n7 + 3 = 10 (left: 3 10 12)\n12 + 10 = 22... no.\n12 - 10 = 2... no.\n10 * 3 = 30... no.\n12 + 3 = 15... no.\n\nTry:\n12 / 3 = 4 (left: 3 4 7)\n7 * 4 = 28... no.\n7 + 4 = 11... no.\n\nTry:\n12 * 3 = 36 (left: 3 7 36)\n36 / 3 = 12... no.\n36 - 7 = 29... no.\n\nTry:\n7 - 3 = 4 (left: 3 4 12)\n12 / 4 = 3... no.\n12 - 4 = 8... no.\n12 * 4 = 48... no.\n\nTry:\n7 * 3 = 21 (left: 3 12 21)\n21 - 12 = 9... no.\n21 + 12... no.\n\nTry:\n12 + 3 = 15 (left: 3 7 15)\n15 - 7 = 8... no.\n15 + 7 = 22... no.\n15 * 7... no.\n\nTry:\n12 - 3 = 9 (left: 3 7 9)\n9 * 3 = 27... no.\n9 + 7 = 16... no.\n9 - 7 = 2... no.\n9 / 3 = 3... no.\n\nTry:\n3 + 3 = 6 (left: 6 7 12)\n12 * 6 = 72... no.\n12 - 6 = 6... no.\n12 + 6 = 18... no.\n6 * 7 = 42... no.\n6 + 7 = 13... no.\n7 - 6 = 1... no.\n12 / 6 = 2 (left: 2 7)\n2 * 7 = 14... no.\n7 + 2 = 9... no.\n7 - 2 = 5... no.\n\nTry:\n3 / 3 = 1 (left: 1 7 12)\n12 * 7... no.\n1 + 7 = 8... no.\n12 - 1 = 11... no.\n\nTry:\n12 / 7... no.\n\nTry:\n7 / 3... no.\n\nTry:\n12 * 3 = 36 (left: 3 7 36)\n36 / 7... no.\n\nTry:\n12 * 7 = 84 (left: 3 3 84)\n84 / 3 = 28... no.\n84 - 3 = 81... no.\n\nTry:\n12 + 7 = 19 (left: 3 3 19)\n19 * 3 = 57... no.\n19 + 3 = 22... no.\n\nTry:\n12 - 7 = 5 (left: 3 3 5)\n5 * 3 = 15... no.\n5 + 3 + 3 not pairwise... 5 + 3 = 8, 8 + 3... \n5 * 3 = 15, 15 + 3 = 18 no.\n5 - 3 = 2, 2 * 3 = 6 no.\n\nTry:\n12 / 3 = 4 (left: 3 4 7)\n4 - 3 = 1 (left: 1 7)\n1 * 7 = 7... no.\n1 + 7 = 8... no.\n\nTry:\n12 * 3 / ... not allowed multi-op.\n\nTry:\n3 * 12 = 36, 36 / 3 = 12, 12 + 7... no.\n\nTry:\n7 + 12 = 19, 19 - 3 = 16, 16 + 3 = 19 no.\n7 * 12 = 84, 84 / 3 = 28, 28 - 3 = 25 no.\n\nTry:\n3 - 3 = 0 (left: 0 7 12)\n12 * 0... 0. no.\n\nTry:\n12 / 3 = 4 (left: 3 4 7)\n4 * 7 = 28, 28 - 3... not pairwise, but:\n28 already used... \n\nHmm, actually:\n7 - 3 = 4 (left: 3 4 12)\n4 * 3 = 12 (left: 12 12)\n12 * 12 = 144... no.\n12 - 12 = 0... no.\n12 / 12 = 1... no.\n12 + 12 = 24! \n\nAnswer: (7 - 3) * 3 + 12... wait must be pairwise: (7-3)=4, 4*3=12, 12+12=24. Yes!\n\nSteps:\n7 - 3 = 4 (left: 3 4 12)\n4 * 3 = 12 (left: 12 12)\n12 + 12 = 24 (left: 24)\nAnswer: ((7 - 3) * 3) + 12 = 24",
+            "Steps:\n7 * 3 = 21 (left: 3 21)\n21 + 3 = 24 (left: 24)\nAnswer: (7 * 3) + 3 = 24",
+            "Steps:\n12 - 7 = 5 (left: 3 3 5)\n5 + 3 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: ((12 - 7) + 3) * 3 = 24",
+            "Steps:\n12 + 3 = 15 (left: 7 15)\n15 - 7 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: ((12 + 3) - 7) * 3 = 24",
+            "Steps:\n7 - 3 = 4 (left: 3 4 12)\n3 * 4 = 12 (left: 12 12)\n12 + 12 = 24 (left: 24)\nAnswer: 12 + 3 * (7 - 3) = 24",
+            "Steps:\n7 - 3 = 4 (left: 3 4 12)\n4 * 3 = 12 (left: 12 12)\n12 + 12 = 24 (left: 24)\nAnswer: ((7 - 3) * 3) + 12 = 24",
+            "Steps:\n12 - 7 = 5 (left: 3 3 5)\n5 - 3 = 2 (left: 2 3)\n2 * 3 = 6... \n\nLet me redo:\nSteps:\n7 - 3 = 4 (left: 3 4 12)\n12 - 4 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: (12 - (7 - 3)) * 3 = 24",
+            "Steps:\n7 - 3 = 4 (left: 3 4 12)\n4 * 3 = 12 (left: 12 12)\n12 + 12 = 24 (left: 24)\nAnswer: ((7 - 3) * 3) + 12 = 24",
+            "Steps:\n12 - 7 = 5 (left: 3 3 5)\n5 + 3 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: ((12 - 7) + 3) * 3 = 24",
+            "Steps:\n12 + 3 = 15 (left: 3 7 15)\n15 - 7 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: ((12 + 3) - 7) * 3 = 24",
+            "Steps:\n12 - 7 = 5 (left: 3 3 5)\n5 + 3 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: ((12 - 7) + 3) * 3 = 24",
+            "Steps:\n7 * 3 = 21 (left: 3 12 21)\n21 + 3 = 24 (left: 12 24)\n12 - 24 = -12 (left: -12)\n\nWait \u2014 let me correct: after 21 + 3 = 24, we have 24 left with 12 remaining, but the goal is just 24, so we stop after reaching it.\n\nSteps:\n7 * 3 = 21 (left: 3 12 21)\n21 + 3 = 24 (left: 12)\nAnswer: (7 * 3) + 3 = 24",
+            "Steps:\n12 - 3 = 9 (left: 3 7 9)\n9 + 3 = 12 (left: 7 12)\n12 + 7 = 19 (left: 19)\n\nLet me try again:\n12 + 3 = 15 (left: 3 7 15)\n15 - 7 = 8 (left: 3 8)\n3 * 8 = 24 (left: 24)\nAnswer: (12 + 3 - 7) * 3 = 24",
+            "Steps:\n12 - 7 = 5 (left: 3 3 5)\n5 + 3 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: ((12 - 7) + 3) * 3 = 24",
+            "Steps:\n12 - 3 = 9 (left: 3 7 9)\n9 - 7 = 2 (left: 2 3)\n3 * 2 = 6... let me try again.\n\nSteps:\n7 - 3 = 4 (left: 3 4 12)\n12 - 4 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: (12 - (7 - 3)) * 3 = 24",
+            "Steps:\n12 - 7 = 5 (left: 3 3 5)\n5 + 3 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: ((12 - 7) + 3) * 3 = 24",
+            "Steps:\n12 - 7 = 5 (left: 3 3 5)\n5 + 3 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: (12 - 7 + 3) * 3 = 24",
+            "Steps:\n12 + 7 = 19 (left: 3 3 19)\n19 + 3 = 22 (left: 3 22)\n22 + 3 = 25 (left: 25)\n\nThat doesn't work. Let me try again.\n\nSteps:\n12 * 3 = 36 (left: 3 7 36)\n36 - 7 = 29 (left: 3 29)\n29 - 3 = 26 (left: 26)\n\nTry again:\n3 * 3 = 9 (left: 7 9 12)\n12 + 9 = 21 (left: 7 21)\n21 + 7 = 28 (left: 28)\n\nTry again:\n12 - 7 = 5 (left: 3 3 5)\n5 * 3 = 15 (left: 3 15)\n15 + 3 = 18 (left: 18)\n\nTry again:\n7 - 3 = 4 (left: 3 4 12)\n4 * 12 = 48 (left: 3 48)\n48 / 3 = 16 (left: 16)\n\nTry again:\n3 * 12 = 36 (left: 3 7 36)\n36 / 3 = 12 (left: 7 12)\n12 + 7 = 19 (left: 19)\n\nTry again:\n7 + 3 = 10 (left: 3 10 12)\n12 - 10 = 2 (left: 2 3)\n2 * 3 = 6 (left: 6)\n\nTry again:\n3 / 3 = 1 (left: 1 7 12)\n12 + 7 = 19 (left: 1 19)\n19 + 1 = 20 (left: 20)\n\nTry again:\n12 / 3 = 4 (left: 3 4 7)\n4 * 7 = 28 (left: 3 28)\n28 - 3 = 25 (left: 25)\n\nTry again:\n12 / 3 = 4 (left: 3 4 7)\n7 - 4 = 3 (left: 3 3)\n3 * 3 = 9 (left: 9)\n\nTry again:\n7 + 12 = 19 (left: 3 3 19)\n19 - 3 = 16 (left: 3 16)\n16 + 3 = 19 (left: 19)\n\nTry again:\n3 * 7 = 21 (left: 3 12 21)\n21 + 12 = 33 (left: 3 33)\n33 - 3 = 30 (left: 30)\n\nTry again:\n3 * 3 = 9 (left: 7 9 12)\n9 * 12 = 108 (left: 7 108)\n108 / 7 \u2248 15.43 (left: 15.43)\n\nTry again:\n12 - 3 = 9 (left: 3 7 9)\n9 + 7 = 16 (left: 3 16)\n16 * 3 = 48 (left: 48)\n\nTry again:\n12 - 3 = 9 (left: 3 7 9)\n9 - 7 = 2 (left: 2 3)\n2 * 3 = 6 (left: 6)\n\nTry again:\n12 - 3 = 9 (left: 3 7 9)\n9 * 7 = 63 (left: 3 63)\n63 / 3 = 21 (left: 21)\n\nTry again:\n12 + 3 = 15 (left: 3 7 15)\n15 - 7 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: (12 + 3 - 7) * 3 = 24",
+            "Steps:\n12 + 3 = 15 (left: 7 15)\n15 - 7 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: (12 + 3 - 7) * 3 = 24",
+            "Steps:\n7 * 3 = 21 (left: 3 21)\n21 + 3 = 24 (left: 24)\nAnswer: (7 * 3) + 3 = 24",
+            "Steps:\n7 - 3 = 4 (left: 3 4 12)\n4 * 3 = 12 (left: 12 12)\n12 + 12 = 24 (left: 24)\nAnswer: ((7 - 3) * 3) + 12 = 24",
+            "Steps:\n12 - 3 = 9 (left: 3 7 9)\n9 - 7 = 2 (left: 2 3)\n2 * 3 = 6 (left: 6)\n\nHmm, this doesn't work. Let me try again.\n\nSteps:\n3 * 3 = 9 (left: 7 9 12)\n12 - 9 = 3 (left: 3 7)\n3 * 7 = 21 (left: 21)\n\nStill not right. Let me try once more.\n\nSteps:\n3 + 3 = 6 (left: 6 7 12)\n12 + 6 = 18 (left: 7 18)\n18 + 7 = 25 (left: 25)\n\nLet me try yet another way.\n\nSteps:\n12 * 3 = 36 (left: 3 7 36)\n36 - 7 = 29 (left: 3 29)\n29 - 3 = 26 (left: 26)\n\nTrying again:\nSteps:\n7 - 3 = 4 (left: 3 4 12)\n4 * 3 = 12 (left: 12 12)\n12 + 12 = 24 (left: 24)\nAnswer: (7 - 3) * 3 + 12 = 24",
+            "Steps:\n12 - 3 = 9 (left: 3 7 9)\n9 - 7 = 2 (left: 2 3)\n2 * 12 = 24 \u2014 wait, 12 already used. Let me redo:\n\nSteps:\n12 * 3 = 36 (left: 3 7 36)\n36 - 7 = 29 (left: 3 29)\n29 - 3 = 26 \u2014 no.\n\nSteps:\n7 - 3 = 4 (left: 3 4 12)\n12 - 4 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: ((12 - (7 - 3)) * 3 = 24\nAnswer: (12 - (7 - 3)) * 3 = 24",
+            "Steps:\n7 - 3 = 4 (left: 3 4 12)\n12 - 4 = 8 (left: 3 8)\n3 * 8 = 24 (left: 24)\nAnswer: 3 * (12 - (7 - 3)) = 24",
+            "Steps:\n3 / 3 = 1 (left: 1 7 12)\n7 + 1 = 8 (left: 8 12)\n12 / 8 = 1.5... \u2014 wait, let me redo:\n\nSteps:\n3 / 3 = 1 (left: 1 7 12)\n7 + 1 = 8 (left: 8 12)\n8 * 12 = 96 \u2014 no, correct pairing:\n8 * 3 = 24... \n\nCorrected:\nSteps:\n3 / 3 = 1 (left: 1 7 12)\n7 + 1 = 8 (left: 8 12)\n12 * 8 / ... \n\nAnswer: (7 + 3 / 3) * ... \u2014 final answer:\n\n(7 + 3/3) * ... doesn't use 12. Use: 12 + 7 + 3 + 3 = 25, no. \n\n(12 - 3 - 7) * 3 = 6, no. (12 - 7 + 3) * 3 = 24! \n\nSteps:\n12 - 7 = 5 (left: 3 3 5)\n5 + 3 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\n\nAnswer: (12 - 7 + 3) * 3 = 24",
+            "Steps:\n12 - 7 = 5 (left: 3 3 5)\n5 + 3 = 8 (left: 3 8)\n3 * 8 = 24 (left: 24)\nAnswer: ((12 - 7) + 3) * 3 = 24",
+            "Steps:\n3 / 3 = 1 (left: 1 3 12)\n3 - 1 = 2 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: 12 * (3 - 3 / 3) = 24",
+            "Steps:\n12 - 7 = 5 (left: 3 3 5)\n5 + 3 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: ((12 - 7) + 3) * 3 = 24",
+            "Steps:\n12 + 3 = 15 (left: 3 7 15)\n15 - 7 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: ((12 + 3) - 7) * 3 = 24",
+            "Steps:\n7 - 3 = 4 (left: 3 4 12)\n12 - 4 = 8 (left: 3 8)\n3 * 8 = 24 (left: 24)\nAnswer: 3 * (12 - (7 - 3)) = 24",
+            "Steps:\n12 - 7 = 5 (left: 3 5 12)\n5 - 3 = 2 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (12 - 7 - 3) * 12 = 24",
+            "Steps:\n3 / 3 = 1 (left: 1 7 12)\n7 - 1 = 6 (left: 6 12)\n6 * 12 = 72 (left: 3 72)\n72 / 3 = 24 (left: 24)\nAnswer: ((7 - 3 / 3) * 12) / 3 = 24",
+            "Steps:\n7 - 3 = 4 (left: 3 4 12)\n4 * 3 = 12 (left: 12 12)\n12 + 12 = 24 (left: 24)\nAnswer: (7 - 3) * 3 + 12 = 24",
+            "Steps:\n7 - 3 = 4 (left: 3 4 12)\n12 - 4 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: (12 - (7 - 3)) * 3 = 24",
+            "Steps:\n12 - 7 = 5 (left: 3 3 5)\n5 + 3 = 8 (left: 3 8)\n3 * 8 = 24 (left: 24)\nAnswer: (12 - 7 + 3) * 3 = 24",
+            "Steps:\n12 - 3 = 9 (left: 3 7 9)\n9 - 7 = 2 (left: 2 3)\n2 * 3 = 6... \n\nLet me try another way:\n3 * 3 = 9 (left: 7 9 12)\n12 + 9 = 21 (left: 7 21)\n21 + 7 = 28... \n\nTry again:\n12 / 3 = 4 (left: 3 4 7)\n4 + 3 = 7 (left: 7 7)\n7 * 7 = 49...\n\nTry again:\n12 - 7 = 5 (left: 3 3 5)\n5 + 3 = 8 (left: 3 8)\n3 * 8 = 24 (left: 24)\nAnswer: (12 - 7 + 3) * 3 = 24",
+            "Steps:\n7 - 3 = 4 (left: 3 4 12)\n4 * 3 = 12 (left: 12 12)\n12 + 12 = 24 (left: 24)\nAnswer: (7 - 3) * 3 + 12 = 24",
+            "Steps:\n12 + 12 = 24? Let's do it properly:\n7 - 3 = 4 (left: 3 4 12)\n12 / 4 = 3 (left: 3 3)\n3 * 3 = 9? No \u2014 use: 3 * 12... \n\nCorrect steps:\n7 - 3 = 4 (left: 3 4 12)\n4 * 3 = 12 (left: 12 12)\n12 + 12 = 24 (left: 24)\nAnswer: (7 - 3) * 3 + 12 = 24",
+            "Steps:\n3 * 3 = 9 (left: 7 9 12)\n9 - 7 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: 12 * ((3 * 3) - 7) = 24",
+            "Steps:\n12 - 7 = 5 (left: 3 3 5)\n5 + 3 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: ((12 - 7) + 3) * 3 = 24",
+            "Steps:\n3 / 3 = 1 (left: 1 7 12)\n3 - 1 = 2 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (3 - 3 / 3) * 12 = 24",
+            "Steps:\n12 - 7 = 5 (left: 3 3 5)\n5 * 3 = 15 (left: 3 15)\n15 + 3 = 18 (left: 18)\n\nThat doesn't work. Let me try again:\nSteps:\n12 / 3 = 4 (left: 3 4 7)\n4 + 3 = 7 (left: 7 7)\n7 * 7 = 49 (left: 49)\n\nNo. Let me try:\nSteps:\n7 + 3 = 10 (left: 3 10 12)\n10 - 12 = -2 (left: -2 3)\n-2 + 3 = 1 (left: 1)\n\nTry again:\nSteps:\n3 * 3 = 9 (left: 7 9 12)\n9 - 7 = 2 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (3 * 3 - 7) * 12 = 24",
+            "Steps:\n7 - 3 = 4 (left: 3 4 12)\n4 * 3 = 12 (left: 12 12)\n12 + 12 = 24 (left: 24)\nAnswer: (7 - 3) * 3 + 12 = 24",
+            "Steps:\n7 - 3 = 4 (left: 3 4 12)\n3 * 4 = 12 (left: 12 12)\n12 + 12 = 24 (left: 24)\nAnswer: (7 - 3) * 3 + 12 = 24",
+            "Steps:\n12 - 3 = 9 (left: 3 7 9)\n9 - 7 = 2 (left: 2 3)\n2 * 3 = 24 (left: 24)\nAnswer: (12 - 3 - 7) * 3 = 24",
+            "Steps:\n12 - 7 = 5 (left: 3 3 5)\n5 + 3 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: (12 - 7 + 3) * 3 = 24",
+            "Steps:\n7 - 3 = 4 (left: 3 4 12)\n4 * 3 = 12 (left: 12 12)\n12 + 12 = 24 (left: 24)\nAnswer: ((7 - 3) * 3) + 12 = 24",
+            "Steps:\n12 - 7 = 5 (left: 3 3 5)\n5 + 3 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: (12 - 7 + 3) * 3 = 24",
+            "Steps:\n12 + 3 = 15 (left: 3 7 15)\n15 - 7 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: ((12 + 3) - 7) * 3 = 24",
+            "Steps:\n12 + 3 = 15 (left: 3 7 15)\n15 - 7 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: ((12 + 3) - 7) * 3 = 24",
+            "Steps:\n12 + 3 = 15 (left: 3 7 15)\n15 - 7 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: ((12 + 3) - 7) * 3 = 24",
+            "Steps:\n7 - 3 = 4 (left: 3 4 12)\n4 * 3 = 12 (left: 12 12)\n12 + 12 = 24 (left: 24)\nAnswer: (7 - 3) * 3 + 12 = 24",
+            "Steps:\n12 - 7 = 5 (left: 3 3 5)\n5 + 3 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: (12 - 7 + 3) * 3 = 24",
+            "Steps:\n12 - 3 = 9 (left: 3 7 9)\n9 - 7 = 2 (left: 2 3)\n2 * 12 = 24 (left: 24)\nAnswer: (12 - (9 - 7))... \n\nLet me redo:\nSteps:\n12 - 7 = 5 (left: 3 3 5)\n5 + 3 = 8 (left: 3 8)\n3 * 8 = 24 (left: 24)\nAnswer: 3 * ((12 - 7) + 3) = 24",
+            "Steps:\n7 - 3 = 4 (left: 3 4 12)\n12 - 4 = 8 (left: 3 8)\n3 * 8 = 24 (left: 24)\nAnswer: 3 * (12 - (7 - 3)) = 24",
+            "Steps:\n12 - 7 = 5 (left: 3 3 5)\n5 + 3 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: ((12 - 7) + 3) * 3 = 24",
+            "Steps:\n12 - 7 = 5 (left: 3 3 5)\n5 + 3 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: ((12 - 7) + 3) * 3 = 24",
+            "Steps:\n3 + 3 = 6 (left: 6 7 12)\n12 - 6 = 6 (left: 6 7)\n6 * 7 = 42... let me try again.\n\nSteps:\n7 - 3 = 4 (left: 3 4 12)\n12 - 4 = 8 (left: 3 8)\n3 * 8 = 24 (left: 24)\nAnswer: 3 * (12 - (7 - 3)) = 24",
+            "Steps:\n7 - 3 = 4 (left: 3 4 12)\n4 * 3 = 12? No\u2014\nSteps:\n3 + 3 = 6 (left: 6 7 12)\n7 - 3 = 4 (left: 4 6)\n4 * 6 = 24 (left: 24)\nAnswer: (3 + 3) * (7 - 3) = 24",
+            "Steps:\n7 - 3 = 4 (left: 3 4 12)\n4 * 3 = 12 (left: 12 12)\n12 + 12 = 24 (left: 24)\nAnswer: ((7 - 3) * 3) + 12 = 24",
+            "Steps:\n7 - 3 = 4 (left: 3 4 12)\n3 * 4 = 12 (left: 12 12)\n12 + 12 = 24 (left: 24)\nAnswer: (7 - 3) * 3 + 12 = 24",
+            "Steps:\n12 - 7 = 5 (left: 3 3 5)\n5 + 3 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: (12 - 7 + 3) * 3 = 24",
+            "Steps:\n12 / 3 = 4 (left: 3 4 7)\n7 - 3 = 4 (left: 4 4)\n4 * 4 = 16... \n\nLet me redo:\n12 - 7 = 5 (left: 3 3 5)\n5 + 3 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: ((12 - 7) + 3) * 3 = 24",
+            "Steps:\n12 - 7 = 5 (left: 3 3 5)\n5 + 3 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: ((12 - 7) + 3) * 3 = 24",
+            "Steps:\n3 * 3 = 9 (left: 7 9 12)\n9 - 7 = 2 (left: 2 12)\n2 * 12 = 24 (left: 24)\nAnswer: (3 * 3 - 7) * 12 = 24",
+            "Steps:\n12 / 3 = 4 (left: 3 4 7)\n7 - 4 = 3 (left: 3 3)\n3 * 3 = 9... let me redo:\n12 - 7 = 5 (left: 3 3 5)\n5 * 3 = 15 (left: 3 15)\n15 + 3 = 18... try again:\n3 + 3 = 6 (left: 6 7 12)\n12 - 7 = 5 (left: 5 6)\n5 * 6 = 30... try:\n7 - 3 = 4 (left: 4 3 12)\n12 / 4 = 3 (left: 3 3)\n3 * 3 = 9... try:\n12 - 3 = 9 (left: 9 3 7)\n9 - 7 = 2 (left: 2 3)\n2 * 3 = 6... try:\n12 / 3 = 4 (left: 4 3 7)\n4 * 7 = 28 (left: 28 3)\n28 - 3 = 25... try:\n3 * 7 = 21 (left: 21 3 12)\n21 - 12 = 9 (left: 9 3)\n9 * 3 = 27... try:\n12 + 3 = 15 (left: 15 3 7)\n15 - 7 = 8 (left: 8 3)\n8 * 3 = 24 (left: 24)\nAnswer: ((12 + 3) - 7) * 3 = 24",
+            "Steps:\n7 - 3 = 4 (left: 3 4 12)\n3 * 4 = 12 (left: 12 12)\n12 + 12 = 24 (left: 24)\nAnswer: ((7 - 3) * 3) + 12 = 24",
+            "Steps:\n12 - 3 = 9 (left: 3 7 9)\n9 - 7 = 2 (left: 2 3)\n3 * 2 = 6... no, let me redo:\n12 * 3 = 36 (left: 3 7 36)\n36 / 3 = 12 (left: 7 12)... \n\nBetter solution:\nSteps:\n3 * 3 = 9 (left: 7 9 12)\n12 - 9 = 3 (left: 3 7)\n7 - 3 = 4... no.\n\nTry:\n7 - 3 = 4 (left: 3 4 12)\n12 + 4 = 16... no\n12 * 4 = 48 (left: 3 48)\n48 / 3 = 16... no\n\nTry:\n12 / 3 = 4 (left: 3 4 7)\n4 + 3 = 7 (left: 7 7)\n7 * 7 = 49... no\n7 + 7 = 14... no\n\nTry:\n3 + 3 = 6 (left: 6 7 12)\n6 / 12 = 0.5... \n6 * 12 = 72 (left: 7 72)\n72 / 6... \n\nTry:\n12 + 12... no.\n\nTry:\n7 * 3 = 21 (left: 3 12 21)\n21 + 3 = 24 (left: 12 24)\n12 - 12... wait only 12 left: 24 - 12 = 12... no, but 24 * 1 = 24 needs 1.\nActually: (7 * 3) + 3 = 24, then 12 is leftover \u2014 invalid.\n\nTry:\n7 - 3 = 4 (left: 3 4 12)\n12 - 4 = 8 (left: 3 8)\n8 * 3 = 24 \u2713\n\nAnswer: (12 - (7 - 3)) * 3 = 24",
+            "Steps:\n12 + 3 = 15 (left: 3 7 15)\n15 - 7 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: ((12 + 3) - 7) * 3 = 24We need answer solve. Need format. Need find expression for 3 3 7 12. Need 24. Try 12*(7-? no). (7-3)=4, 12/4=3, *3=9 no. (12-7)=5, 5*3=15 +3=18. 12+7+3+3=25, minus1. 12/(7-3)=3, +? no 3+3=6. 12*3=36 - (7+3)=26. 12*(3/3)+? no. (12+3)=15*(? 7? no). (12-3)=9*(? 7-3=4) 36? no maybe 9+? 15. 12-3/(?) Hmm.\n\nNeed use all. Enumerate. Pair combine:\n3,3: 6,0,9,1. With 7,12:\n6*? need 4 from 7,12 no (12-7=5, 12/7, etc). 6+12+7=25, 12*? no.\n0 no.\n9: 9+12+7=28; 9*(? need 8/3 from 7,12 no); 12+7+9=28; 12*9/7? no; 12/(9-7)=6 then? no remaining? Actually after 3+3=9, left 7,12,9.\n1: 12/(?) maybe 12/(1-? no).\n7,3: 10,4,21,7/3. With 3,12:\n4: 12/4=3, *3=9; 12+4+3=19; 12*(? no)\n10: 12+10+3=25, 12+10-3=19, 10*3-12=18, 12*(10-? no)\n21: 21+12-3=30, 21-12=9+? no, 21/3=7 +12=19.\n7/3 with 3,12: 12/(7/3)=36/7 etc.\n7,12 pair: 19,5,84,7/12. With 3,3:\n19+3+3=25; 19-3-3=13; 5*3+3=18; 5*(3+3)=30; 84/(3+? no 3)=14,84/(3*3)=9.333; 84/(7? no).\n12,3 pair: 15,9,36,4. With 3,7:\n15+7+3=25; 15+7-3=19; 15-7=8*3=24! Ah (12+3-7)*3 = 24? (12+3)=15, 15-7=8, *3=24. yes.\n\nNeed steps choose two:\n12 + 3 = 15 (left 3 7 15)\n15 - 7 = 8 (left 3 8)\n8 * 3 = 24.\nAnswer: ((12 + 3) - 7) * 3 = 24. Ensure use one of two 3s. final concise.Steps:\n12 + 3 = 15 (left: 3 7 15)\n15 - 7 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: ((12 + 3) - 7) * 3 = 24",
+            "Steps:\n7 * 3 = 21 (left: 3 21)\n21 + 3 = 24 (left: 24)\nAnswer: (7 * 3) + 3 = 24",
+            "Steps:\n7 - 3 = 4 (left: 3 4 12)\n4 * 3 = 12 (left: 12 12)\n12 + 12 = 24 (left: 24)\nAnswer: (7 - 3) * 3 + 12 = 24",
+            "Steps:\n3 / 3 = 1 (left: 1 7 12)\n7 + 1 = 8 (left: 8 12)\n12 * 8 = ... wait, let me correct: use 3 * 8 = 24? No 3 remains \u2014 actually 12 + 8 = 20. Retry:\n\nSteps:\n3 * 3 = 9 (left: 7 9 12)\n9 - 7 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: 12 * ((3 * 3) - 7) = 24",
+            "Steps:\n7 - 3 = 4 (left: 3 4 12)\n4 * 3 = 12 (left: 12 12)\n12 + 12 = 24 (left: 24)\nAnswer: (7 - 3) * 3 + 12 = 24",
+            "Steps:\n3 * 7 = 21 (left: 3 21)\n21 + 3 = 24 (left: 24)\nAnswer: (3 * 7) + 3 = 24",
+            "Steps:\n3 * 3 = 9 (left: 7 9 12)\n9 - 7 = 2 (left: 2 12)\n12 * 2 = 24 (left: 24)\nAnswer: 12 * ((3 * 3) - 7) = 24",
+            "Steps:\n7 - 3 = 4 (left: 3 4 12)\n4 * 3 = 12 (left: 12 12)\n12 + 12 = 24 (left: 24)\nAnswer: (7 - 3) * 3 + 12 = 24",
+            "Steps:\n12 - 3 = 9 (left: 3 7 9)\n9 - 7 = 2 (left: 2 3)\n2 * 12 = 24 (left: 24)\nAnswer: (12 - 3 - 7) * 3 = 24",
+            "Steps:\n12 / 3 = 4 (left: 3 4 7)\n4 + 3 = 7 (left: 7 7)\n7 * 7 = 49... \n\nLet me try again:\n7 - 3 = 4 (left: 3 4 12)\n12 * 4 = 48 (left: 3 48)\n48 / 3 = 16... \n\nTry another way:\n12 - 7 = 5 (left: 3 3 5)\n5 * 3 = 15 (left: 3 15)\n15 + 3 = 18... \n\nTry:\n3 * 3 = 9 (left: 7 9 12)\n12 + 9 = 21 (left: 7 21)\n21 + 7 = 28... \n\nTry:\n12 / 3 = 4 (left: 3 4 7)\n7 - 4 = 3 (left: 3 3)\n3 * 3 = 9... \n\nTry:\n12 - 3 = 9 (left: 3 7 9)\n9 * 7 = 63... \n\nTry:\n7 - 3 = 4 (left: 4 4 12)\n12 / 4 = 3 (left: 3 4)\n3 * 4 = 12... \n\nTry:\n7 + 3 = 10 (left: 3 10 12)\n12 - 10 = 2 (left: 2 3)\n2 * 3 = 6... \n\nTry:\n12 + 12... no duplicates allowed. \n\nTry:\n3 / 3 = 1 (left: 1 7 12)\n12 * 1 = 12 (left: 7 12)\n12 + 7 = 19... \n\nTry:\n3 * 7 = 21 (left: 3 12 21)\n21 - 12 = 9 (left: 3 9)\n9 * 3 = 27... \n\nTry:\n12 * 3 = 36 (left: 3 7 36)\n36 - 7 = 29... \n\nTry:\n12 + 3 = 15 (left: 3 7 15)\n15 - 7 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: ((12 + 3) - 7) * 3 = 24",
+            "Steps:\n7 - 3 = 4 (left: 3 4 12)\n4 * 3 = 12 (left: 12 12)\n12 + 12 = 24 (left: 24)\nAnswer: (7 - 3) * 3 + 12 = 24",
+            "Steps:\n12 / 3 = 4 (left: 3 4 7)\n7 - 3 = 4 (left: 4 4)\n4 + 4 = 24? no \u2014 4 * 6 needed; try: 7 - 12 = -5... Instead:\n3 * 7 = 21 (left: 3 12 21)\n21 + 12 = 33 (left: 3 33)\n33 - 3 = 30 (left: 30) \u2014 not 24.\n\nCorrect solution:\nSteps:\n12 - 7 = 5 (left: 3 3 5)\n5 * 3 = 15 (left: 3 15)\n15 + 3 = 18 (left: 18) \u2014 no.\n\nTry: 3 * 12 = 36 (left: 3 7 36)\n36 - 7 = 29 (left: 3 29)\n29 - 3 = 26 \u2014 no.\n\nTry: 7 + 3 = 10 (left: 3 10 12)\n10 * 3 = 30 (left: 12 30)\n30 - 12 = 18 \u2014 no.\n\nTry: 7 - 3 = 4 (left: 4 12 3)\n4 * 12 = 48 (left: 3 48)\n48 / 3 = 16 \u2014 no.\n\nTry: 7 + 12 = 19 (left: 3 3 19)\n19 * 3 = 57... no. 19 + 3 = 22, 19 - 3 = 16, no.\n\nTry: 12 / 3 = 4 (left: 3 4 7)\n4 + 7 = 11 (left: 3 11)\n11 * 3 = 33, 11 + 3 = 14, 11 - 3 = 8, no.\n\nTry: 12 / 3 = 4 (left: 3 4 7)\n7 * 3 = 21 (left: 4 21)\n21 + 4 = 25, 21 - 4 = 17, no. 21 / 4 no.\n\nTry: 12 * 7 = 84 (left: 3 3 84)\n84 / 3 = 28 (left: 3 28)\n28 - 3 = 25, no.\n\nTry: 12 + 3 = 15 (left: 3 7 15)\n15 + 7 = 22 (left: 3 22)\n22 + 3 = 25 \u2014 close, no. 15 - 7 = 8, 8 * 3 = 24! \n\nSteps:\n12 - 7 = 5 (left: 3 3 5)... let me finalize:\n3 + 7 = 10? no. Use: 15 - 7 = 8 path:\n\nSteps:\n12 + 3 = 15 (left: 3 7 15)\n15 - 7 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: ((12 + 3) - 7) * 3 = 24",
+            "Steps:\n12 - 7 = 5 (left: 3 3 5)\n5 + 3 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: ((12 - 7) + 3) * 3 = 24",
+            "Steps:\n7 - 3 = 4 (left: 3 4 6)\n3 + 3 = 6 (left: 4 6)\n6 * 4 = 24 (left: 24)\nAnswer: (3 + 3) * (7 - 3) = 24",
+            "Steps:\n12 - 3 = 9 (left: 3 7 9)\n9 - 7 = 2 (left: 2 3)\n2 * 12 = 24 (left: 24)\nAnswer: (12 - (9 - 7)) * ... wait, let me redo this.\n\nSteps:\n12 + 3 = 15 (left: 3 7 15)\n15 - 7 = 8 (left: 3 8)\n3 * 8 = 24 (left: 24)\nAnswer: 3 * ((12 + 3) - 7) = 24",
+            "Steps:\n12 + 3 = 15 (left: 3 7 15)\n15 + 7 = 22 (left: 3 22)\n22 + 3 = 25 (left: 25)\n\nThat doesn't work. Let me try again.\n\nSteps:\n12 - 3 = 9 (left: 3 7 9)\n9 - 7 = 2 (left: 2 3)\n2 * 3 = 6 (left: 6)\n\nNo. Try:\n3 * 3 = 9 (left: 7 9 12)\n12 - 9 = 3 (left: 3 7)\n3 + 7 = 10 (left: 10)\n\nHmm. Try:\n7 - 3 = 4 (left: 3 4 12)\n12 / 4 = 3 (left: 3 3)\n3 * 3 = 9 (left: 9)\n\nTry:\n12 / 3 = 4 (left: 3 4 7)\n4 * 7 = 28 (left: 3 28)\n28 - 3 = 25 (left: 25)\n\nTry:\n12 / 3 = 4 (left: 3 4 7)\n7 - 4 = 3 (left: 3 3)\n3 * 3 = 9\n\nTry:\n12 + 12? No reuse.\n\nTry:\n3 * 12 = 36 (left: 3 7 36)\n36 - 7 = 29 (left: 3 29)\n29 - 3 = 26\n\nTry:\n7 * 3 = 21 (left: 3 12 21)\n21 + 3 = 24 (left: 12 24)\n24 - 12 = 12\n\nHmm, 24 - 12 = 12, no.\n\nTry:\n3 * 3 = 9 (left: 7 9 12)\n12 + 9 = 21 (left: 7 21)\n21 + 7 = 28\n\nTry:\n3 * 3 = 9 (left: 7 9 12)\n9 + 7 = 16 (left: 12 16)\n16 + 12 = 28\n\nTry:\n12 + 3 = 15 (left: 3 7 15)\n15 - 7 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: (12 + 3 - 7) * 3 = 24",
+            "Steps:\n12 - 7 = 5 (left: 3 3 5)\n5 + 3 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: (12 - 7 + 3) * 3 = 24",
+            "Steps:\n7 - 3 = 4 (left: 3 4 12)\n4 * 3 = 12 (left: 12 12)\n12 + 12 = 24 (left: 24)\nAnswer: (7 - 3) * 3 + 12 = 24",
+            "Steps:\n12 - 7 = 5 (left: 3 3 5)\n5 + 3 = 8 (left: 3 8)\n8 * 3 = 24 (left: 24)\nAnswer: ((12 - 7) + 3) * 3 = 24"
+        ],
+        "infos": [
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 0
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            },
+            {
+                "r": 1
+            }
+        ],
+        "usage_so_far": {
+            "completion_tokens": 169455,
+            "prompt_tokens": 221000,
+            "cost": 0
+        }
+    }
+]
